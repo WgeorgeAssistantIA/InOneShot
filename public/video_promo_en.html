@@ -9,11 +9,13 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { overflow: hidden; }
 body {
   width: 1920px; height: 1080px; overflow: hidden;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   background: #f8fafc;
   color: #1e293b;
+  transform-origin: 0 0;
 }
 
 .scene {
@@ -416,6 +418,9 @@ function tick() {
 
 showScene(0);
 requestAnimationFrame(tick);
+</script>
+<script>
+(function(){function fit(){var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);document.body.style.transform='scale('+s+')';}fit();window.addEventListener('resize',fit);})();
 </script>
 </body>
 </html>
