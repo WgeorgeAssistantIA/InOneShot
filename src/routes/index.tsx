@@ -731,9 +731,8 @@ function Index() {
             <div className="mx-auto aspect-video w-full overflow-hidden rounded-xl border border-border bg-card">
               <iframe
                 className="h-full w-full"
-                src={`https://www.youtube.com/embed/${lang === "fr" ? "cYzXG-vAgk0" : "CSvZnfFWClU"}`}
+                src={lang === "fr" ? "/video_promo_fr.html" : "/video_promo_en.html"}
                 title={c.video.caption}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
