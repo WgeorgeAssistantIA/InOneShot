@@ -401,27 +401,78 @@ function showScene(idx) {
   });
 }
 
-const startTime = performance.now();
+let startTime = performance.now();
+let paused = false;
+let pauseOffset = 0;
 
 function tick() {
-  const now = performance.now();
-  elapsed = (now - startTime) % total;
-  document.getElementById('progress').style.width = (elapsed / total * 100) + '%';
+  if (!paused) {
+    const now = performance.now();
+    elapsed = (now - startTime) % total;
+    document.getElementById('progress').style.width = (elapsed / total * 100) + '%';
 
-  let acc = 0;
-  for (let i = 0; i < scenes.length; i++) {
-    acc += scenes[i].duration;
-    if (elapsed < acc) {
-      if (current !== i) { current = i; showScene(i); }
-      break;
+    let acc = 0;
+    for (let i = 0; i < scenes.length; i++) {
+      acc += scenes[i].duration;
+      if (elapsed < acc) {
+        if (current !== i) { current = i; showScene(i); }
+        break;
+      }
     }
   }
-
   requestAnimationFrame(tick);
 }
 
 showScene(0);
 requestAnimationFrame(tick);
+
+/* ── Controls ── */
+const controls = document.createElement('div');
+controls.id = 'video-controls';
+controls.innerHTML = `
+  <button id="btn-play" title="Pause">❚❚</button>
+  <button id="btn-fs" title="Plein écran">⛶</button>
+`;
+document.body.appendChild(controls);
+
+const style = document.createElement('style');
+style.textContent = `
+#video-controls {
+  position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+  display: flex; gap: 8px; opacity: 0; transition: opacity 0.3s;
+}
+body:hover #video-controls, #video-controls:hover { opacity: 1; }
+#video-controls button {
+  width: 44px; height: 44px; border: none; border-radius: 50%;
+  background: rgba(24,95,165,0.85); color: #fff; font-size: 18px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(4px); transition: background 0.2s;
+}
+#video-controls button:hover { background: rgba(24,95,165,1); }
+`;
+document.head.appendChild(style);
+
+document.getElementById('btn-play').addEventListener('click', function() {
+  if (paused) {
+    startTime = performance.now() - pauseOffset;
+    paused = false;
+    this.textContent = '❚❚';
+    this.title = 'Pause';
+  } else {
+    pauseOffset = elapsed;
+    paused = true;
+    this.textContent = '▶';
+    this.title = 'Lecture';
+  }
+});
+
+document.getElementById('btn-fs').addEventListener('click', function() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+});
 </script>
 <script>
 (function(){function fit(){var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);document.body.style.transform='scale('+s+')';}fit();window.addEventListener('resize',fit);})();
