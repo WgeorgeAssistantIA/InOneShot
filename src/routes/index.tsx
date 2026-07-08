@@ -529,7 +529,7 @@ function MergeDemo({ lang }: { lang: Lang }) {
         <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest text-brand">
           <Files className="h-3.5 w-3.5" /> {c.to}
         </span>
-        <div className="relative h-[104px] w-[88px]">
+        <div className="relative mt-3 h-[104px] w-[88px]">
           {[2, 1, 0].map((d) => (
             <div
               key={d}
