@@ -20,6 +20,10 @@ function trackLinuxDownload() {
   track("linux_download");
   if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "linux_appimage" });
 }
+function trackSnapDownload() {
+  track("snap_download");
+  if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "linux_snap" });
+}
 
 import {
   Download,
@@ -49,6 +53,7 @@ const CHECKOUT_URL = "https://voxcut-pro.lemonsqueezy.com/checkout/buy/d04203ba-
 const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
 const PORTABLE_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.0.1_win64_portable.zip";
 const LINUX_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-x86_64.AppImage";
+const SNAP_URL = "https://snapcraft.io/inoneshot";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
 
 const t = {
@@ -68,6 +73,7 @@ const t = {
       btnPrimary: "Download free for Windows",
       btnPortable: "Portable version (.zip)",
       btnLinux: "Linux (.AppImage)",
+      btnSnap: "Linux (Snap Store)",
       subText: "Free — no credit card required",
       badges: [
         "Your files never leave your computer",
@@ -238,6 +244,7 @@ const t = {
       btnPrimary: "Télécharger gratuitement pour Windows",
       btnPortable: "Version portable (.zip)",
       btnLinux: "Linux (.AppImage)",
+      btnSnap: "Linux (Snap Store)",
       subText: "Gratuit — aucune carte bancaire requise",
       badges: [
         "Vos fichiers ne quittent jamais votre ordinateur",
@@ -705,6 +712,16 @@ function Index() {
                 >
                   <Download className="h-4 w-4" />
                   {c.hero.btnLinux}
+                </a>
+                <a
+                  href={SNAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={trackSnapDownload}
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
+                >
+                  <Download className="h-4 w-4" />
+                  {c.hero.btnSnap}
                 </a>
               </div>
               <p className="mt-3 text-xs text-muted-foreground">{c.hero.subText}</p>
