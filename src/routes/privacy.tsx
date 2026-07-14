@@ -13,6 +13,7 @@ export const Route = createFileRoute("/privacy")({
       },
       { property: "og:title", content: "Politique de confidentialité — InOneShot" },
     ],
+    links: [{ rel: "canonical", href: "https://www.inoneshot.fr/privacy" }],
   }),
   component: Privacy,
 });

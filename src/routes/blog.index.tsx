@@ -17,6 +17,7 @@ export const Route = createFileRoute("/blog/")({
         content: "Conseils et tutoriels sur le publipostage PDF par l'équipe InOneShot.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://www.inoneshot.fr/blog" }],
   }),
   component: BlogIndex,
 });

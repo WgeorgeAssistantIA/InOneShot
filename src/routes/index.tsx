@@ -417,8 +417,12 @@ export const Route = createFileRoute("/")({
           "Générez des centaines de PDF personnalisés depuis votre Excel, en un clic. 100% local, sans abonnement.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.inoneshot.fr/" },
     ],
-    links: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    links: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "canonical", href: "https://www.inoneshot.fr/" },
+    ],
   }),
   component: Index,
 });

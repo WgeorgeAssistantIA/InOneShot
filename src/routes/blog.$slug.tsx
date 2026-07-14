@@ -11,13 +11,42 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     const post = loaderData?.post;
     if (!post) return { meta: [{ title: "Article — InOneShot" }] };
+    const canonical = `https://www.inoneshot.fr/blog/${post.slug}`;
     return {
       meta: [
         { title: `${post.title} — Blog InOneShot` },
         { name: "description", content: post.description },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.description },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: canonical },
         { property: "article:author", content: post.author },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.description,
+            datePublished: post.date,
+            dateModified: post.date,
+            inLanguage: "fr-FR",
+            author: { "@type": "Organization", name: post.author },
+            publisher: {
+              "@type": "Organization",
+              name: "InOneShot",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.inoneshot.fr/favicon.ico",
+              },
+            },
+            mainEntityOfPage: canonical,
+            url: canonical,
+          }),
+        },
       ],
     };
   },

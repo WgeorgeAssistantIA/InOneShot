@@ -12,6 +12,7 @@ export const Route = createFileRoute("/legal")({
       },
       { property: "og:title", content: "Mentions légales — InOneShot" },
     ],
+    links: [{ rel: "canonical", href: "https://www.inoneshot.fr/legal" }],
   }),
   component: Legal,
 });
