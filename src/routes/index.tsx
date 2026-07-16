@@ -24,6 +24,9 @@ function trackSnapDownload() {
   track("snap_download");
   if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "linux_snap" });
 }
+function trackCrossLink(target: string) {
+  track("cross_link_click", { target });
+}
 
 import {
   Download,
@@ -226,6 +229,8 @@ const t = {
     footer: {
       links: { download: "Download", pricing: "Pricing", faq: "FAQ", privacy: "Privacy", legal: "Legal notice", contact: "Contact" },
       copy: "© 2026 InOneShot — Local and private PDF mail merge",
+      madeBy: "A La Fabrik Numérique product",
+      alsoCheck: "Also check out VoxCut",
     },
   },
   fr: {
@@ -397,6 +402,8 @@ const t = {
     footer: {
       links: { download: "Télécharger", pricing: "Tarifs", faq: "FAQ", privacy: "Confidentialité", legal: "Mentions légales", contact: "Contact" },
       copy: "© 2026 InOneShot — Publipostage PDF local et privé",
+      madeBy: "Un produit La Fabrik Numérique",
+      alsoCheck: "Découvrez aussi VoxCut",
     },
   },
 } as const;
@@ -1147,6 +1154,27 @@ function Index() {
             <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-foreground">{c.footer.links.contact}</a>
           </nav>
           <p className="text-xs text-muted-foreground">{c.footer.copy}</p>
+          <p className="text-xs text-muted-foreground">
+            <a
+              href="https://www.lafabriknumerique.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCrossLink("lafabriknumerique")}
+              className="underline transition-colors hover:text-foreground"
+            >
+              {c.footer.madeBy}
+            </a>
+            {" · "}
+            <a
+              href="https://voxcutpro.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCrossLink("voxcut")}
+              className="underline transition-colors hover:text-foreground"
+            >
+              {c.footer.alsoCheck}
+            </a>
+          </p>
         </div>
       </footer>
     </div>
