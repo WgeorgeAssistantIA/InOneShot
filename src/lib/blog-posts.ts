@@ -464,6 +464,50 @@ export const posts: BlogPost[] = [
       },
     ],
   }),
+  make({
+    slug: "inoneshot-1-1-0-whats-new",
+    title: "InOneShot 1.1.0: Dark Mode, Bilingual UI, PDF Merging, Drag & Drop — and Linux",
+    description:
+      "InOneShot 1.1.0 brings dark mode, a bilingual interface, CSV import, merging generated PDFs into a single file, drag-and-drop file handling, and a Linux release.",
+    date: "2026-07-18",
+    author: "InOneShot Team",
+    lang: "en",
+    content: [
+      {
+        type: "p",
+        text: "InOneShot evolves based on how people actually use it, not a roadmap fixed in advance. Version 1.1.0 bundles several requests that kept coming up over the past few weeks: more visual comfort, more accepted data formats, and a simpler output file. Here's what actually changed.",
+      },
+      { type: "h2", text: "Dark mode and a bilingual FR/EN interface" },
+      {
+        type: "p",
+        text: "A button in the top bar switches the app to dark mode, and another switches the interface language between French and English. Both settings are remembered across sessions — no surprise auto-detection based on system settings, you choose and it stays.",
+      },
+      { type: "h2", text: "Merge into a single PDF, on top of the ZIP" },
+      {
+        type: "p",
+        text: "Until now, InOneShot produced one PDF per spreadsheet row, delivered in a ZIP. That's still the default, but a new output option lets you merge all the generated documents directly into a single PDF file — handy for a batch you want to print in one go or archive as one document instead of a hundred separate files.",
+      },
+      { type: "h2", text: "CSV import and drag & drop" },
+      {
+        type: "ul",
+        items: [
+          "CSV files are now accepted as a data source, alongside Excel — automatic delimiter and encoding detection",
+          "The PDF template and data file can be dropped directly into the window, no need to go through the file picker every time",
+          "Double-clicking a placed field opens an edit box to fine-tune its position and format",
+          "The preview can now be browsed row by row, to check how several entries render before running the full batch",
+        ],
+      },
+      { type: "h2", text: "InOneShot is now on Linux" },
+      {
+        type: "p",
+        text: "InOneShot is now available on Linux via the Snap Store, with the same feature set as the Windows version — including drag and drop. Same logic as VoxCut, our other app: no reason to be locked to a single operating system when the same tools can run everywhere, locally.",
+      },
+      {
+        type: "p",
+        text: "The update is available now as a direct download on this site (Windows portable) and on the Snap Store for Linux. The Microsoft Store listing is being updated and will follow in the coming days.",
+      },
+    ],
+  }),
 ];
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
