@@ -420,6 +420,50 @@ export const posts: BlogPost[] = [
       },
     ],
   }),
+  make({
+    slug: "inoneshot-1-1-0-nouveautes",
+    title: "InOneShot 1.1.0 : mode sombre, interface FR/EN, fusion PDF, glisser-déposer — et Linux",
+    description:
+      "La mise à jour 1.1.0 d'InOneShot apporte le mode sombre, une interface bilingue, l'import CSV, la fusion en un seul PDF, le glisser-déposer de fichiers, et une version Linux.",
+    date: "2026-07-18",
+    author: "Équipe InOneShot",
+    lang: "fr",
+    content: [
+      {
+        type: "p",
+        text: "InOneShot évolue au fil de vos retours plutôt que selon une feuille de route figée à l'avance. La version 1.1.0 regroupe plusieurs demandes revenues souvent ces dernières semaines : plus de confort visuel, plus de formats de données acceptés, et un fichier de sortie plus simple à utiliser. Voici ce qui change concrètement.",
+      },
+      { type: "h2", text: "Mode sombre et interface bilingue FR/EN" },
+      {
+        type: "p",
+        text: "Un bouton dans la barre du haut bascule l'application en mode sombre, et un autre change la langue de l'interface entre français et anglais. Les deux réglages sont mémorisés d'une session à l'autre — pas de détection automatique surprenante selon les réglages système, vous choisissez et ça reste.",
+      },
+      { type: "h2", text: "Fusion en un seul PDF, en plus du ZIP" },
+      {
+        type: "p",
+        text: "Jusqu'ici, InOneShot produisait un PDF par ligne du tableur, livrés dans un ZIP. C'est toujours le cas par défaut, mais une nouvelle option de sortie permet de fusionner directement tous les documents générés en un seul fichier PDF — pratique pour un lot à imprimer d'un coup ou à archiver comme un seul document plutôt qu'une centaine de fichiers séparés.",
+      },
+      { type: "h2", text: "Import CSV et glisser-déposer" },
+      {
+        type: "ul",
+        items: [
+          "Les fichiers CSV sont maintenant acceptés comme source de données, en plus de l'Excel — détection automatique du délimiteur et de l'encodage",
+          "Le modèle PDF et le fichier de données peuvent être glissés-déposés directement dans la fenêtre, plus besoin de passer systématiquement par le sélecteur de fichiers",
+          "Un double-clic sur un champ posé ouvre une boîte d'édition pour ajuster précisément sa position et son format",
+          "L'aperçu se parcourt maintenant ligne par ligne, pour vérifier le rendu de plusieurs entrées avant de lancer le lot complet",
+        ],
+      },
+      { type: "h2", text: "InOneShot arrive sur Linux" },
+      {
+        type: "p",
+        text: "InOneShot est désormais disponible sur Linux via le Snap Store, avec les mêmes fonctionnalités que la version Windows — y compris le glisser-déposer. C'est la même logique que VoxCut, notre autre application : plus question d'être enfermé sur un seul système d'exploitation quand les mêmes outils peuvent tourner partout, en local.",
+      },
+      {
+        type: "p",
+        text: "La mise à jour est disponible dès maintenant en téléchargement direct sur ce site (version portable Windows) et sur le Snap Store pour Linux. La fiche Microsoft Store est en cours de mise à jour et suivra dans les prochains jours.",
+      },
+    ],
+  }),
 ];
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
