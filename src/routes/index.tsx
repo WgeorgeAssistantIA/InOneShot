@@ -57,6 +57,7 @@ const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
 const PORTABLE_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.1.0_win64_portable.zip";
 const LINUX_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-x86_64.AppImage";
 const SNAP_URL = "https://snapcraft.io/inoneshot";
+const YOUTUBE_URL = "https://www.youtube.com/@InOneShot-PDFMailMerge";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
 
 const t = {
@@ -227,7 +228,7 @@ const t = {
       consentLink: "Privacy policy",
     },
     footer: {
-      links: { download: "Download", pricing: "Pricing", faq: "FAQ", privacy: "Privacy", legal: "Legal notice", contact: "Contact" },
+      links: { download: "Download", pricing: "Pricing", faq: "FAQ", youtube: "YouTube", privacy: "Privacy", legal: "Legal notice", contact: "Contact" },
       copy: "© 2026 InOneShot — Local and private PDF mail merge",
       madeBy: "A La Fabrik Numérique product",
       alsoCheck: "Also check out VoxCut",
@@ -400,7 +401,7 @@ const t = {
       consentLink: "Politique de confidentialité",
     },
     footer: {
-      links: { download: "Télécharger", pricing: "Tarifs", faq: "FAQ", privacy: "Confidentialité", legal: "Mentions légales", contact: "Contact" },
+      links: { download: "Télécharger", pricing: "Tarifs", faq: "FAQ", youtube: "YouTube", privacy: "Confidentialité", legal: "Mentions légales", contact: "Contact" },
       copy: "© 2026 InOneShot — Publipostage PDF local et privé",
       madeBy: "Un produit La Fabrik Numérique",
       alsoCheck: "Découvrez aussi VoxCut",
@@ -1149,6 +1150,7 @@ function Index() {
             <a href="#pricing" className="transition-colors hover:text-foreground">{c.footer.links.pricing}</a>
             <a href="#faq" className="transition-colors hover:text-foreground">{c.footer.links.faq}</a>
             <Link to="/blog" className="transition-colors hover:text-foreground">Blog</Link>
+            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCrossLink("youtube")} className="transition-colors hover:text-foreground">{c.footer.links.youtube}</a>
             <Link to="/privacy" className="transition-colors hover:text-foreground">{c.footer.links.privacy}</Link>
             <Link to="/legal" className="transition-colors hover:text-foreground">{c.footer.links.legal}</Link>
             <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-foreground">{c.footer.links.contact}</a>
