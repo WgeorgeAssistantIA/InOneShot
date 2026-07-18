@@ -54,7 +54,7 @@ type Lang = "en" | "fr";
 
 const CHECKOUT_URL = "https://voxcut-pro.lemonsqueezy.com/checkout/buy/d04203ba-2117-403a-9dfb-b903bfd04587?checkout[discount_code]=LANCEMENT";
 const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
-const PORTABLE_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.0.1_win64_portable.zip";
+const PORTABLE_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.1.0_win64_portable.zip";
 const LINUX_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-x86_64.AppImage";
 const SNAP_URL = "https://snapcraft.io/inoneshot";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
