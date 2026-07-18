@@ -232,6 +232,7 @@ const t = {
       copy: "© 2026 InOneShot — Local and private PDF mail merge",
       madeBy: "A La Fabrik Numérique product",
       alsoCheck: "Also check out VoxCut",
+      alsoCheckVectorPop: "Also check out VectorPop",
     },
   },
   fr: {
@@ -405,6 +406,7 @@ const t = {
       copy: "© 2026 InOneShot — Publipostage PDF local et privé",
       madeBy: "Un produit La Fabrik Numérique",
       alsoCheck: "Découvrez aussi VoxCut",
+      alsoCheckVectorPop: "Découvrez aussi VectorPop",
     },
   },
 } as const;
@@ -1175,6 +1177,16 @@ function Index() {
               className="underline transition-colors hover:text-foreground"
             >
               {c.footer.alsoCheck}
+            </a>
+            {" · "}
+            <a
+              href="https://vectorpop.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCrossLink("vectorpop")}
+              className="underline transition-colors hover:text-foreground"
+            >
+              {c.footer.alsoCheckVectorPop}
             </a>
           </p>
         </div>
