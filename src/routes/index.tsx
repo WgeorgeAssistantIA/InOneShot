@@ -20,6 +20,10 @@ function trackLinuxDownload() {
   track("linux_download");
   if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "linux_appimage" });
 }
+function trackLinuxTarDownload() {
+  track("linux_tar_download");
+  if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "linux_tar_gz" });
+}
 function trackSnapDownload() {
   track("snap_download");
   if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "linux_snap" });
@@ -56,6 +60,7 @@ const CHECKOUT_URL = "https://voxcut-pro.lemonsqueezy.com/checkout/buy/d04203ba-
 const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
 const PORTABLE_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.1.0_win64_portable.zip";
 const LINUX_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-x86_64.AppImage";
+const LINUX_TAR_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.1.0_linux_x86_64.tar.gz";
 const SNAP_URL = "https://snapcraft.io/inoneshot";
 const YOUTUBE_URL = "https://www.youtube.com/@InOneShot-PDFMailMerge";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
@@ -77,6 +82,7 @@ const t = {
       btnPrimary: "Download free for Windows",
       btnPortable: "Portable version (.zip)",
       btnLinux: "Linux (.AppImage)",
+      btnLinuxTar: "Linux (.tar.gz)",
       btnSnap: "Linux (Snap Store)",
       subText: "Free — no credit card required",
       badges: [
@@ -251,6 +257,7 @@ const t = {
       btnPrimary: "Télécharger gratuitement pour Windows",
       btnPortable: "Version portable (.zip)",
       btnLinux: "Linux (.AppImage)",
+      btnLinuxTar: "Linux (.tar.gz)",
       btnSnap: "Linux (Snap Store)",
       subText: "Gratuit — aucune carte bancaire requise",
       badges: [
@@ -700,24 +707,30 @@ function Index() {
               <p className="mt-5 max-w-xl text-balance text-lg text-muted-foreground">{c.hero.subtitle}</p>
             </Reveal>
             <Reveal delay={180}>
-              <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
-                  href={STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={trackStoreDownload}
+                  href={PORTABLE_URL}
+                  onClick={trackPortableDownload}
                   className="group inline-flex cursor-pointer items-center gap-2 rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep hover:shadow-lg hover:shadow-primary/25"
                 >
                   <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
                   {c.hero.btnPrimary}
                 </a>
                 <a
-                  href={PORTABLE_URL}
-                  onClick={trackPortableDownload}
-                  className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
+                  href={STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={trackStoreDownload}
+                  aria-label={lang === "fr" ? "Télécharger InOneShot sur le Microsoft Store" : "Get InOneShot from the Microsoft Store"}
+                  className="inline-flex items-center transition-opacity hover:opacity-90"
                 >
-                  <Download className="h-4 w-4" />
-                  {c.hero.btnPortable}
+                  <img
+                    src={`https://get.microsoft.com/images/${lang === "fr" ? "fr" : "en-us"}%20light.svg`}
+                    width={200}
+                    height={58}
+                    alt={lang === "fr" ? "Disponible sur le Microsoft Store" : "Get it from Microsoft Store"}
+                    className="h-[52px] w-auto"
+                  />
                 </a>
                 <a
                   href={LINUX_URL}
@@ -728,14 +741,28 @@ function Index() {
                   {c.hero.btnLinux}
                 </a>
                 <a
+                  href={LINUX_TAR_URL}
+                  onClick={trackLinuxTarDownload}
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
+                >
+                  <Download className="h-4 w-4" />
+                  {c.hero.btnLinuxTar}
+                </a>
+                <a
                   href={SNAP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={trackSnapDownload}
-                  className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
+                  aria-label={lang === "fr" ? "Télécharger InOneShot sur le Snap Store" : "Get InOneShot from the Snap Store"}
+                  className="inline-flex items-center transition-opacity hover:opacity-90"
                 >
-                  <Download className="h-4 w-4" />
-                  {c.hero.btnSnap}
+                  <img
+                    src="https://snapcraft.io/en/light/install.svg"
+                    width={204}
+                    height={60}
+                    alt={lang === "fr" ? "Disponible sur le Snap Store" : "Get it from the Snap Store"}
+                    className="h-[52px] w-auto"
+                  />
                 </a>
               </div>
               <p className="mt-3 text-xs text-muted-foreground">{c.hero.subText}</p>
