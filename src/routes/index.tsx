@@ -711,7 +711,7 @@ function Index() {
                 <a
                   href={PORTABLE_URL}
                   onClick={trackPortableDownload}
-                  className="group inline-flex cursor-pointer items-center gap-2 rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep hover:shadow-lg hover:shadow-primary/25"
+                  className="group inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep hover:shadow-lg hover:shadow-primary/25"
                 >
                   <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
                   {c.hero.btnPrimary}
@@ -735,7 +735,7 @@ function Index() {
                 <a
                   href={LINUX_URL}
                   onClick={trackLinuxDownload}
-                  className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
+                  className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
                 >
                   <Download className="h-4 w-4" />
                   {c.hero.btnLinux}
@@ -743,7 +743,7 @@ function Index() {
                 <a
                   href={LINUX_TAR_URL}
                   onClick={trackLinuxTarDownload}
-                  className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
+                  className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
                 >
                   <Download className="h-4 w-4" />
                   {c.hero.btnLinuxTar}
