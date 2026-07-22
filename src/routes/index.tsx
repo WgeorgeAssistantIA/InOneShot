@@ -690,7 +690,7 @@ function Index() {
 
       {/* HERO (split) */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pt-16 pb-20 md:grid-cols-2 md:pt-24 md:pb-28">
+        <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 pt-16 pb-20 md:grid-cols-2 md:pt-24 md:pb-28">
           {/* Left — copy */}
           <div>
             <Reveal>
