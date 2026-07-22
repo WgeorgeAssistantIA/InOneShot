@@ -707,11 +707,11 @@ function Index() {
               <p className="mt-5 max-w-xl text-balance text-lg text-muted-foreground">{c.hero.subtitle}</p>
             </Reveal>
             <Reveal delay={180}>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="mt-8 grid grid-cols-2 gap-3">
                 <a
                   href={PORTABLE_URL}
                   onClick={trackPortableDownload}
-                  className="group inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep hover:shadow-lg hover:shadow-primary/25"
+                  className="group col-span-2 inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep hover:shadow-lg hover:shadow-primary/25"
                 >
                   <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
                   {c.hero.btnPrimary}
@@ -722,7 +722,7 @@ function Index() {
                   rel="noopener noreferrer"
                   onClick={trackStoreDownload}
                   aria-label={lang === "fr" ? "Télécharger InOneShot sur le Microsoft Store" : "Get InOneShot from the Microsoft Store"}
-                  className="inline-flex items-center transition-opacity hover:opacity-90"
+                  className="inline-flex items-center justify-center rounded-lg border border-border transition-opacity hover:opacity-90"
                 >
                   <img
                     src={`https://get.microsoft.com/images/${lang === "fr" ? "fr" : "en-us"}%20light.svg`}
@@ -733,28 +733,12 @@ function Index() {
                   />
                 </a>
                 <a
-                  href={LINUX_URL}
-                  onClick={trackLinuxDownload}
-                  className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
-                >
-                  <Download className="h-4 w-4" />
-                  {c.hero.btnLinux}
-                </a>
-                <a
-                  href={LINUX_TAR_URL}
-                  onClick={trackLinuxTarDownload}
-                  className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
-                >
-                  <Download className="h-4 w-4" />
-                  {c.hero.btnLinuxTar}
-                </a>
-                <a
                   href={SNAP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={trackSnapDownload}
                   aria-label={lang === "fr" ? "Télécharger InOneShot sur le Snap Store" : "Get InOneShot from the Snap Store"}
-                  className="inline-flex items-center transition-opacity hover:opacity-90"
+                  className="inline-flex items-center justify-center rounded-lg border border-border transition-opacity hover:opacity-90"
                 >
                   <img
                     src="https://snapcraft.io/en/light/install.svg"
@@ -763,6 +747,22 @@ function Index() {
                     alt={lang === "fr" ? "Disponible sur le Snap Store" : "Get it from the Snap Store"}
                     className="h-[52px] w-auto"
                   />
+                </a>
+                <a
+                  href={LINUX_URL}
+                  onClick={trackLinuxDownload}
+                  className="inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
+                >
+                  <Download className="h-4 w-4" />
+                  {c.hero.btnLinux}
+                </a>
+                <a
+                  href={LINUX_TAR_URL}
+                  onClick={trackLinuxTarDownload}
+                  className="inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
+                >
+                  <Download className="h-4 w-4" />
+                  {c.hero.btnLinuxTar}
                 </a>
               </div>
               <p className="mt-3 text-xs text-muted-foreground">{c.hero.subText}</p>
