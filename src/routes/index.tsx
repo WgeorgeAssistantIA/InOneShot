@@ -444,7 +444,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function Reveal({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -460,6 +460,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   return (
     <div
       ref={ref}
+      className={className}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(24px)",
@@ -541,59 +542,59 @@ function MergeDemo({ lang }: { lang: Lang }) {
   ];
 
   return (
-    <div className="flex items-center justify-center gap-4 sm:gap-6">
+    <div className="flex h-full flex-col items-center justify-between gap-6">
       {/* Source Excel */}
-      <div className="flex flex-col gap-2">
-        <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-          <FileSpreadsheet className="h-3.5 w-3.5 text-green-600" /> {c.from}
+      <div className="flex w-full max-w-[320px] flex-col gap-3">
+        <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+          <FileSpreadsheet className="h-4 w-4 text-green-600" /> {c.from}
         </span>
         <div className="overflow-hidden rounded-lg border border-border">
           {rows.map((r, i) => (
             <div
               key={i}
-              className={`flex items-center justify-between gap-3 border-b border-border/70 px-3 py-1.5 text-xs transition-colors last:border-b-0 ${
+              className={`flex items-center justify-between gap-3 border-b border-border/70 px-4 py-3 text-sm transition-colors last:border-b-0 ${
                 i === activeRow ? "bg-brand/10" : "bg-card"
               }`}
             >
               <span className={`font-medium ${i === activeRow ? "text-brand-deep" : "text-foreground/80"}`}>{r.name}</span>
-              <span className="font-mono text-[10px] text-muted-foreground">{r.tag}</span>
+              <span className="font-mono text-[11px] text-muted-foreground">{r.tag}</span>
             </div>
           ))}
         </div>
       </div>
 
-      <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground/50" />
+      <ArrowRight className="h-7 w-7 shrink-0 rotate-90 text-muted-foreground/50" />
 
       {/* PDF générés */}
-      <div className="flex flex-col items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest text-brand">
-          <Files className="h-3.5 w-3.5" /> {c.to}
+      <div className="flex flex-col items-center gap-3">
+        <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-widest text-brand">
+          <Files className="h-4 w-4" /> {c.to}
         </span>
-        <div className="relative mt-3 h-[104px] w-[88px]">
+        <div className="relative mt-4 h-[150px] w-[124px]">
           {[2, 1, 0].map((d) => (
             <div
               key={d}
               className="absolute inset-0 rounded-lg border border-border bg-card shadow-sm"
-              style={{ transform: `translate(${d * 6}px, ${d * -6}px) rotate(${d * 3}deg)` }}
+              style={{ transform: `translate(${d * 8}px, ${d * -8}px) rotate(${d * 3}deg)` }}
             >
-              <div className="flex items-center gap-1 border-b border-border/70 px-2 py-1.5">
-                <FileText className="h-3 w-3 text-brand" />
-                <span className="h-1 w-8 rounded bg-border" />
+              <div className="flex items-center gap-1.5 border-b border-border/70 px-3 py-2">
+                <FileText className="h-4 w-4 text-brand" />
+                <span className="h-1.5 w-10 rounded bg-border" />
               </div>
-              <div className="space-y-1 p-2">
-                <span className="block h-1 w-full rounded bg-border" />
-                <span className="block h-1 w-3/4 rounded bg-border" />
-                <span className="block h-1 w-5/6 rounded bg-border" />
-                <span className="mt-2 inline-block h-4 w-4 rounded-sm bg-brand/15 ring-1 ring-brand/30" />
+              <div className="space-y-1.5 p-3">
+                <span className="block h-1.5 w-full rounded bg-border" />
+                <span className="block h-1.5 w-3/4 rounded bg-border" />
+                <span className="block h-1.5 w-5/6 rounded bg-border" />
+                <span className="mt-3 inline-block h-6 w-6 rounded-sm bg-brand/15 ring-1 ring-brand/30" />
               </div>
             </div>
           ))}
         </div>
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-energy/10 px-3 py-1 text-xs font-bold text-energy tabular-nums">
-          <Zap className="h-3.5 w-3.5" /> {count} / {total} {c.counter}
+        <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-energy/10 px-3.5 py-1.5 text-sm font-bold text-energy tabular-nums">
+          <Zap className="h-4 w-4" /> {count} / {total} {c.counter}
         </span>
-        <span className="inline-flex items-center gap-1 font-mono text-[10px] text-muted-foreground">
-          <Layers className="h-3 w-3" /> {c.zip}
+        <span className="inline-flex items-center gap-1 font-mono text-[11px] text-muted-foreground">
+          <Layers className="h-3.5 w-3.5" /> {c.zip}
         </span>
       </div>
     </div>
@@ -690,7 +691,7 @@ function Index() {
 
       {/* HERO (split) */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 pt-16 pb-20 md:grid-cols-2 md:pt-24 md:pb-28">
+        <div className="mx-auto grid max-w-6xl items-stretch gap-12 px-6 pt-16 pb-20 md:grid-cols-2 md:pt-24 md:pb-28">
           {/* Left — copy */}
           <div>
             <Reveal>
@@ -782,22 +783,22 @@ function Index() {
           </div>
 
           {/* Right — app window with merge demo */}
-          <Reveal delay={160}>
-            <div className="relative">
+          <Reveal delay={160} className="h-full">
+            <div className="relative h-full">
               <div className="pointer-events-none absolute -left-3 -top-3 z-20 hidden items-center gap-1.5 rounded-full border border-brand/30 bg-card px-3 py-1.5 text-xs font-medium text-brand-deep shadow-sm sm:inline-flex">
                 <QrCode className="h-3.5 w-3.5" /> {c.hero.floating.topLeft}
               </div>
               <div className="pointer-events-none absolute -bottom-3 -right-3 z-20 hidden items-center gap-1.5 rounded-full border border-energy/30 bg-card px-3 py-1.5 text-xs font-medium text-energy shadow-sm sm:inline-flex">
                 <ShieldCheck className="h-3.5 w-3.5" /> {c.hero.floating.bottomRight}
               </div>
-              <div className="rounded-2xl border border-border bg-card shadow-xl shadow-slate-900/5">
+              <div className="flex h-full flex-col rounded-2xl border border-border bg-card shadow-xl shadow-slate-900/5">
                 <div className="flex items-center gap-1.5 border-b border-border px-4 py-3">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
                   <span className="ml-2 text-xs font-medium text-muted-foreground">{c.hero.window.title}</span>
                 </div>
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-8 sm:p-10">
                   <MergeDemo lang={lang} />
                 </div>
               </div>
