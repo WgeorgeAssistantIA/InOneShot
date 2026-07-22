@@ -86,9 +86,9 @@ const t = {
       btnSnap: "Linux (Snap Store)",
       subText: "Free — no credit card required",
       badges: [
-        "Your files never leave your computer",
-        "One-time purchase — no subscription",
-        "QR codes & signatures included",
+        "100% local — GDPR",
+        "One-time payment — no subscription",
+        "Free up to 5 PDFs per batch",
       ],
       floating: { topLeft: "QR code & signature", bottomRight: "100% local — GDPR" },
       window: { title: "InOneShot", from: "Excel — 24 rows", to: "Generated PDFs", counter: "PDFs", zip: "merged.zip" },
@@ -261,9 +261,9 @@ const t = {
       btnSnap: "Linux (Snap Store)",
       subText: "Gratuit — aucune carte bancaire requise",
       badges: [
-        "Vos fichiers ne quittent jamais votre ordinateur",
-        "Achat unique — aucun abonnement",
-        "QR code & signature inclus",
+        "100% local — RGPD",
+        "Paiement unique — sans abonnement",
+        "Gratuit jusqu'à 5 PDF par lot",
       ],
       floating: { topLeft: "QR code & signature", bottomRight: "100% local — RGPD" },
       window: { title: "InOneShot", from: "Excel — 24 lignes", to: "PDF générés", counter: "PDF", zip: "publipostage.zip" },
@@ -769,11 +769,14 @@ function Index() {
               <p className="mt-3 text-xs text-muted-foreground">{c.hero.subText}</p>
             </Reveal>
             <Reveal delay={240}>
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+              <div className="mt-8 flex flex-wrap items-center gap-2.5">
                 {c.hero.badges.map((badge, i) => {
-                  const Icon = [Lock, CreditCard, QrCode][i] ?? Lock;
+                  const Icon = [ShieldCheck, CreditCard, Zap][i] ?? ShieldCheck;
                   return (
-                    <span key={badge} className="inline-flex items-center gap-1.5">
+                    <span
+                      key={badge}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3 py-1.5 text-xs font-medium text-brand-deep"
+                    >
                       <Icon className="h-3.5 w-3.5 text-brand" /> {badge}
                     </span>
                   );
