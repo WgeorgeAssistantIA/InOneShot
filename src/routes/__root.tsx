@@ -86,6 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Générez des centaines de PDF personnalisés depuis un modèle PDF + un Excel. Application Windows — 100% locale et privée.",
       },
       { name: "author", content: "InOneShot" },
+      { name: "msvalidate.01", content: "30AA85A37A0A951F897562FF150D3525" },
       { property: "og:title", content: "InOneShot — Publipostage PDF en un clic" },
       {
         property: "og:description",
