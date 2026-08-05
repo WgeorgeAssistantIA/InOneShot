@@ -1178,6 +1178,21 @@ function Index() {
       <footer className="border-t border-border py-12">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
           <Logo />
+          <a
+            href="https://www.saashub.com/inoneshot?utm_source=badge&utm_campaign=badge&utm_content=inoneshot&badge_variant=color&badge_kind=approved"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackCrossLink("saashub")}
+          >
+            <img
+              src="https://cdn-b.saashub.com/img/badges/approved-color.png?v=1"
+              alt="InOneShot.fr badge"
+              width={150}
+              height={60}
+              loading="lazy"
+              style={{ maxWidth: "150px" }}
+            />
+          </a>
           <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
             <a href={STORE_URL} target="_blank" rel="noopener noreferrer" onClick={trackStoreDownload} className="transition-colors hover:text-foreground">{c.footer.links.download}</a>
             <a href="#pricing" className="transition-colors hover:text-foreground">{c.footer.links.pricing}</a>
