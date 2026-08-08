@@ -1259,6 +1259,16 @@ function Index() {
             >
               {c.footer.alsoCheckVectorPop}
             </a>
+            {" · "}
+            <a
+              href="https://nyctale.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCrossLink("nyctale")}
+              className="underline transition-colors hover:text-foreground"
+            >
+              Nyctale
+            </a>
           </p>
         </div>
       </footer>
