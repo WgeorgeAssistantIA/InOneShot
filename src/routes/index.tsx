@@ -12,6 +12,10 @@ function trackStoreDownload() {
   track("store_download");
   if (typeof gtag !== "undefined") gtag("event", "store_download", { event_category: "engagement" });
 }
+function trackPlayStoreDownload() {
+  track("play_store_download");
+  if (typeof gtag !== "undefined") gtag("event", "play_store_download", { event_category: "engagement" });
+}
 function trackPortableDownload() {
   track("portable_download");
   if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "portable_zip" });
@@ -58,6 +62,7 @@ type Lang = "en" | "fr";
 
 const CHECKOUT_URL = "https://voxcut-pro.lemonsqueezy.com/checkout/buy/d04203ba-2117-403a-9dfb-b903bfd04587?checkout[discount_code]=LANCEMENT";
 const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android";
 const WINDOWS_INSTALLER_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-Setup-1.1.0.exe";
 const LINUX_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-x86_64.AppImage";
 const LINUX_TAR_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.1.0_linux_x86_64.tar.gz";
@@ -750,6 +755,22 @@ function Index() {
                   />
                 </a>
                 <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={trackPlayStoreDownload}
+                  aria-label={lang === "fr" ? "Télécharger InOneShot sur Google Play" : "Get InOneShot on Google Play"}
+                  className="inline-flex items-center justify-center rounded-lg border border-border transition-opacity hover:opacity-90"
+                >
+                  <img
+                    src={`https://play.google.com/intl/en_us/badges/static/images/badges/${lang === "fr" ? "fr" : "en"}_badge_web_generic.png`}
+                    width={200}
+                    height={60}
+                    alt={lang === "fr" ? "Disponible sur Google Play" : "Get it on Google Play"}
+                    className="h-[52px] w-auto"
+                  />
+                </a>
+                <a
                   href={LINUX_URL}
                   onClick={trackLinuxDownload}
                   className="inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
@@ -1198,6 +1219,7 @@ function Index() {
           </div>
           <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
             <a href={STORE_URL} target="_blank" rel="noopener noreferrer" onClick={trackStoreDownload} className="transition-colors hover:text-foreground">{c.footer.links.download}</a>
+            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={trackPlayStoreDownload} className="transition-colors hover:text-foreground">Android</a>
             <a href="#pricing" className="transition-colors hover:text-foreground">{c.footer.links.pricing}</a>
             <a href="#faq" className="transition-colors hover:text-foreground">{c.footer.links.faq}</a>
             <Link to="/blog" className="transition-colors hover:text-foreground">Blog</Link>

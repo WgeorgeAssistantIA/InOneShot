@@ -508,6 +508,74 @@ export const posts: BlogPost[] = [
       },
     ],
   }),
+  make({
+    slug: "inoneshot-disponible-sur-android",
+    title: "InOneShot est maintenant disponible sur Android",
+    description:
+      "Le publipostage PDF d'InOneShot passe sur mobile : générez vos lots de PDF personnalisés depuis votre téléphone ou votre tablette, avec Google Play.",
+    date: "2026-08-08",
+    author: "Équipe InOneShot",
+    lang: "fr",
+    content: [
+      {
+        type: "p",
+        text: "InOneShot était jusqu'ici une application de bureau, pour Windows et Linux. C'est maintenant aussi une application Android, disponible sur le Google Play Store : le même principe de publipostage PDF, mais accessible depuis votre téléphone ou votre tablette.",
+      },
+      { type: "h2", text: "Pourquoi une version Android" },
+      {
+        type: "p",
+        text: "Beaucoup d'utilisateurs préparent leurs documents sur ordinateur mais veulent pouvoir relancer un lot, vérifier un rendu ou dépanner une génération de PDF sans être devant un poste fixe. La version Android répond à ce besoin : importer un modèle et un fichier de données, placer ses champs, générer le lot — directement depuis un appareil mobile.",
+      },
+      { type: "h2", text: "Ce qui ne change pas" },
+      {
+        type: "ul",
+        items: [
+          "Le traitement reste local, sur votre appareil : vos données ne transitent par aucun serveur",
+          "Le même flux qu'en version bureau : modèle PDF + tableur de données, champs placés par glisser-déposer, génération en un clic",
+          "Un ZIP de PDF prêt à partager en sortie",
+        ],
+      },
+      { type: "h2", text: "Télécharger InOneShot sur Android" },
+      {
+        type: "p",
+        text: "L'application est disponible dès maintenant, gratuitement, sur le Google Play Store : cherchez « InOneShot » ou suivez le lien direct depuis la page d'accueil de ce site.",
+      },
+    ],
+  }),
+  make({
+    slug: "inoneshot-now-available-on-android",
+    title: "InOneShot Is Now Available on Android",
+    description:
+      "InOneShot's PDF mail merge is now on mobile: generate your batches of personalized PDFs from your phone or tablet, via Google Play.",
+    date: "2026-08-08",
+    author: "InOneShot Team",
+    lang: "en",
+    content: [
+      {
+        type: "p",
+        text: "InOneShot has been a desktop app so far, for Windows and Linux. It's now also an Android app, available on the Google Play Store: the same PDF mail merge workflow, now accessible from your phone or tablet.",
+      },
+      { type: "h2", text: "Why an Android version" },
+      {
+        type: "p",
+        text: "Many users prepare their documents on a computer but want to be able to re-run a batch, check a render, or troubleshoot a PDF generation without sitting at a desk. The Android version covers that: import a template and a data file, place your fields, generate the batch — straight from a mobile device.",
+      },
+      { type: "h2", text: "What stays the same" },
+      {
+        type: "ul",
+        items: [
+          "Processing stays local, on your device: your data never passes through any server",
+          "The same flow as the desktop version: PDF template + spreadsheet, fields placed by drag and drop, one-click generation",
+          "A ready-to-share ZIP of PDFs as output",
+        ],
+      },
+      { type: "h2", text: "Download InOneShot on Android" },
+      {
+        type: "p",
+        text: "The app is available now, for free, on the Google Play Store: search for \"InOneShot\" or follow the direct link from this site's homepage.",
+      },
+    ],
+  }),
 ];
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
