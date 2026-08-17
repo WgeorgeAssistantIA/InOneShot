@@ -395,12 +395,18 @@ function Privacy() {
           ))}
         </div>
 
-        <div className="mt-14 border-t border-border pt-8">
+        <div className="mt-14 flex flex-wrap items-center gap-6 border-t border-border pt-8 text-sm">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="h-4 w-4" /> {c.back}
+          </Link>
+          <Link to="/legal" className="text-muted-foreground hover:text-foreground transition-colors">
+            {lang === "fr" ? "Mentions légales" : "Legal notice"}
+          </Link>
+          <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+            {lang === "fr" ? "Conditions générales de vente" : "Terms of sale"}
           </Link>
         </div>
       </div>

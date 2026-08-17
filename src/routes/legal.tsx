@@ -186,6 +186,9 @@ function Legal() {
           <Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
             {lang === "fr" ? "Politique de confidentialité" : "Privacy policy"}
           </Link>
+          <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+            {lang === "fr" ? "Conditions générales de vente" : "Terms of sale"}
+          </Link>
         </div>
       </div>
     </main>
