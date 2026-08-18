@@ -36,6 +36,32 @@ function trackCrossLink(target: string) {
   track("cross_link_click", { target });
 }
 
+function useDownloadCount() {
+  const [total, setTotal] = useState<number | null>(null);
+  useEffect(() => {
+    fetch("/api/downloads")
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.ok && typeof d.total === "number") setTotal(d.total);
+      })
+      .catch(() => {});
+  }, []);
+  return total;
+}
+
+function DownloadCounter({ lang }: { lang: Lang }) {
+  const total = useDownloadCount();
+  if (total === null || total < 20) return null; // pas assez de recul, évite un chiffre gênant
+  const formatted = new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "en-US").format(total);
+  return (
+    <p className="mt-3 text-xs text-muted-foreground">
+      {lang === "fr"
+        ? `${formatted} téléchargements au total`
+        : `${formatted} downloads so far`}
+    </p>
+  );
+}
+
 import {
   Download,
   FileText,
@@ -788,6 +814,7 @@ function Index() {
                 </a>
               </div>
               <p className="mt-3 text-xs text-muted-foreground">{c.hero.subText}</p>
+              <DownloadCounter lang={lang} />
             </Reveal>
             <Reveal delay={240}>
               <div className="mt-8 flex flex-wrap items-center gap-2.5">

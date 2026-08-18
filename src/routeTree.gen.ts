@@ -15,6 +15,8 @@ import { Route as LegalRouteImport } from './routes/legal'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ApiTrackRouteImport } from './routes/api/track'
+import { Route as ApiDownloadsRouteImport } from './routes/api/downloads'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -46,12 +48,24 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiTrackRoute = ApiTrackRouteImport.update({
+  id: '/api/track',
+  path: '/api/track',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadsRoute = ApiDownloadsRouteImport.update({
+  id: '/api/downloads',
+  path: '/api/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/api/downloads': typeof ApiDownloadsRoute
+  '/api/track': typeof ApiTrackRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -60,6 +74,8 @@ export interface FileRoutesByTo {
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/api/downloads': typeof ApiDownloadsRoute
+  '/api/track': typeof ApiTrackRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -69,20 +85,40 @@ export interface FileRoutesById {
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/api/downloads': typeof ApiDownloadsRoute
+  '/api/track': typeof ApiTrackRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/legal' | '/privacy' | '/terms' | '/blog/$slug' | '/blog/'
+  fullPaths:
+    | '/'
+    | '/legal'
+    | '/privacy'
+    | '/terms'
+    | '/api/downloads'
+    | '/api/track'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/legal' | '/privacy' | '/terms' | '/blog/$slug' | '/blog'
+  to:
+    | '/'
+    | '/legal'
+    | '/privacy'
+    | '/terms'
+    | '/api/downloads'
+    | '/api/track'
+    | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
     | '/legal'
     | '/privacy'
     | '/terms'
+    | '/api/downloads'
+    | '/api/track'
     | '/blog/$slug'
     | '/blog/'
   fileRoutesById: FileRoutesById
@@ -92,6 +128,8 @@ export interface RootRouteChildren {
   LegalRoute: typeof LegalRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
+  ApiDownloadsRoute: typeof ApiDownloadsRoute
+  ApiTrackRoute: typeof ApiTrackRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
@@ -140,6 +178,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/track': {
+      id: '/api/track'
+      path: '/api/track'
+      fullPath: '/api/track'
+      preLoaderRoute: typeof ApiTrackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/downloads': {
+      id: '/api/downloads'
+      path: '/api/downloads'
+      fullPath: '/api/downloads'
+      preLoaderRoute: typeof ApiDownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -148,6 +200,8 @@ const rootRouteChildren: RootRouteChildren = {
   LegalRoute: LegalRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
+  ApiDownloadsRoute: ApiDownloadsRoute,
+  ApiTrackRoute: ApiTrackRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
