@@ -91,7 +91,7 @@ const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android";
 const WINDOWS_INSTALLER_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-Setup-1.2.0.exe";
 const LINUX_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-x86_64.AppImage";
-const LINUX_TAR_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.1.0_linux_x86_64.tar.gz";
+const LINUX_TAR_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.2.0_linux_x86_64.tar.gz";
 const SNAP_URL = "https://snapcraft.io/inoneshot";
 const YOUTUBE_URL = "https://www.youtube.com/@InOneShot-PDFMailMerge";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
