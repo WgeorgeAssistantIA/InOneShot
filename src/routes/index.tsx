@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { subscribeNewsletter } from "@/lib/api/newsletter.functions";
+import { getReassuranceVariant, REASSURANCE_COPY, type ReassuranceVariant } from "@/lib/abtest";
 
 declare function gtag(...args: unknown[]): void;
 function trackDownload() {
@@ -10,27 +11,33 @@ function trackDownload() {
 }
 function trackStoreDownload() {
   track("store_download");
-  if (typeof gtag !== "undefined") gtag("event", "store_download", { event_category: "engagement" });
+  if (typeof gtag !== "undefined")
+    gtag("event", "store_download", { event_category: "engagement" });
 }
 function trackPlayStoreDownload() {
   track("play_store_download");
-  if (typeof gtag !== "undefined") gtag("event", "play_store_download", { event_category: "engagement" });
+  if (typeof gtag !== "undefined")
+    gtag("event", "play_store_download", { event_category: "engagement" });
 }
 function trackPortableDownload() {
   track("portable_download");
-  if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "portable_zip" });
+  if (typeof gtag !== "undefined")
+    gtag("event", "file_download", { event_category: "engagement", event_label: "portable_zip" });
 }
 function trackLinuxDownload() {
   track("linux_download");
-  if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "linux_appimage" });
+  if (typeof gtag !== "undefined")
+    gtag("event", "file_download", { event_category: "engagement", event_label: "linux_appimage" });
 }
 function trackLinuxTarDownload() {
   track("linux_tar_download");
-  if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "linux_tar_gz" });
+  if (typeof gtag !== "undefined")
+    gtag("event", "file_download", { event_category: "engagement", event_label: "linux_tar_gz" });
 }
 function trackSnapDownload() {
   track("snap_download");
-  if (typeof gtag !== "undefined") gtag("event", "file_download", { event_category: "engagement", event_label: "linux_snap" });
+  if (typeof gtag !== "undefined")
+    gtag("event", "file_download", { event_category: "engagement", event_label: "linux_snap" });
 }
 function trackCrossLink(target: string) {
   track("cross_link_click", { target });
@@ -55,9 +62,7 @@ function DownloadCounter({ lang }: { lang: Lang }) {
   const formatted = new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "en-US").format(total);
   return (
     <p className="mt-3 text-xs text-muted-foreground">
-      {lang === "fr"
-        ? `${formatted} téléchargements au total`
-        : `${formatted} downloads so far`}
+      {lang === "fr" ? `${formatted} téléchargements au total` : `${formatted} downloads so far`}
     </p>
   );
 }
@@ -86,12 +91,17 @@ import {
 
 type Lang = "en" | "fr";
 
-const CHECKOUT_URL = "https://voxcut-pro.lemonsqueezy.com/checkout/buy/d04203ba-2117-403a-9dfb-b903bfd04587?checkout[discount_code]=LANCEMENT";
+const CHECKOUT_URL =
+  "https://voxcut-pro.lemonsqueezy.com/checkout/buy/d04203ba-2117-403a-9dfb-b903bfd04587?checkout[discount_code]=LANCEMENT";
 const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
-const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android";
-const WINDOWS_INSTALLER_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-Setup-1.2.1.exe";
-const LINUX_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-x86_64.AppImage";
-const LINUX_TAR_URL = "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.2.1_linux_x86_64.tar.gz";
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android";
+const WINDOWS_INSTALLER_URL =
+  "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-Setup-1.2.1.exe";
+const LINUX_URL =
+  "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-x86_64.AppImage";
+const LINUX_TAR_URL =
+  "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_1.2.1_linux_x86_64.tar.gz";
 const SNAP_URL = "https://snapcraft.io/inoneshot";
 const YOUTUBE_URL = "https://www.youtube.com/@InOneShot-PDFMailMerge";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
@@ -122,7 +132,13 @@ const t = {
         "Free up to 5 PDFs per batch",
       ],
       floating: { topLeft: "QR code & signature", bottomRight: "100% local — GDPR" },
-      window: { title: "InOneShot", from: "Excel — 24 rows", to: "Generated PDFs", counter: "PDFs", zip: "merged.zip" },
+      window: {
+        title: "InOneShot",
+        from: "Excel — 24 rows",
+        to: "Generated PDFs",
+        counter: "PDFs",
+        zip: "merged.zip",
+      },
     },
     video: { caption: "InOneShot in action — 1-minute demo", soon: "Demo video coming soon" },
     pain: {
@@ -139,9 +155,18 @@ const t = {
       title: "How it works",
       subtitle: "Three steps, zero hassle.",
       steps: [
-        { title: "Import your files", desc: "One PDF template + one Excel sheet (.xlsx) as your data source." },
-        { title: "Place your fields", desc: "Drag & drop columns, today's date, a signature image or a QR code." },
-        { title: "Generate in one shot", desc: "One PDF per row, auto-named, bundled into a ready-to-send ZIP." },
+        {
+          title: "Import your files",
+          desc: "One PDF template + one Excel sheet (.xlsx) as your data source.",
+        },
+        {
+          title: "Place your fields",
+          desc: "Drag & drop columns, today's date, a signature image or a QR code.",
+        },
+        {
+          title: "Generate in one shot",
+          desc: "One PDF per row, auto-named, bundled into a ready-to-send ZIP.",
+        },
       ],
     },
     pricing: {
@@ -150,7 +175,12 @@ const t = {
       free: {
         name: "Free",
         price: "€0",
-        features: ["Up to 5 PDFs per batch", "Unlimited templates", "Basic fields (columns, date)", "Windows"],
+        features: [
+          "Up to 5 PDFs per batch",
+          "Unlimited templates",
+          "Basic fields (columns, date)",
+          "Windows",
+        ],
         cta: "Download Free",
       },
       pro: {
@@ -207,12 +237,65 @@ const t = {
       title: "PDF mail merge, done right and kept local",
       subtitle:
         "Classic Word/Excel mail merge does not output native PDFs. Online tools upload your data to the cloud. InOneShot keeps everything on your machine — with advanced fields and a one-click batch.",
-      cols: { local: "100% local", advanced: "Advanced fields (QR / signature)", batch: "Batch in 1 click", price: "Price" },
+      cols: {
+        local: "100% local",
+        advanced: "Advanced fields (QR / signature)",
+        batch: "Batch in 1 click",
+        price: "Price",
+      },
       rows: [
-        { name: "InOneShot", badge: "Our app", sub: "PDF + ZIP, named automatically", highlight: true, local: "yes", localNote: "", advanced: "yes", advancedNote: "QR, signature, date", batch: "yes", batchNote: "PDF + ZIP", price: "€39 one-time" },
-        { name: "Word/Excel mail merge", badge: "", sub: "classic merge", highlight: false, local: "yes", localNote: "", advanced: "warn", advancedNote: "no native PDF", batch: "warn", batchNote: "manual PDF export", price: "Office included" },
-        { name: "Adobe Acrobat (+ plugin)", badge: "", sub: "", highlight: false, local: "yes", localNote: "", advanced: "yes", advancedNote: "", batch: "warn", batchNote: "paid plugin", price: "~€24/mo" },
-        { name: "Online PDF tools", badge: "", sub: "", highlight: false, local: "no", localNote: "cloud upload", advanced: "warn", advancedNote: "plan-dependent", batch: "yes", batchNote: "", price: "subscription" },
+        {
+          name: "InOneShot",
+          badge: "Our app",
+          sub: "PDF + ZIP, named automatically",
+          highlight: true,
+          local: "yes",
+          localNote: "",
+          advanced: "yes",
+          advancedNote: "QR, signature, date",
+          batch: "yes",
+          batchNote: "PDF + ZIP",
+          price: "€39 one-time",
+        },
+        {
+          name: "Word/Excel mail merge",
+          badge: "",
+          sub: "classic merge",
+          highlight: false,
+          local: "yes",
+          localNote: "",
+          advanced: "warn",
+          advancedNote: "no native PDF",
+          batch: "warn",
+          batchNote: "manual PDF export",
+          price: "Office included",
+        },
+        {
+          name: "Adobe Acrobat (+ plugin)",
+          badge: "",
+          sub: "",
+          highlight: false,
+          local: "yes",
+          localNote: "",
+          advanced: "yes",
+          advancedNote: "",
+          batch: "warn",
+          batchNote: "paid plugin",
+          price: "~€24/mo",
+        },
+        {
+          name: "Online PDF tools",
+          badge: "",
+          sub: "",
+          highlight: false,
+          local: "no",
+          localNote: "cloud upload",
+          advanced: "warn",
+          advancedNote: "plan-dependent",
+          batch: "yes",
+          batchNote: "",
+          price: "subscription",
+        },
       ],
       footnote:
         "Indicative comparison compiled in July 2026. Competitors' features, limits and prices may vary.",
@@ -233,7 +316,10 @@ const t = {
           q: "Is the free version really free?",
           a: "Yes. There is no time limit. You can generate up to 5 PDFs per batch, forever, at no cost.",
         },
-        { q: "What files do I need?", a: "A PDF template and an Excel file (.xlsx) as your data source." },
+        {
+          q: "What files do I need?",
+          a: "A PDF template and an Excel file (.xlsx) as your data source.",
+        },
         {
           q: "Are my files uploaded to the internet?",
           a: "No. Everything is processed locally on your computer. Your template and your data never leave your machine.",
@@ -265,7 +351,15 @@ const t = {
       consentLink: "Privacy policy",
     },
     footer: {
-      links: { download: "Download", pricing: "Pricing", faq: "FAQ", youtube: "YouTube", privacy: "Privacy", legal: "Legal notice", contact: "Contact" },
+      links: {
+        download: "Download",
+        pricing: "Pricing",
+        faq: "FAQ",
+        youtube: "YouTube",
+        privacy: "Privacy",
+        legal: "Legal notice",
+        contact: "Contact",
+      },
       copy: "© 2026 InOneShot — Local and private PDF mail merge",
       madeBy: "A La Fabrik Numérique product",
       alsoCheck: "Also check out VoxCut",
@@ -273,7 +367,8 @@ const t = {
     },
   },
   fr: {
-    metaTitle: "InOneShot — Générez des centaines de PDF personnalisés depuis votre Excel, en un clic",
+    metaTitle:
+      "InOneShot — Générez des centaines de PDF personnalisés depuis votre Excel, en un clic",
     metaDesc:
       "Publipostage PDF pour Windows. À partir d'un modèle PDF + un fichier Excel, générez un PDF par ligne + un ZIP. 100% local. Version gratuite disponible.",
     nav: { features: "Fonctionnalités", pricing: "Tarifs", faq: "FAQ", cta: "Télécharger" },
@@ -282,7 +377,8 @@ const t = {
       code: "LANCEMENT",
     },
     hero: {
-      title: "Générez des centaines de PDF personnalisés en un clic, depuis votre Excel. 100% local.",
+      title:
+        "Générez des centaines de PDF personnalisés en un clic, depuis votre Excel. 100% local.",
       subtitle:
         "À partir d'un seul modèle PDF et d'un fichier Excel, placez vos champs par glisser-déposer, puis générez un PDF par ligne et un ZIP prêt à envoyer. Pas de cloud, pas d'abonnement.",
       btnPrimary: "Télécharger gratuitement pour Windows",
@@ -297,9 +393,18 @@ const t = {
         "Gratuit jusqu'à 5 PDF par lot",
       ],
       floating: { topLeft: "QR code & signature", bottomRight: "100% local — RGPD" },
-      window: { title: "InOneShot", from: "Excel — 24 lignes", to: "PDF générés", counter: "PDF", zip: "publipostage.zip" },
+      window: {
+        title: "InOneShot",
+        from: "Excel — 24 lignes",
+        to: "PDF générés",
+        counter: "PDF",
+        zip: "publipostage.zip",
+      },
     },
-    video: { caption: "InOneShot en action — démo d'une minute", soon: "Démo vidéo bientôt disponible" },
+    video: {
+      caption: "InOneShot en action — démo d'une minute",
+      soon: "Démo vidéo bientôt disponible",
+    },
     pain: {
       title: "Le publipostage PDF vous prend des heures ?",
       text: "Copier-coller chaque nom dans un modèle, exporter un PDF, renommer le fichier, et recommencer cent fois — c'est la tâche la plus ingrate qui soit, et une seule faute de frappe oblige à tout reprendre.",
@@ -314,9 +419,18 @@ const t = {
       title: "Comment ça marche",
       subtitle: "Trois étapes, zéro complication.",
       steps: [
-        { title: "Importez vos fichiers", desc: "Un modèle PDF + un fichier Excel (.xlsx) comme source de données." },
-        { title: "Placez vos champs", desc: "Glissez-déposez les colonnes, la date du jour, une image de signature ou un QR code." },
-        { title: "Générez d'un seul tir", desc: "Un PDF par ligne, nommé automatiquement, réuni dans un ZIP prêt à envoyer." },
+        {
+          title: "Importez vos fichiers",
+          desc: "Un modèle PDF + un fichier Excel (.xlsx) comme source de données.",
+        },
+        {
+          title: "Placez vos champs",
+          desc: "Glissez-déposez les colonnes, la date du jour, une image de signature ou un QR code.",
+        },
+        {
+          title: "Générez d'un seul tir",
+          desc: "Un PDF par ligne, nommé automatiquement, réuni dans un ZIP prêt à envoyer.",
+        },
       ],
     },
     pricing: {
@@ -325,7 +439,12 @@ const t = {
       free: {
         name: "Gratuit",
         price: "0 €",
-        features: ["Jusqu'à 5 PDF par lot", "Modèles illimités", "Champs de base (colonnes, date)", "Windows"],
+        features: [
+          "Jusqu'à 5 PDF par lot",
+          "Modèles illimités",
+          "Champs de base (colonnes, date)",
+          "Windows",
+        ],
         cta: "Télécharger",
       },
       pro: {
@@ -382,12 +501,65 @@ const t = {
       title: "Le publipostage PDF, bien fait et 100% local",
       subtitle:
         "Le publipostage Word/Excel classique ne produit pas de vrais PDF. Les outils en ligne envoient vos données dans le cloud. InOneShot garde tout sur votre machine — avec des champs avancés et un lot en un clic.",
-      cols: { local: "100% local", advanced: "Champs avancés (QR / signature)", batch: "Lot en 1 clic", price: "Prix" },
+      cols: {
+        local: "100% local",
+        advanced: "Champs avancés (QR / signature)",
+        batch: "Lot en 1 clic",
+        price: "Prix",
+      },
       rows: [
-        { name: "InOneShot", badge: "Notre app", sub: "PDF + ZIP, nommés automatiquement", highlight: true, local: "yes", localNote: "", advanced: "yes", advancedNote: "QR, signature, date", batch: "yes", batchNote: "PDF + ZIP", price: "39 € une fois" },
-        { name: "Publipostage Word/Excel", badge: "", sub: "fusion classique", highlight: false, local: "yes", localNote: "", advanced: "warn", advancedNote: "pas de PDF natif", batch: "warn", batchNote: "export PDF manuel", price: "inclus Office" },
-        { name: "Adobe Acrobat (+ plugin)", badge: "", sub: "", highlight: false, local: "yes", localNote: "", advanced: "yes", advancedNote: "", batch: "warn", batchNote: "plugin payant", price: "~24 €/mois" },
-        { name: "Outils PDF en ligne", badge: "", sub: "", highlight: false, local: "no", localNote: "upload cloud", advanced: "warn", advancedNote: "selon l'offre", batch: "yes", batchNote: "", price: "abonnement" },
+        {
+          name: "InOneShot",
+          badge: "Notre app",
+          sub: "PDF + ZIP, nommés automatiquement",
+          highlight: true,
+          local: "yes",
+          localNote: "",
+          advanced: "yes",
+          advancedNote: "QR, signature, date",
+          batch: "yes",
+          batchNote: "PDF + ZIP",
+          price: "39 € une fois",
+        },
+        {
+          name: "Publipostage Word/Excel",
+          badge: "",
+          sub: "fusion classique",
+          highlight: false,
+          local: "yes",
+          localNote: "",
+          advanced: "warn",
+          advancedNote: "pas de PDF natif",
+          batch: "warn",
+          batchNote: "export PDF manuel",
+          price: "inclus Office",
+        },
+        {
+          name: "Adobe Acrobat (+ plugin)",
+          badge: "",
+          sub: "",
+          highlight: false,
+          local: "yes",
+          localNote: "",
+          advanced: "yes",
+          advancedNote: "",
+          batch: "warn",
+          batchNote: "plugin payant",
+          price: "~24 €/mois",
+        },
+        {
+          name: "Outils PDF en ligne",
+          badge: "",
+          sub: "",
+          highlight: false,
+          local: "no",
+          localNote: "upload cloud",
+          advanced: "warn",
+          advancedNote: "selon l'offre",
+          batch: "yes",
+          batchNote: "",
+          price: "abonnement",
+        },
       ],
       footnote:
         "Comparatif indicatif établi en juillet 2026. Les fonctionnalités, limites et tarifs des autres solutions sont susceptibles d'évoluer.",
@@ -408,7 +580,10 @@ const t = {
           q: "La version gratuite est-elle vraiment gratuite ?",
           a: "Oui. Il n'y a aucune limite dans le temps. Vous pouvez générer jusqu'à 5 PDF par lot, sans limite, gratuitement.",
         },
-        { q: "Quels fichiers faut-il en entrée ?", a: "Un modèle PDF et un fichier Excel (.xlsx) comme source de données." },
+        {
+          q: "Quels fichiers faut-il en entrée ?",
+          a: "Un modèle PDF et un fichier Excel (.xlsx) comme source de données.",
+        },
         {
           q: "Mes fichiers sont-ils envoyés sur internet ?",
           a: "Non. Tout est traité localement sur votre ordinateur. Votre modèle et vos données ne quittent jamais votre machine.",
@@ -440,7 +615,15 @@ const t = {
       consentLink: "Politique de confidentialité",
     },
     footer: {
-      links: { download: "Télécharger", pricing: "Tarifs", faq: "FAQ", youtube: "YouTube", privacy: "Confidentialité", legal: "Mentions légales", contact: "Contact" },
+      links: {
+        download: "Télécharger",
+        pricing: "Tarifs",
+        faq: "FAQ",
+        youtube: "YouTube",
+        privacy: "Confidentialité",
+        legal: "Mentions légales",
+        contact: "Contact",
+      },
       copy: "© 2026 InOneShot — Publipostage PDF local et privé",
       madeBy: "Un produit La Fabrik Numérique",
       alsoCheck: "Découvrez aussi VoxCut",
@@ -475,16 +658,24 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function Reveal({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
+function Reveal({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setVisible(true),
-      { threshold: 0, rootMargin: "0px 0px -10% 0px" },
-    );
+    const obs = new IntersectionObserver(([entry]) => entry.isIntersecting && setVisible(true), {
+      threshold: 0,
+      rootMargin: "0px 0px -10% 0px",
+    });
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
@@ -520,7 +711,9 @@ function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void 
           key={l}
           onClick={() => setLang(l)}
           className={`cursor-pointer rounded-full px-3 py-1 transition ${
-            lang === l ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+            lang === l
+              ? "bg-primary text-primary-foreground"
+              : "text-muted-foreground hover:text-foreground"
           }`}
         >
           {l.toUpperCase()}
@@ -587,7 +780,11 @@ function MergeDemo({ lang }: { lang: Lang }) {
                 i === activeRow ? "bg-brand/10" : "bg-card"
               }`}
             >
-              <span className={`font-medium ${i === activeRow ? "text-brand-deep" : "text-foreground/80"}`}>{r.name}</span>
+              <span
+                className={`font-medium ${i === activeRow ? "text-brand-deep" : "text-foreground/80"}`}
+              >
+                {r.name}
+              </span>
               <span className="font-mono text-[11px] text-muted-foreground">{r.tag}</span>
             </div>
           ))}
@@ -635,7 +832,19 @@ function MergeDemo({ lang }: { lang: Lang }) {
 function Index() {
   const [lang, setLangState] = useState<Lang>("fr");
   const [email, setEmail] = useState("");
-  const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "sending" | "done" | "error">(
+    "idle",
+  );
+  const [reassuranceVariant, setReassuranceVariant] = useState<ReassuranceVariant>("a");
+
+  useEffect(() => {
+    const variant = getReassuranceVariant();
+    setReassuranceVariant(variant);
+    if (typeof gtag !== "undefined")
+      gtag("event", `experiment_reassurance_impression_${variant}`, {
+        event_category: "engagement",
+      });
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -689,9 +898,14 @@ function Index() {
               </span>
               <span>
                 {c.announce.text}{" "}
-                <span className="font-mono font-bold tracking-wider underline underline-offset-2">{c.announce.code}</span>
+                <span className="font-mono font-bold tracking-wider underline underline-offset-2">
+                  {c.announce.code}
+                </span>
               </span>
-              <span aria-hidden="true" className="hidden transition-transform group-hover:translate-x-0.5 sm:inline">
+              <span
+                aria-hidden="true"
+                className="hidden transition-transform group-hover:translate-x-0.5 sm:inline"
+              >
                 →
               </span>
             </div>
@@ -700,10 +914,18 @@ function Index() {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
           <Logo />
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-            <a href="#how" className="transition-colors hover:text-foreground">{c.nav.features}</a>
-            <a href="#pricing" className="transition-colors hover:text-foreground">{c.nav.pricing}</a>
-            <a href="#faq" className="transition-colors hover:text-foreground">{c.nav.faq}</a>
-            <Link to="/blog" className="transition-colors hover:text-foreground">Blog</Link>
+            <a href="#how" className="transition-colors hover:text-foreground">
+              {c.nav.features}
+            </a>
+            <a href="#pricing" className="transition-colors hover:text-foreground">
+              {c.nav.pricing}
+            </a>
+            <a href="#faq" className="transition-colors hover:text-foreground">
+              {c.nav.faq}
+            </a>
+            <Link to="/blog" className="transition-colors hover:text-foreground">
+              Blog
+            </Link>
           </nav>
           <div className="flex items-center gap-3">
             <LangToggle lang={lang} setLang={setLang} />
@@ -727,7 +949,8 @@ function Index() {
           <div>
             <Reveal>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand-deep">
-                <FileText className="h-3.5 w-3.5" /> {lang === "fr" ? "Publipostage PDF · Windows" : "PDF mail merge · Windows"}
+                <FileText className="h-3.5 w-3.5" />{" "}
+                {lang === "fr" ? "Publipostage PDF · Windows" : "PDF mail merge · Windows"}
               </span>
             </Reveal>
             <Reveal delay={60}>
@@ -736,7 +959,9 @@ function Index() {
               </h1>
             </Reveal>
             <Reveal delay={120}>
-              <p className="mt-5 max-w-xl text-balance text-lg text-muted-foreground">{c.hero.subtitle}</p>
+              <p className="mt-5 max-w-xl text-balance text-lg text-muted-foreground">
+                {c.hero.subtitle}
+              </p>
             </Reveal>
             <Reveal delay={180}>
               <div className="mt-8 grid grid-cols-2 gap-3">
@@ -753,14 +978,22 @@ function Index() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={trackStoreDownload}
-                  aria-label={lang === "fr" ? "Télécharger InOneShot sur le Microsoft Store" : "Get InOneShot from the Microsoft Store"}
+                  aria-label={
+                    lang === "fr"
+                      ? "Télécharger InOneShot sur le Microsoft Store"
+                      : "Get InOneShot from the Microsoft Store"
+                  }
                   className="inline-flex items-center justify-center rounded-lg border border-border transition-opacity hover:opacity-90"
                 >
                   <img
                     src={`https://get.microsoft.com/images/${lang === "fr" ? "fr" : "en-us"}%20light.svg`}
                     width={200}
                     height={58}
-                    alt={lang === "fr" ? "Disponible sur le Microsoft Store" : "Get it from Microsoft Store"}
+                    alt={
+                      lang === "fr"
+                        ? "Disponible sur le Microsoft Store"
+                        : "Get it from Microsoft Store"
+                    }
                     className="h-[52px] w-auto"
                   />
                 </a>
@@ -769,14 +1002,20 @@ function Index() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={trackSnapDownload}
-                  aria-label={lang === "fr" ? "Télécharger InOneShot sur le Snap Store" : "Get InOneShot from the Snap Store"}
+                  aria-label={
+                    lang === "fr"
+                      ? "Télécharger InOneShot sur le Snap Store"
+                      : "Get InOneShot from the Snap Store"
+                  }
                   className="inline-flex items-center justify-center rounded-lg border border-border transition-opacity hover:opacity-90"
                 >
                   <img
                     src="https://snapcraft.io/en/light/install.svg"
                     width={204}
                     height={60}
-                    alt={lang === "fr" ? "Disponible sur le Snap Store" : "Get it from the Snap Store"}
+                    alt={
+                      lang === "fr" ? "Disponible sur le Snap Store" : "Get it from the Snap Store"
+                    }
                     className="h-[52px] w-auto"
                   />
                 </a>
@@ -785,7 +1024,11 @@ function Index() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={trackPlayStoreDownload}
-                  aria-label={lang === "fr" ? "Télécharger InOneShot sur Google Play" : "Get InOneShot on Google Play"}
+                  aria-label={
+                    lang === "fr"
+                      ? "Télécharger InOneShot sur Google Play"
+                      : "Get InOneShot on Google Play"
+                  }
                   className="inline-flex items-center justify-center rounded-lg border border-border transition-opacity hover:opacity-90"
                 >
                   <img
@@ -847,7 +1090,9 @@ function Index() {
                   <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
-                  <span className="ml-2 text-xs font-medium text-muted-foreground">{c.hero.window.title}</span>
+                  <span className="ml-2 text-xs font-medium text-muted-foreground">
+                    {c.hero.window.title}
+                  </span>
                 </div>
                 <div className="flex flex-1 flex-col p-8 sm:p-10">
                   <MergeDemo lang={lang} />
@@ -862,7 +1107,9 @@ function Index() {
       <section className="border-t border-border bg-muted py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <Reveal>
-            <p className="mb-4 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">{c.video.caption}</p>
+            <p className="mb-4 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+              {c.video.caption}
+            </p>
             <div className="mx-auto aspect-video w-full overflow-hidden rounded-xl border border-border bg-card">
               <iframe
                 className="h-full w-full"
@@ -920,7 +1167,9 @@ function Index() {
               return (
                 <Reveal key={i} delay={i * 100}>
                   <div className="group relative h-full rounded-2xl border border-border bg-card p-8 shadow-sm transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md">
-                    <div className="absolute right-6 top-6 text-5xl font-bold text-brand/10">{num}</div>
+                    <div className="absolute right-6 top-6 text-5xl font-bold text-brand/10">
+                      {num}
+                    </div>
                     <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 ring-1 ring-brand/20">
                       <Icon className="h-6 w-6 text-brand" />
                     </div>
@@ -950,7 +1199,9 @@ function Index() {
                 <div>
                   <h3 className="text-lg font-semibold">{c.pricing.free.name}</h3>
                   <div className="mt-4 flex items-baseline gap-2">
-                    <span className="text-5xl font-bold tracking-tight">{c.pricing.free.price}</span>
+                    <span className="text-5xl font-bold tracking-tight">
+                      {c.pricing.free.price}
+                    </span>
                   </div>
                 </div>
                 <ul className="mt-8 space-y-3 text-sm">
@@ -984,7 +1235,7 @@ function Index() {
                   </div>
                   <p className="mt-2 text-sm text-brand-deep">{c.pricing.pro.tagline}</p>
                   <div className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3 py-1 text-xs font-medium text-brand-deep">
-                    <CheckCircle2 className="h-3 w-3" /> {c.pricing.pro.guarantee}
+                    <CheckCircle2 className="h-3 w-3" /> {REASSURANCE_COPY[lang][reassuranceVariant]}
                   </div>
                 </div>
                 {c.pricing.pro.promo && (
@@ -996,9 +1247,13 @@ function Index() {
                       <span className="rounded-md bg-energy/15 px-2 py-0.5 font-mono text-sm font-bold tracking-wider text-energy">
                         {c.pricing.pro.promo.code}
                       </span>
-                      <span className="text-xs text-muted-foreground">{c.pricing.pro.promo.applied}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {c.pricing.pro.promo.applied}
+                      </span>
                     </p>
-                    <p className="mt-1 text-xs font-medium text-foreground/80">{c.pricing.pro.promo.priceHint}</p>
+                    <p className="mt-1 text-xs font-medium text-foreground/80">
+                      {c.pricing.pro.promo.priceHint}
+                    </p>
                   </div>
                 )}
                 <ul className="mt-8 space-y-3 text-sm">
@@ -1013,6 +1268,15 @@ function Index() {
                   href={CHECKOUT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    track("begin_checkout", { variant: reassuranceVariant });
+                    if (typeof gtag !== "undefined")
+                      gtag("event", `begin_checkout_${reassuranceVariant}`, {
+                        event_category: "engagement",
+                        value: 39,
+                        currency: "EUR",
+                      });
+                  }}
                   className="mt-8 inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep"
                 >
                   {c.pricing.pro.cta}
@@ -1063,7 +1327,9 @@ function Index() {
         <div className="mx-auto max-w-5xl px-6">
           <Reveal>
             <div className="mb-10 text-center">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-deep">{c.compare.eyebrow}</p>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-deep">
+                {c.compare.eyebrow}
+              </p>
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{c.compare.title}</h2>
               <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">{c.compare.subtitle}</p>
             </div>
@@ -1074,10 +1340,18 @@ function Index() {
                 <thead>
                   <tr className="border-b border-border bg-muted">
                     <th className="px-4 py-4 text-left font-semibold"></th>
-                    <th className="px-3 py-4 text-center font-semibold text-muted-foreground">{c.compare.cols.local}</th>
-                    <th className="px-3 py-4 text-center font-semibold text-muted-foreground">{c.compare.cols.advanced}</th>
-                    <th className="px-3 py-4 text-center font-semibold text-muted-foreground">{c.compare.cols.batch}</th>
-                    <th className="px-3 py-4 text-center font-semibold text-muted-foreground">{c.compare.cols.price}</th>
+                    <th className="px-3 py-4 text-center font-semibold text-muted-foreground">
+                      {c.compare.cols.local}
+                    </th>
+                    <th className="px-3 py-4 text-center font-semibold text-muted-foreground">
+                      {c.compare.cols.advanced}
+                    </th>
+                    <th className="px-3 py-4 text-center font-semibold text-muted-foreground">
+                      {c.compare.cols.batch}
+                    </th>
+                    <th className="px-3 py-4 text-center font-semibold text-muted-foreground">
+                      {c.compare.cols.price}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1086,9 +1360,13 @@ function Index() {
                       key={i}
                       className={`border-b border-border/70 last:border-b-0 ${row.highlight ? "bg-brand/5" : i % 2 === 0 ? "bg-background" : "bg-muted/40"}`}
                     >
-                      <td className={`px-4 py-4 ${row.highlight ? "border-l-2 border-primary" : ""}`}>
+                      <td
+                        className={`px-4 py-4 ${row.highlight ? "border-l-2 border-primary" : ""}`}
+                      >
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="font-semibold" translate="no">{row.name}</span>
+                          <span className="font-semibold" translate="no">
+                            {row.name}
+                          </span>
                           {row.badge && (
                             <span className="rounded-md bg-primary px-2 py-0.5 text-[10px] font-medium text-primary-foreground">
                               {row.badge}
@@ -1096,7 +1374,9 @@ function Index() {
                           )}
                         </div>
                         {row.sub && (
-                          <span className={`mt-1 block text-xs ${row.highlight ? "text-brand-deep" : "text-muted-foreground"}`}>
+                          <span
+                            className={`mt-1 block text-xs ${row.highlight ? "text-brand-deep" : "text-muted-foreground"}`}
+                          >
                             {row.sub}
                           </span>
                         )}
@@ -1105,7 +1385,15 @@ function Index() {
                       <CompareCell status={row.advanced} note={row.advancedNote} />
                       <CompareCell status={row.batch} note={row.batchNote} />
                       <td className="px-3 py-4 text-center align-middle">
-                        <span className={row.highlight ? "font-semibold text-brand-deep" : "text-muted-foreground"}>{row.price}</span>
+                        <span
+                          className={
+                            row.highlight
+                              ? "font-semibold text-brand-deep"
+                              : "text-muted-foreground"
+                          }
+                        >
+                          {row.price}
+                        </span>
                       </td>
                     </tr>
                   ))}
@@ -1114,10 +1402,16 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <p className="mx-auto mt-4 max-w-3xl text-center text-xs text-muted-foreground">{c.compare.footnote}</p>
+            <p className="mx-auto mt-4 max-w-3xl text-center text-xs text-muted-foreground">
+              {c.compare.footnote}
+            </p>
             <figure className="mx-auto mt-10 max-w-2xl border-l-2 border-primary pl-5">
-              <blockquote className="text-base italic text-foreground/90">“{c.compare.quote}”</blockquote>
-              <figcaption className="mt-2 text-sm text-muted-foreground">{c.compare.quoteAuthor}</figcaption>
+              <blockquote className="text-base italic text-foreground/90">
+                “{c.compare.quote}”
+              </blockquote>
+              <figcaption className="mt-2 text-sm text-muted-foreground">
+                {c.compare.quoteAuthor}
+              </figcaption>
             </figure>
           </Reveal>
         </div>
@@ -1216,8 +1510,12 @@ function Index() {
                 {c.email.consentLink}
               </Link>
             </p>
-            {subscribeStatus === "done" && <p className="mt-4 text-sm text-brand-deep">{c.email.thanks}</p>}
-            {subscribeStatus === "error" && <p className="mt-4 text-sm text-destructive">{c.email.error}</p>}
+            {subscribeStatus === "done" && (
+              <p className="mt-4 text-sm text-brand-deep">{c.email.thanks}</p>
+            )}
+            {subscribeStatus === "error" && (
+              <p className="mt-4 text-sm text-destructive">{c.email.error}</p>
+            )}
           </Reveal>
         </div>
       </section>
@@ -1245,15 +1543,51 @@ function Index() {
             </a>
           </div>
           <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-            <a href={STORE_URL} target="_blank" rel="noopener noreferrer" onClick={trackStoreDownload} className="transition-colors hover:text-foreground">{c.footer.links.download}</a>
-            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={trackPlayStoreDownload} className="transition-colors hover:text-foreground">Android</a>
-            <a href="#pricing" className="transition-colors hover:text-foreground">{c.footer.links.pricing}</a>
-            <a href="#faq" className="transition-colors hover:text-foreground">{c.footer.links.faq}</a>
-            <Link to="/blog" className="transition-colors hover:text-foreground">Blog</Link>
-            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackCrossLink("youtube")} className="transition-colors hover:text-foreground">{c.footer.links.youtube}</a>
-            <Link to="/privacy" className="transition-colors hover:text-foreground">{c.footer.links.privacy}</Link>
-            <Link to="/legal" className="transition-colors hover:text-foreground">{c.footer.links.legal}</Link>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-foreground">{c.footer.links.contact}</a>
+            <a
+              href={STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackStoreDownload}
+              className="transition-colors hover:text-foreground"
+            >
+              {c.footer.links.download}
+            </a>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackPlayStoreDownload}
+              className="transition-colors hover:text-foreground"
+            >
+              Android
+            </a>
+            <a href="#pricing" className="transition-colors hover:text-foreground">
+              {c.footer.links.pricing}
+            </a>
+            <a href="#faq" className="transition-colors hover:text-foreground">
+              {c.footer.links.faq}
+            </a>
+            <Link to="/blog" className="transition-colors hover:text-foreground">
+              Blog
+            </Link>
+            <a
+              href={YOUTUBE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCrossLink("youtube")}
+              className="transition-colors hover:text-foreground"
+            >
+              {c.footer.links.youtube}
+            </a>
+            <Link to="/privacy" className="transition-colors hover:text-foreground">
+              {c.footer.links.privacy}
+            </Link>
+            <Link to="/legal" className="transition-colors hover:text-foreground">
+              {c.footer.links.legal}
+            </Link>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-foreground">
+              {c.footer.links.contact}
+            </a>
           </nav>
           <p className="text-xs text-muted-foreground">{c.footer.copy}</p>
           <p className="text-xs text-muted-foreground">
