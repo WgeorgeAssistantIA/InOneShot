@@ -1630,6 +1630,16 @@ function Index() {
             >
               Nyctale
             </a>
+            {" · "}
+            <a
+              href="https://www.vidscope.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCrossLink("vidscope")}
+              className="underline transition-colors hover:text-foreground"
+            >
+              VidScope
+            </a>
           </p>
         </div>
       </footer>
