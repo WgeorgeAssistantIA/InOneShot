@@ -8,9 +8,7 @@ export type BlogPost = {
   readingTime: number; // minutes
   // Content as array of blocks for simple rendering
   content: Array<
-    | { type: "p"; text: string }
-    | { type: "h2"; text: string }
-    | { type: "ul"; items: string[] }
+    { type: "p"; text: string } | { type: "h2"; text: string } | { type: "ul"; items: string[] }
   >;
 };
 
@@ -31,7 +29,8 @@ const make = (p: Omit<BlogPost, "readingTime">): BlogPost => ({
 export const posts: BlogPost[] = [
   make({
     slug: "publipostage-pdf-depuis-excel",
-    title: "Comment générer des centaines de PDF personnalisés depuis un Excel (sans copier-coller)",
+    title:
+      "Comment générer des centaines de PDF personnalisés depuis un Excel (sans copier-coller)",
     description:
       "Attestations, factures, courriers, diplômes : voici comment produire un PDF par ligne de votre tableur, automatiquement, sans recommencer cent fois.",
     date: "2026-06-28",
@@ -572,7 +571,159 @@ export const posts: BlogPost[] = [
       { type: "h2", text: "Download InOneShot on Android" },
       {
         type: "p",
-        text: "The app is available now, for free, on the Google Play Store: search for \"InOneShot\" or follow the direct link from this site's homepage.",
+        text: 'The app is available now, for free, on the Google Play Store: search for "InOneShot" or follow the direct link from this site\'s homepage.',
+      },
+    ],
+  }),
+  make({
+    slug: "generer-factures-pdf-masse-excel",
+    title: "Générer des factures PDF personnalisées en masse depuis un tableur Excel",
+    description:
+      "Pour les indépendants, associations et petites entreprises, automatiser l'édition de factures en série grâce au publipostage PDF est un gain de temps considérable.",
+    date: "2026-08-30",
+    author: "Équipe InOneShot",
+    lang: "fr",
+    content: [
+      {
+        type: "p",
+        text: "La facturation est le nerf de la guerre de toute activité, mais son traitement manuel peut vite devenir chronophage. Si vous gérez vos ventes, cotisations ou prestations dans un fichier Excel, il y a de fortes chances que vous passiez un temps précieux à copier-coller ces informations dans des modèles Word ou PDF.",
+      },
+      { type: "h2", text: "Le problème de la facturation manuelle" },
+      {
+        type: "p",
+        text: "Créer une facture demande de la précision : erreur sur le montant, mauvais numéro de facture, faute de frappe dans l'adresse du client... Les risques sont nombreux. Sans compter la tâche ingrate d'exporter chaque document en PDF et de le nommer correctement pour l'archivage.",
+      },
+      { type: "h2", text: "L'approche publipostage PDF" },
+      {
+        type: "p",
+        text: "Avec un outil comme InOneShot, votre tableau Excel devient une base de données automatisée. Vous concevez un modèle de facture PDF unique (avec votre logo, vos mentions légales, etc.). Ensuite, il suffit de placer les champs (Nom du client, Montant HT, TVA, Total TTC) sur le modèle.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Chaque ligne de votre fichier Excel génère une facture unique.",
+          "Les numéros de facture s'incrémentent naturellement selon votre tableur.",
+          "Les fichiers générés sont nommés automatiquement (ex: Facture_2026-08_ClientA.pdf).",
+        ],
+      },
+      { type: "h2", text: "Gagnez des heures chaque fin de mois" },
+      {
+        type: "p",
+        text: "Une fois le modèle configuré, la génération de 10 ou 500 factures prend exactement le même temps : un seul clic. Le traitement se faisant en local, les données financières de votre entreprise restent confidentielles sur votre ordinateur.",
+      },
+    ],
+  }),
+  make({
+    slug: "generate-bulk-pdf-invoices-from-excel",
+    title: "Generate Bulk PDF Invoices Automatically from an Excel Spreadsheet",
+    description:
+      "For freelancers, nonprofits, and small businesses, automating batch invoice generation with PDF mail merge saves hours of manual work.",
+    date: "2026-08-30",
+    author: "InOneShot Team",
+    lang: "en",
+    content: [
+      {
+        type: "p",
+        text: "Invoicing is the lifeblood of any business, but manual processing can quickly consume your time. If you track sales, memberships, or services in an Excel file, chances are you spend hours copy-pasting that data into Word or PDF templates.",
+      },
+      { type: "h2", text: "The problem with manual invoicing" },
+      {
+        type: "p",
+        text: "Creating an invoice requires precision. A mistake in the amount, an incorrect invoice number, a typo in the client's address... the risks are everywhere. Not to mention the tedious task of exporting each document to PDF and naming it properly for your records.",
+      },
+      { type: "h2", text: "The PDF mail merge approach" },
+      {
+        type: "p",
+        text: "With a tool like InOneShot, your Excel spreadsheet acts as an automated database. You design a single PDF invoice template (with your logo, legal terms, etc.). Then, you drag and drop fields (Client Name, Amount, Tax, Total) onto the layout.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Each row in your Excel file generates a unique invoice.",
+          "Invoice numbers increment naturally based on your spreadsheet.",
+          "Generated files are automatically named (e.g., Invoice_2026-08_ClientA.pdf).",
+        ],
+      },
+      { type: "h2", text: "Save hours at the end of every month" },
+      {
+        type: "p",
+        text: "Once the template is configured, generating 10 or 500 invoices takes exactly the same amount of time: one click. And because processing is strictly local, your company's financial data remains private on your computer.",
+      },
+    ],
+  }),
+  make({
+    slug: "qr-code-document-genere-en-masse",
+    title: "Ajouter un QR code personnalisé sur vos documents générés en masse",
+    description:
+      "Billets d'entrée, badges d'accès ou cartes de visite : apprenez à insérer automatiquement un QR code unique pour chaque ligne de votre fichier Excel.",
+    date: "2026-09-02",
+    author: "Équipe InOneShot",
+    lang: "fr",
+    content: [
+      {
+        type: "p",
+        text: "L'utilisation de QR codes sur des documents physiques ou numériques est devenue incontournable. Que ce soit pour un billet d'événement, un badge de conférence, ou une carte de membre, un QR code permet de relier instantanément le document à une action numérique.",
+      },
+      { type: "h2", text: "Un QR code unique par personne" },
+      {
+        type: "p",
+        text: "La difficulté majeure réside dans la personnalisation. Comment générer 200 invitations avec un QR code différent sur chacune, sans utiliser des générateurs en ligne fastidieux et assembler le tout manuellement ?",
+      },
+      { type: "h2", text: "L'automatisation avec InOneShot" },
+      {
+        type: "p",
+        text: "InOneShot intègre un générateur de QR codes natif. Dans votre fichier Excel, préparez une colonne contenant le lien ou le texte que le QR code doit représenter (un lien vers un formulaire, un identifiant unique, ou une vCard).",
+      },
+      {
+        type: "p",
+        text: "Lors de la configuration du modèle, vous faites simplement glisser le champ \"QR code\" et vous le reliez à cette colonne. Lors de la génération, InOneShot dessinera instantanément un QR code valide et unique sur chaque PDF.",
+      },
+      { type: "h2", text: "Cas d'usage fréquents" },
+      {
+        type: "ul",
+        items: [
+          "Événementiel : Billetterie avec code de scan pour le contrôle à l'entrée.",
+          "Ressources Humaines : Badges d'employés scannables pointant vers l'annuaire interne.",
+          "Associations : Cartes de membres interactives pour la gestion des présences.",
+        ],
+      },
+    ],
+  }),
+  make({
+    slug: "add-qr-code-bulk-generated-documents",
+    title: "Add a Personalized QR Code to Your Bulk-Generated Documents",
+    description:
+      "Event tickets, access badges, or business cards: learn how to automatically insert a unique QR code for each row of your Excel file.",
+    date: "2026-09-02",
+    author: "InOneShot Team",
+    lang: "en",
+    content: [
+      {
+        type: "p",
+        text: "QR codes on physical or digital documents have become essential. Whether it's an event ticket, a conference badge, or a membership card, a QR code instantly connects a printed document to a digital action.",
+      },
+      { type: "h2", text: "A unique QR code per person" },
+      {
+        type: "p",
+        text: "The main challenge is personalization. How do you generate 200 invitations with a different QR code on each, without relying on tedious online generators and assembling everything by hand?",
+      },
+      { type: "h2", text: "Automation with InOneShot" },
+      {
+        type: "p",
+        text: "InOneShot includes a native QR code generator. In your Excel file, just prepare a column containing the link or text the QR code should represent (a URL, a unique ID, or vCard info).",
+      },
+      {
+        type: "p",
+        text: "When setting up your template, simply drag and drop the \"QR Code\" field and link it to that column. During generation, InOneShot will instantly draw a valid, unique QR code onto every single PDF.",
+      },
+      { type: "h2", text: "Common Use Cases" },
+      {
+        type: "ul",
+        items: [
+          "Events: Ticketing with scannable codes for access control.",
+          "Human Resources: Employee badges linking to the internal directory.",
+          "Nonprofits: Interactive membership cards for attendance tracking.",
+        ],
       },
     ],
   }),
