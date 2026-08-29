@@ -632,27 +632,27 @@ const t = {
   },
 } as const;
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/attestations-rh")({
   head: () => ({
     meta: [
-      { title: "InOneShot — Générez des centaines de PDF personnalisés depuis votre Excel" },
+      { title: "Automatisez vos attestations et fiches de paie — 100% Local" },
       {
         name: "description",
         content:
-          "Publipostage PDF pour Windows. À partir d'un modèle PDF + un Excel, générez un PDF par ligne + un ZIP. 100% local.",
+          "Outil de publipostage RH conforme RGPD. Générez des PDF en masse (attestations, contrats) sans envoyer les données employés dans le Cloud.",
       },
-      { property: "og:title", content: "InOneShot — Publipostage PDF en un clic" },
+      { property: "og:title", content: "Génération PDF RH — Conforme RGPD" },
       {
         property: "og:description",
         content:
-          "Générez des centaines de PDF personnalisés depuis votre Excel, en un clic. 100% local, sans abonnement.",
+          "Ne risquez plus les données de vos employés sur le Cloud. Générez attestations et fiches de paie en 1 clic depuis Excel, 100% hors-ligne.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://www.inoneshot.fr/" },
+      { property: "og:url", content: "https://www.inoneshot.fr/attestations-rh" },
     ],
     links: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: "canonical", href: "https://www.inoneshot.fr/" },
+      { rel: "canonical", href: "https://www.inoneshot.fr/attestations-rh" },
     ],
   }),
   component: Index,

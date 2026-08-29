@@ -8,7 +8,8 @@ export const Route = createFileRoute("/legal")({
       { title: "Mentions légales — InOneShot" },
       {
         name: "description",
-        content: "Mentions légales du site inoneshot.fr : éditeur, hébergeur et propriété intellectuelle.",
+        content:
+          "Mentions légales du site inoneshot.fr : éditeur, hébergeur et propriété intellectuelle.",
       },
       { property: "og:title", content: "Mentions légales — InOneShot" },
     ],
@@ -108,7 +109,8 @@ function Legal() {
   const [lang, setLang] = useState<Lang>("fr");
 
   useEffect(() => {
-    const saved = (typeof window !== "undefined" && localStorage.getItem("inoneshot-lang")) as Lang | null;
+    const saved = (typeof window !== "undefined" &&
+      localStorage.getItem("inoneshot-lang")) as Lang | null;
     if (saved === "en" || saved === "fr") setLang(saved);
   }, []);
 
@@ -138,7 +140,9 @@ function Legal() {
                 key={l}
                 onClick={() => changeLang(l)}
                 className={`cursor-pointer rounded-full px-3 py-1 transition ${
-                  lang === l ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  lang === l
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {l.toUpperCase()}
@@ -183,10 +187,16 @@ function Legal() {
           >
             <ArrowLeft className="h-4 w-4" /> {c.back}
           </Link>
-          <Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/privacy"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             {lang === "fr" ? "Politique de confidentialité" : "Privacy policy"}
           </Link>
-          <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/terms"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             {lang === "fr" ? "Conditions générales de vente" : "Terms of sale"}
           </Link>
         </div>

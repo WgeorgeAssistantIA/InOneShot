@@ -632,27 +632,27 @@ const t = {
   },
 } as const;
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/publipostage-notaires")({
   head: () => ({
     meta: [
-      { title: "InOneShot — Générez des centaines de PDF personnalisés depuis votre Excel" },
+      { title: "Publipostage PDF pour Notaires & Avocats — 100% Local" },
       {
         name: "description",
         content:
-          "Publipostage PDF pour Windows. À partir d'un modèle PDF + un Excel, générez un PDF par ligne + un ZIP. 100% local.",
+          "Générez vos contrats et actes sans cloud. Fusion de données PDF 100% locale pour respecter le secret professionnel.",
       },
-      { property: "og:title", content: "InOneShot — Publipostage PDF en un clic" },
+      { property: "og:title", content: "Publipostage pour Notaires — Zéro Cloud" },
       {
         property: "og:description",
         content:
-          "Générez des centaines de PDF personnalisés depuis votre Excel, en un clic. 100% local, sans abonnement.",
+          "Sécurisez vos données clients. Générez des centaines de contrats en un clic depuis votre Excel. 100% local, sans abonnement.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://www.inoneshot.fr/" },
+      { property: "og:url", content: "https://www.inoneshot.fr/publipostage-notaires" },
     ],
     links: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: "canonical", href: "https://www.inoneshot.fr/" },
+      { rel: "canonical", href: "https://www.inoneshot.fr/publipostage-notaires" },
     ],
   }),
   component: Index,

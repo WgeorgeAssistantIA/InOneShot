@@ -39,12 +39,22 @@
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 :root {
@@ -52,7 +62,7 @@
 
   /* Light theme — databox-inspired, InOneShot brand */
   --background: #ffffff;
-  --foreground: #0f172a;            /* slate-900 — texte principal */
+  --foreground: #0f172a; /* slate-900 — texte principal */
 
   --card: #ffffff;
   --card-foreground: #0f172a;
@@ -60,36 +70,40 @@
   --popover: #ffffff;
   --popover-foreground: #0f172a;
 
-  --primary: #2870ca;               /* bleu CTA — texte blanc lisible (AA) */
+  --primary: #2870ca; /* bleu CTA — texte blanc lisible (AA) */
   --primary-foreground: #ffffff;
 
-  --secondary: #f1f5f9;             /* slate-100 */
+  --secondary: #f1f5f9; /* slate-100 */
   --secondary-foreground: #0f172a;
 
-  --muted: #f8fafc;                 /* slate-50 — sections alternées */
-  --muted-foreground: #64748b;      /* slate-500 — texte secondaire (AA sur blanc) */
+  --muted: #f8fafc; /* slate-50 — sections alternées */
+  --muted-foreground: #64748b; /* slate-500 — texte secondaire (AA sur blanc) */
 
-  --accent: #f1f5f9;                /* survol discret (composants shadcn) */
+  --accent: #f1f5f9; /* survol discret (composants shadcn) */
   --accent-foreground: #0f172a;
 
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
-  --border: #e2e8f0;                /* slate-200 */
+  --border: #e2e8f0; /* slate-200 */
   --input: #e2e8f0;
   --ring: #378add;
 
   /* Marque InOneShot */
-  --brand: #378add;                 /* bleu charte — icônes, accents */
+  --brand: #378add; /* bleu charte — icônes, accents */
   --brand-foreground: #ffffff;
-  --brand-deep: #185fa5;            /* hover, titres accentués */
-  --energy: #c2410c;                /* orange « one-shot » — orange-700, lisible en texte sur blanc (AA) */
+  --brand-deep: #185fa5; /* hover, titres accentués */
+  --energy: #c2410c; /* orange « one-shot » — orange-700, lisible en texte sur blanc (AA) */
   --energy-foreground: #ffffff;
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);

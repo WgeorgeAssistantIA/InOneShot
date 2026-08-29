@@ -43,7 +43,8 @@ function PostCard({ post }: { post: BlogPost }) {
           </time>
           <span>•</span>
           <span className="inline-flex items-center gap-1">
-            <Clock className="h-3.5 w-3.5" /> {post.readingTime} {fr ? "min de lecture" : "min read"}
+            <Clock className="h-3.5 w-3.5" /> {post.readingTime}{" "}
+            {fr ? "min de lecture" : "min read"}
           </span>
         </div>
         <h3 className="mt-3 text-2xl font-semibold tracking-tight">{post.title}</h3>

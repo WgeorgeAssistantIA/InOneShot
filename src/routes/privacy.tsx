@@ -25,7 +25,10 @@ type Section = { h: string; blocks: Block[] };
 
 const CONTACT = "contact@inoneshot.fr";
 
-const pp: Record<Lang, { title: string; updated: string; back: string; intro: string; sections: Section[] }> = {
+const pp: Record<
+  Lang,
+  { title: string; updated: string; back: string; intro: string; sections: Section[] }
+> = {
   fr: {
     title: "Politique de confidentialité",
     updated: "Dernière mise à jour : 30 juin 2026",
@@ -318,7 +321,8 @@ function Privacy() {
   const [lang, setLang] = useState<Lang>("fr");
 
   useEffect(() => {
-    const saved = (typeof window !== "undefined" && localStorage.getItem("inoneshot-lang")) as Lang | null;
+    const saved = (typeof window !== "undefined" &&
+      localStorage.getItem("inoneshot-lang")) as Lang | null;
     if (saved === "en" || saved === "fr") setLang(saved);
   }, []);
 
@@ -348,7 +352,9 @@ function Privacy() {
                 key={l}
                 onClick={() => changeLang(l)}
                 className={`cursor-pointer rounded-full px-3 py-1 transition ${
-                  lang === l ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  lang === l
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {l.toUpperCase()}
@@ -383,7 +389,10 @@ function Privacy() {
                       {b.text}
                     </p>
                   ) : (
-                    <ul key={i} className="ml-5 list-disc space-y-2 text-muted-foreground leading-relaxed">
+                    <ul
+                      key={i}
+                      className="ml-5 list-disc space-y-2 text-muted-foreground leading-relaxed"
+                    >
                       {b.items.map((it, j) => (
                         <li key={j}>{it}</li>
                       ))}
@@ -402,10 +411,16 @@ function Privacy() {
           >
             <ArrowLeft className="h-4 w-4" /> {c.back}
           </Link>
-          <Link to="/legal" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/legal"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             {lang === "fr" ? "Mentions légales" : "Legal notice"}
           </Link>
-          <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/terms"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             {lang === "fr" ? "Conditions générales de vente" : "Terms of sale"}
           </Link>
         </div>

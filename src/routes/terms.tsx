@@ -8,7 +8,8 @@ export const Route = createFileRoute("/terms")({
       { title: "Conditions Générales de Vente — InOneShot" },
       {
         name: "description",
-        content: "Conditions générales de vente du logiciel InOneShot : licence, prix, livraison, rétractation et responsabilité.",
+        content:
+          "Conditions générales de vente du logiciel InOneShot : licence, prix, livraison, rétractation et responsabilité.",
       },
       { property: "og:title", content: "Conditions Générales de Vente — InOneShot" },
     ],
@@ -23,7 +24,17 @@ type Section = { h: string; lines: string[] };
 
 const CONTACT = "contact@inoneshot.fr";
 
-const ln: Record<Lang, { title: string; sub: string; updated: string; back: string; disclaimer: string; sections: Section[] }> = {
+const ln: Record<
+  Lang,
+  {
+    title: string;
+    sub: string;
+    updated: string;
+    back: string;
+    disclaimer: string;
+    sections: Section[];
+  }
+> = {
   fr: {
     title: "Conditions Générales de Vente",
     sub: "Applicables à l'achat de la licence InOneShot.",
@@ -174,7 +185,8 @@ function Terms() {
   const [lang, setLang] = useState<Lang>("fr");
 
   useEffect(() => {
-    const saved = (typeof window !== "undefined" && localStorage.getItem("inoneshot-lang")) as Lang | null;
+    const saved = (typeof window !== "undefined" &&
+      localStorage.getItem("inoneshot-lang")) as Lang | null;
     if (saved === "en" || saved === "fr") setLang(saved);
   }, []);
 
@@ -204,7 +216,9 @@ function Terms() {
                 key={l}
                 onClick={() => changeLang(l)}
                 className={`cursor-pointer rounded-full px-3 py-1 transition ${
-                  lang === l ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                  lang === l
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {l.toUpperCase()}
@@ -254,10 +268,16 @@ function Terms() {
           >
             <ArrowLeft className="h-4 w-4" /> {c.back}
           </Link>
-          <Link to="/legal" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/legal"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             {lang === "fr" ? "Mentions légales" : "Legal notice"}
           </Link>
-          <Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/privacy"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             {lang === "fr" ? "Politique de confidentialité" : "Privacy policy"}
           </Link>
         </div>

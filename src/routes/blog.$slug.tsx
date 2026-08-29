@@ -55,7 +55,10 @@ export const Route = createFileRoute("/blog/$slug")({
       <div className="mx-auto max-w-2xl px-6 py-24 text-center">
         <h1 className="text-3xl font-bold">Article introuvable</h1>
         <p className="mt-3 text-muted-foreground">Cet article n'existe pas ou a été déplacé.</p>
-        <Link to="/blog" className="mt-6 inline-flex items-center gap-2 text-primary hover:underline">
+        <Link
+          to="/blog"
+          className="mt-6 inline-flex items-center gap-2 text-primary hover:underline"
+        >
           <ArrowLeft className="h-4 w-4" /> Retour au blog
         </Link>
       </div>
@@ -66,7 +69,10 @@ export const Route = createFileRoute("/blog/$slug")({
       <div className="mx-auto max-w-2xl px-6 py-24 text-center">
         <h1 className="text-3xl font-bold">Une erreur est survenue</h1>
         <p className="mt-3 text-muted-foreground">{error.message}</p>
-        <button onClick={reset} className="mt-6 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
+        <button
+          onClick={reset}
+          className="mt-6 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+        >
           Réessayer
         </button>
       </div>
@@ -91,13 +97,22 @@ function BlogPost() {
 
         <header className="mt-8 mb-10">
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
-            <time>{new Date(post.date).toLocaleDateString(fr ? "fr-FR" : "en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
+            <time>
+              {new Date(post.date).toLocaleDateString(fr ? "fr-FR" : "en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
             <span>•</span>
             <span className="inline-flex items-center gap-1">
-              <Clock className="h-3.5 w-3.5" /> {post.readingTime} {fr ? "min de lecture" : "min read"}
+              <Clock className="h-3.5 w-3.5" /> {post.readingTime}{" "}
+              {fr ? "min de lecture" : "min read"}
             </span>
             <span>•</span>
-            <span>{fr ? "Par" : "By"} {post.author}</span>
+            <span>
+              {fr ? "Par" : "By"} {post.author}
+            </span>
           </div>
           <h1 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight leading-tight">
             {post.title}
@@ -120,7 +135,10 @@ function BlogPost() {
                 </p>
               );
             return (
-              <ul key={i} className="list-disc space-y-2 pl-6 text-base md:text-lg marker:text-primary">
+              <ul
+                key={i}
+                className="list-disc space-y-2 pl-6 text-base md:text-lg marker:text-primary"
+              >
                 {block.items.map((it, j) => (
                   <li key={j}>{it}</li>
                 ))}
