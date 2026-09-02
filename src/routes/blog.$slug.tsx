@@ -147,6 +147,17 @@ function BlogPost() {
           })}
         </div>
 
+        {post.related && (
+          <div className="mt-12 rounded-xl border border-border/60 bg-muted/40 p-5">
+            <Link
+              to={post.related.to}
+              className="inline-flex items-center gap-2 text-base font-medium text-primary hover:underline"
+            >
+              {post.related.label} <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        )}
+
         <div className="mt-16 rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/10 to-transparent p-8 text-center">
           <h3 className="text-2xl font-bold">
             {fr ? "Prêt à automatiser vos PDF ?" : "Ready to automate your PDFs?"}

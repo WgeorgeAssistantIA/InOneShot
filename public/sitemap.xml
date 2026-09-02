@@ -73,6 +73,60 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.inoneshot.fr/blog/inoneshot-disponible-sur-android</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/blog/inoneshot-now-available-on-android</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/blog/generer-factures-pdf-masse-excel</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/blog/generate-bulk-pdf-invoices-from-excel</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/blog/qr-code-document-genere-en-masse</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/blog/add-qr-code-bulk-generated-documents</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/blog/publipostage-rh-contrats-convocations-badges</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/blog/hr-mail-merge-contracts-invitations-badges</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/terms</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.inoneshot.fr/privacy</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>yearly</changefreq>

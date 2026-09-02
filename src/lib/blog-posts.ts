@@ -6,6 +6,8 @@ export type BlogPost = {
   author: string;
   lang: "fr" | "en";
   readingTime: number; // minutes
+  // Optional contextual link to a landing page, rendered above the generic CTA
+  related?: { to: string; label: string };
   // Content as array of blocks for simple rendering
   content: Array<
     { type: "p"; text: string } | { type: "h2"; text: string } | { type: "ul"; items: string[] }
@@ -724,6 +726,162 @@ export const posts: BlogPost[] = [
           "Human Resources: Employee badges linking to the internal directory.",
           "Nonprofits: Interactive membership cards for attendance tracking.",
         ],
+      },
+    ],
+  }),
+  make({
+    slug: "publipostage-rh-contrats-convocations-badges",
+    title: "Publipostage RH : produire contrats, convocations et badges sans y passer la semaine",
+    description:
+      "Un service RH génère les mêmes documents en série toute l'année. Voici comment transformer un tableur du SIRH en centaines de PDF nominatifs, sans copier-coller et sans envoyer les données du personnel dans le cloud.",
+    date: "2026-09-02",
+    author: "Équipe InOneShot",
+    lang: "fr",
+    related: { to: "/attestations-rh", label: "Voir la page dédiée aux documents RH" },
+    content: [
+      {
+        type: "p",
+        text: "Dans un service RH, la production documentaire ne s'arrête jamais. Avenants au contrat en janvier, convocations aux entretiens annuels au printemps, badges pour les nouveaux arrivants toute l'année, attestations diverses à la demande. À chaque fois, le même schéma : une trame identique pour tout le monde, et une poignée d'informations qui changent d'une personne à l'autre.",
+      },
+      {
+        type: "p",
+        text: "C'est précisément la définition du publipostage. Pourtant, dans beaucoup d'entreprises, ces documents se fabriquent encore un par un, à coups de copier-coller depuis un export du SIRH. Voici comment sortir de cette boucle.",
+      },
+      { type: "h2", text: "Trois familles de documents, un seul mécanisme" },
+      {
+        type: "p",
+        text: "Les documents RH les plus chronophages se ressemblent tous structurellement : un modèle fixe, validé par le juridique ou la direction, et des champs variables tirés d'un tableau de collaborateurs.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Contrats et avenants : nom, poste, date d'effet, rémunération, durée de période d'essai.",
+          "Convocations : nom du salarié, date et heure de l'entretien, salle, nom du manager.",
+          "Badges et cartes d'accès : nom, service, photo ou QR code pointant vers l'annuaire interne.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Une fois qu'on voit ce point commun, il devient évident qu'un seul outil peut couvrir les trois. Le modèle change, la méthode reste la même.",
+      },
+      { type: "h2", text: "Le vrai coût de la méthode manuelle" },
+      {
+        type: "p",
+        text: "Comptez deux à trois minutes par document quand tout va bien : ouvrir la trame, recopier cinq ou six valeurs, relire, exporter en PDF, renommer le fichier pour qu'il soit classable. Sur une campagne de 150 convocations, cela représente près d'une journée entière de travail, entièrement consacrée à de la recopie.",
+      },
+      {
+        type: "p",
+        text: "Le problème n'est pas seulement le temps perdu. C'est aussi le risque d'erreur : une date d'entretien décalée d'une ligne, un montant qui appartient au collaborateur précédent, un nom mal orthographié sur un contrat. Sur des documents à portée contractuelle, ces fautes coûtent bien plus cher que les minutes économisées.",
+      },
+      { type: "h2", text: "La donnée RH ne devrait pas quitter l'entreprise" },
+      {
+        type: "p",
+        text: "C'est le point qui distingue le publipostage RH de tous les autres. Un fichier de paie, une liste de salariés avec leurs rémunérations ou leurs coordonnées personnelles constituent des données à caractère personnel sensibles au sens du RGPD. Les téléverser sur un service en ligne pour générer des PDF, c'est créer un transfert de données qu'il faudra documenter, justifier et, le cas échéant, expliquer à un délégué à la protection des données.",
+      },
+      {
+        type: "p",
+        text: "Un outil qui travaille en local règle la question à la racine : le tableur et les PDF produits ne quittent jamais le poste de travail. Il n'y a pas de sous-traitant à inscrire au registre des traitements, pas de serveur tiers à auditer, pas de fichier de paie oublié sur une plateforme.",
+      },
+      { type: "h2", text: "Mettre en place une campagne, concrètement" },
+      {
+        type: "p",
+        text: "Le principe tient en trois temps. D'abord, exportez depuis votre SIRH un tableur contenant une ligne par collaborateur et une colonne par information variable. Ensuite, ouvrez votre trame PDF déjà validée et positionnez les champs par glisser-déposer, en reliant chaque emplacement à la colonne correspondante. Enfin, lancez la génération : vous obtenez un PDF par ligne, nommé automatiquement, plus une archive ZIP prête à être distribuée.",
+      },
+      {
+        type: "p",
+        text: "L'intérêt réel apparaît à la deuxième campagne. Le modèle se sauvegarde et se réutilise : la campagne de convocations de l'an prochain ne demandera plus que le nouvel export du SIRH et un clic. Le travail de mise en place ne se paie qu'une fois.",
+      },
+      { type: "h2", text: "Quelques précautions avant de lancer" },
+      {
+        type: "ul",
+        items: [
+          "Nettoyez les en-têtes du tableur : une colonne par information, des noms explicites, aucune ligne de titre fusionnée au-dessus.",
+          "Vérifiez le format des dates avant l'export, c'est la source d'erreur la plus fréquente.",
+          "Générez toujours un lot de test sur trois ou quatre lignes et relisez-le avant de lancer les 150 autres.",
+          "Faites relire la trame par le service juridique une fois pour toutes : c'est elle qui sera dupliquée à l'identique.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Une fois ces réflexes en place, produire cent contrats ou cent badges prend le même temps qu'en produire un seul. C'est du temps rendu au service RH pour faire ce qu'un tableur ne fera jamais à sa place.",
+      },
+    ],
+  }),
+  make({
+    slug: "hr-mail-merge-contracts-invitations-badges",
+    title: "HR Mail Merge: Contracts, Meeting Invitations and Badges Without Losing a Week",
+    description:
+      "HR teams produce the same documents in batches all year long. Here's how to turn an HRIS export into hundreds of personalized PDFs, with no copy-pasting and without sending employee data to the cloud.",
+    date: "2026-09-02",
+    author: "InOneShot Team",
+    lang: "en",
+    related: { to: "/attestations-rh", label: "See the dedicated HR documents page" },
+    content: [
+      {
+        type: "p",
+        text: "In an HR department, document production never really stops. Contract amendments in January, annual review invitations in the spring, badges for new joiners all year round, various certificates on request. Every time, the same pattern: one identical layout for everyone, and a handful of details that change from one person to the next.",
+      },
+      {
+        type: "p",
+        text: "That is the textbook definition of a mail merge. Yet in many companies these documents are still produced one at a time, by copy-pasting from an HRIS export. Here is how to break out of that loop.",
+      },
+      { type: "h2", text: "Three document families, one single mechanism" },
+      {
+        type: "p",
+        text: "The most time-consuming HR documents are structurally identical: a fixed template, signed off by legal or management, and variable fields pulled from a list of employees.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Contracts and amendments: name, job title, effective date, salary, probation period.",
+          "Meeting invitations: employee name, date and time, room, manager's name.",
+          "Badges and access cards: name, department, photo or QR code pointing to the internal directory.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Once you see what they have in common, it becomes obvious that a single tool can cover all three. The template changes; the method does not.",
+      },
+      { type: "h2", text: "The real cost of doing it by hand" },
+      {
+        type: "p",
+        text: "Count two to three minutes per document on a good day: open the template, retype five or six values, proofread, export to PDF, rename the file so it can actually be filed. Across a campaign of 150 invitations, that adds up to nearly a full working day spent entirely on retyping.",
+      },
+      {
+        type: "p",
+        text: "Wasted time is not the only issue. There is also the risk of error: an interview date shifted by one row, an amount belonging to the previous employee, a misspelled name on a contract. On documents with contractual weight, those mistakes cost far more than the minutes saved.",
+      },
+      { type: "h2", text: "Employee data should not leave the company" },
+      {
+        type: "p",
+        text: "This is what sets HR mail merge apart from every other use case. A payroll file, or a list of employees with their compensation and home addresses, is sensitive personal data under GDPR. Uploading it to an online service to generate PDFs creates a data transfer that must be documented, justified, and possibly explained to a data protection officer.",
+      },
+      {
+        type: "p",
+        text: "A tool that works locally removes the question entirely: the spreadsheet and the resulting PDFs never leave the workstation. There is no processor to add to your records, no third-party server to audit, no payroll file left sitting on a platform.",
+      },
+      { type: "h2", text: "Setting up a campaign, in practice" },
+      {
+        type: "p",
+        text: "The principle comes down to three steps. First, export a spreadsheet from your HRIS with one row per employee and one column per variable field. Then open your approved PDF template and place the fields by drag and drop, linking each position to the matching column. Finally, run the generation: you get one PDF per row, named automatically, plus a ZIP archive ready to distribute.",
+      },
+      {
+        type: "p",
+        text: "The real payoff shows up on the second campaign. The template can be saved and reused, so next year's invitation run only needs a fresh HRIS export and one click. The setup work is paid for once.",
+      },
+      { type: "h2", text: "A few checks before you hit generate" },
+      {
+        type: "ul",
+        items: [
+          "Clean up your spreadsheet headers: one column per field, explicit names, no merged title row on top.",
+          "Check your date formats before exporting — this is by far the most common source of errors.",
+          "Always generate a test batch of three or four rows and proofread it before launching the other 150.",
+          "Have legal review the template once and for all: it is the one thing that gets duplicated identically.",
+        ],
+      },
+      {
+        type: "p",
+        text: "With those habits in place, producing a hundred contracts or a hundred badges takes the same time as producing one. That is time handed back to the HR team to do what a spreadsheet will never do for them.",
       },
     ],
   }),

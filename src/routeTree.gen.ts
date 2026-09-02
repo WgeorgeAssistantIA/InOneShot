@@ -10,8 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as PublipostageNotairesRouteImport } from './routes/publipostage-notaires'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LegalRouteImport } from './routes/legal'
+import { Route as AttestationsRhRouteImport } from './routes/attestations-rh'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -23,6 +25,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PublipostageNotairesRoute = PublipostageNotairesRouteImport.update({
+  id: '/publipostage-notaires',
+  path: '/publipostage-notaires',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -31,6 +38,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const LegalRoute = LegalRouteImport.update({
   id: '/legal',
   path: '/legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AttestationsRhRoute = AttestationsRhRouteImport.update({
+  id: '/attestations-rh',
+  path: '/attestations-rh',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -61,8 +73,10 @@ const ApiDownloadsRoute = ApiDownloadsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/attestations-rh': typeof AttestationsRhRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
+  '/publipostage-notaires': typeof PublipostageNotairesRoute
   '/terms': typeof TermsRoute
   '/api/downloads': typeof ApiDownloadsRoute
   '/api/track': typeof ApiTrackRoute
@@ -71,8 +85,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/attestations-rh': typeof AttestationsRhRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
+  '/publipostage-notaires': typeof PublipostageNotairesRoute
   '/terms': typeof TermsRoute
   '/api/downloads': typeof ApiDownloadsRoute
   '/api/track': typeof ApiTrackRoute
@@ -82,8 +98,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/attestations-rh': typeof AttestationsRhRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
+  '/publipostage-notaires': typeof PublipostageNotairesRoute
   '/terms': typeof TermsRoute
   '/api/downloads': typeof ApiDownloadsRoute
   '/api/track': typeof ApiTrackRoute
@@ -94,8 +112,10 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/attestations-rh'
     | '/legal'
     | '/privacy'
+    | '/publipostage-notaires'
     | '/terms'
     | '/api/downloads'
     | '/api/track'
@@ -104,8 +124,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/attestations-rh'
     | '/legal'
     | '/privacy'
+    | '/publipostage-notaires'
     | '/terms'
     | '/api/downloads'
     | '/api/track'
@@ -114,8 +136,10 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/attestations-rh'
     | '/legal'
     | '/privacy'
+    | '/publipostage-notaires'
     | '/terms'
     | '/api/downloads'
     | '/api/track'
@@ -125,8 +149,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AttestationsRhRoute: typeof AttestationsRhRoute
   LegalRoute: typeof LegalRoute
   PrivacyRoute: typeof PrivacyRoute
+  PublipostageNotairesRoute: typeof PublipostageNotairesRoute
   TermsRoute: typeof TermsRoute
   ApiDownloadsRoute: typeof ApiDownloadsRoute
   ApiTrackRoute: typeof ApiTrackRoute
@@ -143,6 +169,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/publipostage-notaires': {
+      id: '/publipostage-notaires'
+      path: '/publipostage-notaires'
+      fullPath: '/publipostage-notaires'
+      preLoaderRoute: typeof PublipostageNotairesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -155,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/legal'
       fullPath: '/legal'
       preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/attestations-rh': {
+      id: '/attestations-rh'
+      path: '/attestations-rh'
+      fullPath: '/attestations-rh'
+      preLoaderRoute: typeof AttestationsRhRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -197,8 +237,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AttestationsRhRoute: AttestationsRhRoute,
   LegalRoute: LegalRoute,
   PrivacyRoute: PrivacyRoute,
+  PublipostageNotairesRoute: PublipostageNotairesRoute,
   TermsRoute: TermsRoute,
   ApiDownloadsRoute: ApiDownloadsRoute,
   ApiTrackRoute: ApiTrackRoute,
