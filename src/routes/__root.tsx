@@ -94,7 +94,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Générez des centaines de PDF personnalisés depuis un modèle PDF + un Excel. Application Windows — 100% locale et privée.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: "https://www.inoneshot.fr/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.inoneshot.fr/og-image.png" },
     ],
     links: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
