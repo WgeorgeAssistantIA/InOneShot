@@ -41,18 +41,22 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Le publipostage PDF consiste à fusionner un modèle fixe avec les données d'un fichier Excel pour générer un PDF unique par ligne, automatiquement.",
+      },
+      {
+        type: "p",
         text: "Vous avez un beau modèle de document — une attestation, une facture, un courrier — et un fichier Excel avec une centaine de lignes. Le but : produire un PDF pour chaque ligne, avec les bonnes informations au bon endroit. Fait à la main, c'est l'une des tâches les plus longues et les plus ingrates qui soient.",
       },
       {
         type: "p",
         text: "La bonne nouvelle : c'est exactement le genre de travail répétitif qu'un ordinateur fait mieux que vous. On parle de publipostage PDF, et voici comment l'automatiser de bout en bout.",
       },
-      { type: "h2", text: "Le principe du publipostage PDF" },
+      { type: "h2", text: "Qu'est-ce que le publipostage PDF ?" },
       {
         type: "p",
         text: "Le publipostage consiste à fusionner un modèle (la mise en page, fixe) avec une source de données (votre Excel, variable). Chaque ligne du tableur devient un document : la colonne « Nom » remplit le champ nom, la colonne « Montant » remplit le champ montant, et ainsi de suite. Le tout se répète automatiquement pour toutes les lignes.",
       },
-      { type: "h2", text: "La méthode manuelle (et pourquoi elle vous coûte cher)" },
+      { type: "h2", text: "Pourquoi la méthode manuelle de publipostage PDF coûte-t-elle cher ?" },
       {
         type: "ul",
         items: [
@@ -65,12 +69,12 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Sur cent documents, c'est facilement une demi-journée perdue, avec un vrai risque d'erreur (un mauvais nom, un montant décalé).",
       },
-      { type: "h2", text: "La méthode automatique avec InOneShot" },
+      { type: "h2", text: "Comment automatiser le publipostage PDF avec InOneShot ?" },
       {
         type: "p",
         text: "InOneShot est une application Windows dédiée au publipostage PDF. Vous importez un modèle PDF et un fichier Excel, vous placez vos champs par glisser-déposer (colonnes, date du jour, image de signature, QR code), puis vous cliquez une fois : l'application génère un PDF par ligne, les nomme automatiquement et vous livre un ZIP prêt à envoyer. Tout se passe en local, sur votre ordinateur.",
       },
-      { type: "h2", text: "Quelques conseils pour un bon résultat" },
+      { type: "h2", text: "Quels conseils suivre pour réussir son publipostage PDF ?" },
       {
         type: "ul",
         items: [
@@ -96,9 +100,13 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Le publipostage PDF en ligne consiste à téléverser votre modèle et vos données sur un serveur tiers pour générer les documents dans le cloud, plutôt que sur votre propre ordinateur.",
+      },
+      {
+        type: "p",
         text: "Beaucoup d'outils de fusion PDF fonctionnent en ligne : vous téléversez votre modèle et votre fichier de données sur un serveur, le traitement se fait dans le cloud, puis vous récupérez les fichiers. Pratique — mais loin d'être anodin quand vos documents contiennent des données personnelles.",
       },
-      { type: "h2", text: "Ce que « en ligne » implique vraiment" },
+      { type: "h2", text: "Le publipostage en ligne est-il sûr pour des données RH ?" },
       {
         type: "ul",
         items: [
@@ -107,7 +115,7 @@ export const posts: BlogPost[] = [
           "Beaucoup de ces services fonctionnent par abonnement, avec des plafonds de volume",
         ],
       },
-      { type: "h2", text: "Pourquoi le local est souvent le bon choix" },
+      { type: "h2", text: "Pourquoi le publipostage PDF local est-il souvent le bon choix ?" },
       {
         type: "p",
         text: "Pour les RH, les professions juridiques, la comptabilité ou toute structure qui manipule des données sensibles, le traitement local est un argument de conformité (RGPD) autant que de tranquillité : vos fichiers ne quittent jamais votre machine. Pas de serveur, pas de cloud, pas de question à se poser sur l'endroit où finissent vos données.",
@@ -116,7 +124,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "InOneShot a été conçu sur ce principe : tout le publipostage se fait sur votre ordinateur, hors ligne. Et comme il n'y a pas de coûts d'infrastructure cloud à amortir, le modèle est un paiement unique plutôt qu'un abonnement.",
       },
-      { type: "h2", text: "Quand le cloud reste pertinent" },
+      { type: "h2", text: "Le publipostage PDF en ligne reste-t-il pertinent dans certains cas ?" },
       {
         type: "p",
         text: "Si vous avez besoin que plusieurs personnes collaborent en temps réel sur les mêmes modèles depuis des sites différents, une solution en ligne peut avoir du sens. Mais pour le cas le plus courant — produire un lot de documents à partir d'un tableur, vite et bien — le local est plus simple, plus rapide et plus sûr.",
@@ -134,9 +142,13 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Le publipostage Word fusionne un document texte avec des données Excel, mais ne produit pas nativement un PDF distinct et correctement nommé pour chaque destinataire — c'est ce qu'un outil dédié comme InOneShot ajoute.",
+      },
+      {
+        type: "p",
         text: "Si vous avez déjà fait du publipostage, c'était probablement dans Word, à partir d'une source Excel. C'est un outil éprouvé — mais dès qu'on veut produire de vrais PDF, un par destinataire, avec un nommage propre, ça se complique.",
       },
-      { type: "h2", text: "Ce que Word fait bien" },
+      { type: "h2", text: "Que fait bien le publipostage Word ?" },
       {
         type: "ul",
         items: [
@@ -145,7 +157,7 @@ export const posts: BlogPost[] = [
           "Gratuit si vous avez déjà la suite Office",
         ],
       },
-      { type: "h2", text: "Là où ça coince pour le PDF" },
+      { type: "h2", text: "Pourquoi le publipostage Word coince-t-il pour produire des PDF ?" },
       {
         type: "ul",
         items: [
@@ -155,12 +167,12 @@ export const posts: BlogPost[] = [
           "Champs avancés (QR code, image de signature) compliqués à intégrer proprement",
         ],
       },
-      { type: "h2", text: "Ce qu'apporte un outil dédié comme InOneShot" },
+      { type: "h2", text: "Qu'apporte un outil dédié comme InOneShot ?" },
       {
         type: "p",
         text: "InOneShot part directement d'un modèle PDF, place les champs par glisser-déposer (colonnes Excel, date, QR code, signature), génère un PDF par ligne, les nomme automatiquement et les réunit dans un ZIP — en un clic, en local. C'est précisément le maillon que Word ne couvre pas bien.",
       },
-      { type: "h2", text: "Comment choisir" },
+      { type: "h2", text: "Comment choisir entre Word et un outil dédié comme InOneShot ?" },
       {
         type: "ul",
         items: [
@@ -185,7 +197,11 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Quand on parle de publipostage, on pense d'abord aux lettres types. Pourtant, dès qu'une structure doit produire le même document pour plusieurs personnes, le publipostage PDF s'applique — et le gain de temps est souvent spectaculaire. Voici cinq cas d'usage que nous voyons revenir chez les utilisateurs d'InOneShot.",
+        text: "Le publipostage PDF consiste à générer automatiquement un document PDF personnalisé pour chaque ligne d'un fichier Excel, à partir d'un même modèle.",
+      },
+      {
+        type: "p",
+        text: "Quand on parle de publipostage, on pense d'abord aux lettres types. Pourtant, dès qu'une structure doit produire le même document pour plusieurs personnes, le publipostage PDF s'applique — et il réduit un lot de 150 documents de plusieurs heures à quelques secondes. Voici cinq cas d'usage que nous voyons revenir chez les utilisateurs d'InOneShot.",
       },
       { type: "h2", text: "1. Les attestations RH" },
       {
@@ -212,7 +228,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Pour un salon ou une conférence, chaque badge peut embarquer un QR code propre au participant (lien d'inscription, identifiant, vCard). InOneShot génère le QR code à partir d'une colonne de votre Excel et le place sur le modèle, comme n'importe quel autre champ.",
       },
-      { type: "h2", text: "Le point commun : un modèle, un tableur, un clic" },
+      { type: "h2", text: "Quel est le point commun entre ces cas d'usage du publipostage PDF ?" },
       {
         type: "ul",
         items: [
@@ -239,19 +255,23 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Préparer son fichier Excel pour un publipostage consiste à nettoyer les en-têtes, les cellules fusionnées et les formats de données avant de les relier à un modèle PDF, pour qu'un lot entier se génère sans erreur.",
+      },
+      {
+        type: "p",
         text: "Dans un publipostage PDF, le modèle est rarement le problème : c'est le fichier Excel qui cause l'essentiel des mauvaises surprises. Une colonne mal nommée, une cellule fusionnée, un format de date incohérent — et c'est tout le lot qui est à refaire. Bonne nouvelle : quelques réflexes simples éliminent la quasi-totalité des erreurs.",
       },
-      { type: "h2", text: "Une ligne d'en-têtes, une seule" },
+      { type: "h2", text: "Faut-il une seule ligne d'en-têtes dans son Excel ?" },
       {
         type: "p",
         text: "La première ligne de votre feuille doit contenir les noms de colonnes, et rien d'autre : pas de titre de document au-dessus, pas de ligne vide, pas de double en-tête. Des noms courts et explicites (« Nom », « Prénom », « Montant ») rendent le placement des champs beaucoup plus lisible au moment de préparer le modèle.",
       },
-      { type: "h2", text: "Pas de cellules fusionnées" },
+      { type: "h2", text: "Pourquoi éviter les cellules fusionnées avant un publipostage ?" },
       {
         type: "p",
         text: "Les cellules fusionnées sont l'ennemi numéro un : elles cassent la logique « une ligne = un document ». Si votre fichier en contient, défusionnez-les et recopiez la valeur dans chaque ligne concernée. Chaque ligne doit être complète et autonome.",
       },
-      { type: "h2", text: "Des données propres dans chaque colonne" },
+      { type: "h2", text: "Comment obtenir des données propres dans chaque colonne ?" },
       {
         type: "ul",
         items: [
@@ -261,12 +281,12 @@ export const posts: BlogPost[] = [
           "Harmonisez majuscules et minuscules si le champ apparaît en clair sur le document",
         ],
       },
-      { type: "h2", text: "Prévoyez une colonne pour le nommage des fichiers" },
+      { type: "h2", text: "Quelle colonne choisir pour nommer les fichiers générés ?" },
       {
         type: "p",
         text: "Cent PDF nommés « document (1) », « document (2) »… sont inutilisables. Prévoyez une colonne dont les valeurs sont uniques — numéro de facture, matricule, ou une colonne « NomPrenom » construite avec une formule — et utilisez-la pour le nommage automatique des fichiers générés.",
       },
-      { type: "h2", text: "Testez sur la première ligne avant de lancer le lot" },
+      { type: "h2", text: "Faut-il tester sur une seule ligne avant de lancer tout le lot ?" },
       {
         type: "p",
         text: "Quelle que soit la qualité de votre préparation, générez d'abord un seul document et relisez-le entièrement : bon champ au bon endroit, format de date correct, pas de texte tronqué. Ce contrôle prend trente secondes et vous évite de refaire un lot de deux cents fichiers.",
@@ -288,18 +308,22 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "PDF mail merge means combining a fixed template with the data from an Excel file to automatically generate one unique PDF per row.",
+      },
+      {
+        type: "p",
         text: "You have a polished document template — a certificate, an invoice, a letter — and an Excel file with a hundred rows. The goal: one PDF per row, with the right information in the right place. Done by hand, it's one of the most tedious and error-prone tasks there is.",
       },
       {
         type: "p",
         text: "The good news: this is exactly the kind of repetitive work a computer does better than you. It's called PDF mail merge, and here's how to automate it end to end.",
       },
-      { type: "h2", text: "How PDF mail merge works" },
+      { type: "h2", text: "What is PDF mail merge?" },
       {
         type: "p",
         text: "A mail merge combines a template (the fixed layout) with a data source (your spreadsheet, which varies). Each row of the spreadsheet becomes one document: the “Name” column fills the name field, the “Amount” column fills the amount field, and so on — repeated automatically for every row.",
       },
-      { type: "h2", text: "The manual way (and what it really costs)" },
+      { type: "h2", text: "Why does the manual way of doing a PDF mail merge cost you so much?" },
       {
         type: "ul",
         items: [
@@ -312,12 +336,12 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Across a hundred documents, that's easily half a day lost, with a real risk of mistakes: a wrong name, a shifted amount, a mislabeled file.",
       },
-      { type: "h2", text: "The automatic way with InOneShot" },
+      { type: "h2", text: "How do you automate PDF mail merge with InOneShot?" },
       {
         type: "p",
         text: "InOneShot is a Windows app built for PDF mail merge. You import a PDF template and an Excel file, place your fields by drag and drop (spreadsheet columns, today's date, a signature image, a QR code), then click once: the app generates one PDF per row, names each file automatically, and delivers a ZIP ready to send. Everything runs locally on your computer — your data never leaves your machine.",
       },
-      { type: "h2", text: "Tips for a clean result" },
+      { type: "h2", text: "What tips help you get a clean result?" },
       {
         type: "ul",
         items: [
@@ -343,9 +367,13 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Online PDF mail merge means uploading your template and your data to a third-party server to generate the documents in the cloud, instead of processing them on your own computer.",
+      },
+      {
+        type: "p",
         text: "Most PDF merge tools work online: you upload your template and your data file to a server, processing happens in the cloud, and you download the results. Convenient — but far from trivial when your documents contain personal data.",
       },
-      { type: "h2", text: "What “online” actually means" },
+      { type: "h2", text: "Is online PDF mail merge safe for HR data?" },
       {
         type: "ul",
         items: [
@@ -354,7 +382,7 @@ export const posts: BlogPost[] = [
           "Many of these services are subscription-based, with volume caps",
         ],
       },
-      { type: "h2", text: "Why local is usually the right call" },
+      { type: "h2", text: "Why is local PDF mail merge usually the right call?" },
       {
         type: "p",
         text: "For HR teams, legal professionals, accountants, or any organization handling sensitive data, local processing is as much a compliance argument (GDPR) as a peace-of-mind one: your files never leave your machine. No server, no cloud, no wondering where your data ends up.",
@@ -363,7 +391,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "InOneShot was designed around this principle: the entire mail merge runs on your computer, offline. And since there's no cloud infrastructure to pay for, the pricing is a one-time purchase instead of a subscription.",
       },
-      { type: "h2", text: "When the cloud still makes sense" },
+      { type: "h2", text: "Does online PDF mail merge still make sense in some cases?" },
       {
         type: "p",
         text: "If several people need to collaborate on the same templates in real time from different locations, an online solution can be worth it. But for the most common case — producing a batch of documents from a spreadsheet, quickly and reliably — local is simpler, faster, and safer.",
@@ -381,9 +409,13 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Word's mail merge combines a text document with Excel data, but it does not natively produce a separate, properly named PDF for each recipient — that's the gap a dedicated tool like InOneShot fills.",
+      },
+      {
+        type: "p",
         text: "If you've ever run a mail merge, it was probably in Microsoft Word with an Excel data source. It's a proven tool — but the moment you need real PDFs, one per recipient, with clean file names, things get complicated.",
       },
-      { type: "h2", text: "What Word does well" },
+      { type: "h2", text: "What does Word's mail merge do well?" },
       {
         type: "ul",
         items: [
@@ -392,7 +424,7 @@ export const posts: BlogPost[] = [
           "Free if you already own the Office suite",
         ],
       },
-      { type: "h2", text: "Where it falls short for PDF" },
+      { type: "h2", text: "Where does Word's mail merge fall short for PDF output?" },
       {
         type: "ul",
         items: [
@@ -402,12 +434,12 @@ export const posts: BlogPost[] = [
           "Advanced fields like QR codes or signature images are painful to integrate",
         ],
       },
-      { type: "h2", text: "What a dedicated tool like InOneShot adds" },
+      { type: "h2", text: "What does a dedicated tool like InOneShot add?" },
       {
         type: "p",
         text: "InOneShot starts directly from a PDF template, lets you place fields by drag and drop (Excel columns, date, QR code, signature), generates one PDF per row, names every file automatically, and bundles the batch into a ZIP — in one click, entirely on your machine. That's precisely the link in the chain Word doesn't cover well.",
       },
-      { type: "h2", text: "How to choose" },
+      { type: "h2", text: "How do you choose between Word and a dedicated PDF tool?" },
       {
         type: "ul",
         items: [
@@ -432,19 +464,23 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "InOneShot 1.1.0 est une mise à jour de l'application de publipostage PDF qui ajoute le mode sombre, une interface bilingue, l'import CSV, la fusion en un seul PDF, le glisser-déposer et une version Linux.",
+      },
+      {
+        type: "p",
         text: "InOneShot évolue au fil de vos retours plutôt que selon une feuille de route figée à l'avance. La version 1.1.0 regroupe plusieurs demandes revenues souvent ces dernières semaines : plus de confort visuel, plus de formats de données acceptés, et un fichier de sortie plus simple à utiliser. Voici ce qui change concrètement.",
       },
-      { type: "h2", text: "Mode sombre et interface bilingue FR/EN" },
+      { type: "h2", text: "Qu'apportent le mode sombre et l'interface bilingue FR/EN ?" },
       {
         type: "p",
         text: "Un bouton dans la barre du haut bascule l'application en mode sombre, et un autre change la langue de l'interface entre français et anglais. Les deux réglages sont mémorisés d'une session à l'autre — pas de détection automatique surprenante selon les réglages système, vous choisissez et ça reste.",
       },
-      { type: "h2", text: "Fusion en un seul PDF, en plus du ZIP" },
+      { type: "h2", text: "Comment fonctionne la fusion en un seul PDF, en plus du ZIP ?" },
       {
         type: "p",
         text: "Jusqu'ici, InOneShot produisait un PDF par ligne du tableur, livrés dans un ZIP. C'est toujours le cas par défaut, mais une nouvelle option de sortie permet de fusionner directement tous les documents générés en un seul fichier PDF — pratique pour un lot à imprimer d'un coup ou à archiver comme un seul document plutôt qu'une centaine de fichiers séparés.",
       },
-      { type: "h2", text: "Import CSV et glisser-déposer" },
+      { type: "h2", text: "Que changent l'import CSV et le glisser-déposer ?" },
       {
         type: "ul",
         items: [
@@ -454,7 +490,7 @@ export const posts: BlogPost[] = [
           "L'aperçu se parcourt maintenant ligne par ligne, pour vérifier le rendu de plusieurs entrées avant de lancer le lot complet",
         ],
       },
-      { type: "h2", text: "InOneShot arrive sur Linux" },
+      { type: "h2", text: "InOneShot est-il disponible sur Linux ?" },
       {
         type: "p",
         text: "InOneShot est désormais disponible sur Linux via le Snap Store, avec les mêmes fonctionnalités que la version Windows — y compris le glisser-déposer. C'est la même logique que VoxCut, notre autre application : plus question d'être enfermé sur un seul système d'exploitation quand les mêmes outils peuvent tourner partout, en local.",
@@ -476,19 +512,23 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "InOneShot 1.1.0 is an update to the PDF mail merge app that adds dark mode, a bilingual interface, CSV import, single-file PDF merging, drag-and-drop, and a Linux release.",
+      },
+      {
+        type: "p",
         text: "InOneShot evolves based on how people actually use it, not a roadmap fixed in advance. Version 1.1.0 bundles several requests that kept coming up over the past few weeks: more visual comfort, more accepted data formats, and a simpler output file. Here's what actually changed.",
       },
-      { type: "h2", text: "Dark mode and a bilingual FR/EN interface" },
+      { type: "h2", text: "What do dark mode and the bilingual FR/EN interface add?" },
       {
         type: "p",
         text: "A button in the top bar switches the app to dark mode, and another switches the interface language between French and English. Both settings are remembered across sessions — no surprise auto-detection based on system settings, you choose and it stays.",
       },
-      { type: "h2", text: "Merge into a single PDF, on top of the ZIP" },
+      { type: "h2", text: "How does merging into a single PDF work, on top of the ZIP?" },
       {
         type: "p",
         text: "Until now, InOneShot produced one PDF per spreadsheet row, delivered in a ZIP. That's still the default, but a new output option lets you merge all the generated documents directly into a single PDF file — handy for a batch you want to print in one go or archive as one document instead of a hundred separate files.",
       },
-      { type: "h2", text: "CSV import and drag & drop" },
+      { type: "h2", text: "What do CSV import and drag & drop change?" },
       {
         type: "ul",
         items: [
@@ -498,7 +538,7 @@ export const posts: BlogPost[] = [
           "The preview can now be browsed row by row, to check how several entries render before running the full batch",
         ],
       },
-      { type: "h2", text: "InOneShot is now on Linux" },
+      { type: "h2", text: "Is InOneShot now available on Linux?" },
       {
         type: "p",
         text: "InOneShot is now available on Linux via the Snap Store, with the same feature set as the Windows version — including drag and drop. Same logic as VoxCut, our other app: no reason to be locked to a single operating system when the same tools can run everywhere, locally.",
@@ -520,14 +560,18 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "InOneShot était jusqu'ici une application de bureau, pour Windows et Linux. C'est maintenant aussi une application Android, disponible sur le Google Play Store : le même principe de publipostage PDF, mais accessible depuis votre téléphone ou votre tablette.",
+        text: "InOneShot pour Android est la version mobile de l'application de publipostage PDF : elle permet de générer un lot de PDF personnalisés depuis un téléphone ou une tablette, avec le même principe que la version bureau.",
       },
-      { type: "h2", text: "Pourquoi une version Android" },
       {
         type: "p",
-        text: "Beaucoup d'utilisateurs préparent leurs documents sur ordinateur mais veulent pouvoir relancer un lot, vérifier un rendu ou dépanner une génération de PDF sans être devant un poste fixe. La version Android répond à ce besoin : importer un modèle et un fichier de données, placer ses champs, générer le lot — directement depuis un appareil mobile.",
+        text: "InOneShot était jusqu'ici une application de bureau, pour Windows et Linux. C'est maintenant aussi une application Android, disponible sur le Google Play Store : le même principe de publipostage PDF, mais accessible depuis votre téléphone ou votre tablette.",
       },
-      { type: "h2", text: "Ce qui ne change pas" },
+      { type: "h2", text: "Pourquoi une version Android d'InOneShot ?" },
+      {
+        type: "p",
+        text: "Un usage courant : préparer ses documents sur ordinateur, mais vouloir relancer un lot, vérifier un rendu ou dépanner une génération de PDF sans être devant un poste fixe. La version Android répond à ce besoin : importer un modèle et un fichier de données, placer ses champs, générer le lot — directement depuis un appareil mobile.",
+      },
+      { type: "h2", text: "Qu'est-ce qui ne change pas sur la version Android ?" },
       {
         type: "ul",
         items: [
@@ -536,7 +580,7 @@ export const posts: BlogPost[] = [
           "Un ZIP de PDF prêt à partager en sortie",
         ],
       },
-      { type: "h2", text: "Télécharger InOneShot sur Android" },
+      { type: "h2", text: "Comment télécharger InOneShot sur Android ?" },
       {
         type: "p",
         text: "L'application est disponible dès maintenant, gratuitement, sur le Google Play Store : cherchez « InOneShot » ou suivez le lien direct depuis la page d'accueil de ce site.",
@@ -554,14 +598,18 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "InOneShot has been a desktop app so far, for Windows and Linux. It's now also an Android app, available on the Google Play Store: the same PDF mail merge workflow, now accessible from your phone or tablet.",
+        text: "InOneShot for Android is the mobile version of the PDF mail merge app: it lets you generate a batch of personalized PDFs from a phone or tablet, using the same principle as the desktop app.",
       },
-      { type: "h2", text: "Why an Android version" },
       {
         type: "p",
-        text: "Many users prepare their documents on a computer but want to be able to re-run a batch, check a render, or troubleshoot a PDF generation without sitting at a desk. The Android version covers that: import a template and a data file, place your fields, generate the batch — straight from a mobile device.",
+        text: "InOneShot has been a desktop app so far, for Windows and Linux. It's now also an Android app, available on the Google Play Store: the same PDF mail merge workflow, now accessible from your phone or tablet.",
       },
-      { type: "h2", text: "What stays the same" },
+      { type: "h2", text: "Why an Android version of InOneShot?" },
+      {
+        type: "p",
+        text: "A common case: preparing documents on a computer, but needing to re-run a batch, check a render, or troubleshoot a PDF generation without sitting at a desk. The Android version covers that: import a template and a data file, place your fields, generate the batch — straight from a mobile device.",
+      },
+      { type: "h2", text: "What stays the same on the Android version?" },
       {
         type: "ul",
         items: [
@@ -570,7 +618,7 @@ export const posts: BlogPost[] = [
           "A ready-to-share ZIP of PDFs as output",
         ],
       },
-      { type: "h2", text: "Download InOneShot on Android" },
+      { type: "h2", text: "How do you download InOneShot on Android?" },
       {
         type: "p",
         text: 'The app is available now, for free, on the Google Play Store: search for "InOneShot" or follow the direct link from this site\'s homepage.',
@@ -581,21 +629,25 @@ export const posts: BlogPost[] = [
     slug: "generer-factures-pdf-masse-excel",
     title: "Générer des factures PDF personnalisées en masse depuis un tableur Excel",
     description:
-      "Pour les indépendants, associations et petites entreprises, automatiser l'édition de factures en série grâce au publipostage PDF est un gain de temps considérable.",
+      "Pour les indépendants, associations et petites entreprises, automatiser l'édition de factures en série grâce au publipostage PDF réduit un lot de 150 factures de plusieurs heures à quelques minutes.",
     date: "2026-08-30",
     author: "Équipe InOneShot",
     lang: "fr",
     content: [
       {
         type: "p",
+        text: "Générer des factures PDF en masse depuis Excel consiste à relier un modèle de facture unique aux lignes d'un tableur pour produire automatiquement une facture PDF distincte par client, sans ressaisie.",
+      },
+      {
+        type: "p",
         text: "La facturation est le nerf de la guerre de toute activité, mais son traitement manuel peut vite devenir chronophage. Si vous gérez vos ventes, cotisations ou prestations dans un fichier Excel, il y a de fortes chances que vous passiez un temps précieux à copier-coller ces informations dans des modèles Word ou PDF.",
       },
-      { type: "h2", text: "Le problème de la facturation manuelle" },
+      { type: "h2", text: "Quel est le problème de la facturation manuelle ?" },
       {
         type: "p",
         text: "Créer une facture demande de la précision : erreur sur le montant, mauvais numéro de facture, faute de frappe dans l'adresse du client... Les risques sont nombreux. Sans compter la tâche ingrate d'exporter chaque document en PDF et de le nommer correctement pour l'archivage.",
       },
-      { type: "h2", text: "L'approche publipostage PDF" },
+      { type: "h2", text: "Comment fonctionne l'approche publipostage PDF pour les factures ?" },
       {
         type: "p",
         text: "Avec un outil comme InOneShot, votre tableau Excel devient une base de données automatisée. Vous concevez un modèle de facture PDF unique (avec votre logo, vos mentions légales, etc.). Ensuite, il suffit de placer les champs (Nom du client, Montant HT, TVA, Total TTC) sur le modèle.",
@@ -608,7 +660,7 @@ export const posts: BlogPost[] = [
           "Les fichiers générés sont nommés automatiquement (ex: Facture_2026-08_ClientA.pdf).",
         ],
       },
-      { type: "h2", text: "Gagnez des heures chaque fin de mois" },
+      { type: "h2", text: "Combien d'heures peut-on gagner chaque fin de mois ?" },
       {
         type: "p",
         text: "Une fois le modèle configuré, la génération de 10 ou 500 factures prend exactement le même temps : un seul clic. Le traitement se faisant en local, les données financières de votre entreprise restent confidentielles sur votre ordinateur.",
@@ -626,14 +678,18 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Generating bulk PDF invoices from Excel means linking a single invoice template to the rows of a spreadsheet so each row automatically produces its own PDF invoice, with no retyping.",
+      },
+      {
+        type: "p",
         text: "Invoicing is the lifeblood of any business, but manual processing can quickly consume your time. If you track sales, memberships, or services in an Excel file, chances are you spend hours copy-pasting that data into Word or PDF templates.",
       },
-      { type: "h2", text: "The problem with manual invoicing" },
+      { type: "h2", text: "What is the problem with manual invoicing?" },
       {
         type: "p",
         text: "Creating an invoice requires precision. A mistake in the amount, an incorrect invoice number, a typo in the client's address... the risks are everywhere. Not to mention the tedious task of exporting each document to PDF and naming it properly for your records.",
       },
-      { type: "h2", text: "The PDF mail merge approach" },
+      { type: "h2", text: "How does the PDF mail merge approach work for invoices?" },
       {
         type: "p",
         text: "With a tool like InOneShot, your Excel spreadsheet acts as an automated database. You design a single PDF invoice template (with your logo, legal terms, etc.). Then, you drag and drop fields (Client Name, Amount, Tax, Total) onto the layout.",
@@ -646,7 +702,7 @@ export const posts: BlogPost[] = [
           "Generated files are automatically named (e.g., Invoice_2026-08_ClientA.pdf).",
         ],
       },
-      { type: "h2", text: "Save hours at the end of every month" },
+      { type: "h2", text: "How many hours can you save at the end of every month?" },
       {
         type: "p",
         text: "Once the template is configured, generating 10 or 500 invoices takes exactly the same amount of time: one click. And because processing is strictly local, your company's financial data remains private on your computer.",
@@ -664,14 +720,18 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Ajouter un QR code personnalisé sur des documents générés en masse consiste à relier une colonne de votre Excel (lien, identifiant, vCard) à un champ QR code du modèle, pour que chaque PDF reçoive automatiquement un code unique et valide.",
+      },
+      {
+        type: "p",
         text: "L'utilisation de QR codes sur des documents physiques ou numériques est devenue incontournable. Que ce soit pour un billet d'événement, un badge de conférence, ou une carte de membre, un QR code permet de relier instantanément le document à une action numérique.",
       },
-      { type: "h2", text: "Un QR code unique par personne" },
+      { type: "h2", text: "Comment obtenir un QR code unique par personne ?" },
       {
         type: "p",
         text: "La difficulté majeure réside dans la personnalisation. Comment générer 200 invitations avec un QR code différent sur chacune, sans utiliser des générateurs en ligne fastidieux et assembler le tout manuellement ?",
       },
-      { type: "h2", text: "L'automatisation avec InOneShot" },
+      { type: "h2", text: "Comment automatiser l'ajout de QR codes avec InOneShot ?" },
       {
         type: "p",
         text: "InOneShot intègre un générateur de QR codes natif. Dans votre fichier Excel, préparez une colonne contenant le lien ou le texte que le QR code doit représenter (un lien vers un formulaire, un identifiant unique, ou une vCard).",
@@ -680,7 +740,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Lors de la configuration du modèle, vous faites simplement glisser le champ \"QR code\" et vous le reliez à cette colonne. Lors de la génération, InOneShot dessinera instantanément un QR code valide et unique sur chaque PDF.",
       },
-      { type: "h2", text: "Cas d'usage fréquents" },
+      { type: "h2", text: "Quels sont les cas d'usage fréquents du QR code personnalisé ?" },
       {
         type: "ul",
         items: [
@@ -702,14 +762,18 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Adding a personalized QR code to bulk-generated documents means linking a column of your Excel file (a link, an ID, a vCard) to a QR code field on the template, so every PDF automatically gets its own valid, unique code.",
+      },
+      {
+        type: "p",
         text: "QR codes on physical or digital documents have become essential. Whether it's an event ticket, a conference badge, or a membership card, a QR code instantly connects a printed document to a digital action.",
       },
-      { type: "h2", text: "A unique QR code per person" },
+      { type: "h2", text: "How do you get a unique QR code per person?" },
       {
         type: "p",
         text: "The main challenge is personalization. How do you generate 200 invitations with a different QR code on each, without relying on tedious online generators and assembling everything by hand?",
       },
-      { type: "h2", text: "Automation with InOneShot" },
+      { type: "h2", text: "How do you automate QR codes with InOneShot?" },
       {
         type: "p",
         text: "InOneShot includes a native QR code generator. In your Excel file, just prepare a column containing the link or text the QR code should represent (a URL, a unique ID, or vCard info).",
@@ -718,7 +782,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "When setting up your template, simply drag and drop the \"QR Code\" field and link it to that column. During generation, InOneShot will instantly draw a valid, unique QR code onto every single PDF.",
       },
-      { type: "h2", text: "Common Use Cases" },
+      { type: "h2", text: "What are the most common use cases?" },
       {
         type: "ul",
         items: [
@@ -741,13 +805,17 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "Le publipostage RH consiste à relier un tableur exporté du SIRH à un modèle PDF unique (contrat, convocation, badge) pour générer automatiquement un document nominatif par collaborateur, sans copier-coller.",
+      },
+      {
+        type: "p",
         text: "Dans un service RH, la production documentaire ne s'arrête jamais. Avenants au contrat en janvier, convocations aux entretiens annuels au printemps, badges pour les nouveaux arrivants toute l'année, attestations diverses à la demande. À chaque fois, le même schéma : une trame identique pour tout le monde, et une poignée d'informations qui changent d'une personne à l'autre.",
       },
       {
         type: "p",
         text: "C'est précisément la définition du publipostage. Pourtant, dans beaucoup d'entreprises, ces documents se fabriquent encore un par un, à coups de copier-coller depuis un export du SIRH. Voici comment sortir de cette boucle.",
       },
-      { type: "h2", text: "Trois familles de documents, un seul mécanisme" },
+      { type: "h2", text: "Trois familles de documents RH, un seul mécanisme ?" },
       {
         type: "p",
         text: "Les documents RH les plus chronophages se ressemblent tous structurellement : un modèle fixe, validé par le juridique ou la direction, et des champs variables tirés d'un tableau de collaborateurs.",
@@ -764,7 +832,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Une fois qu'on voit ce point commun, il devient évident qu'un seul outil peut couvrir les trois. Le modèle change, la méthode reste la même.",
       },
-      { type: "h2", text: "Le vrai coût de la méthode manuelle" },
+      { type: "h2", text: "Quel est le vrai coût de la méthode manuelle en RH ?" },
       {
         type: "p",
         text: "Comptez deux à trois minutes par document quand tout va bien : ouvrir la trame, recopier cinq ou six valeurs, relire, exporter en PDF, renommer le fichier pour qu'il soit classable. Sur une campagne de 150 convocations, cela représente près d'une journée entière de travail, entièrement consacrée à de la recopie.",
@@ -773,7 +841,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Le problème n'est pas seulement le temps perdu. C'est aussi le risque d'erreur : une date d'entretien décalée d'une ligne, un montant qui appartient au collaborateur précédent, un nom mal orthographié sur un contrat. Sur des documents à portée contractuelle, ces fautes coûtent bien plus cher que les minutes économisées.",
       },
-      { type: "h2", text: "La donnée RH ne devrait pas quitter l'entreprise" },
+      { type: "h2", text: "Pourquoi la donnée RH ne devrait-elle pas quitter l'entreprise ?" },
       {
         type: "p",
         text: "C'est le point qui distingue le publipostage RH de tous les autres. Un fichier de paie, une liste de salariés avec leurs rémunérations ou leurs coordonnées personnelles constituent des données à caractère personnel sensibles au sens du RGPD. Les téléverser sur un service en ligne pour générer des PDF, c'est créer un transfert de données qu'il faudra documenter, justifier et, le cas échéant, expliquer à un délégué à la protection des données.",
@@ -782,7 +850,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Un outil qui travaille en local règle la question à la racine : le tableur et les PDF produits ne quittent jamais le poste de travail. Il n'y a pas de sous-traitant à inscrire au registre des traitements, pas de serveur tiers à auditer, pas de fichier de paie oublié sur une plateforme.",
       },
-      { type: "h2", text: "Mettre en place une campagne, concrètement" },
+      { type: "h2", text: "Comment mettre en place une campagne de publipostage RH, concrètement ?" },
       {
         type: "p",
         text: "Le principe tient en trois temps. D'abord, exportez depuis votre SIRH un tableur contenant une ligne par collaborateur et une colonne par information variable. Ensuite, ouvrez votre trame PDF déjà validée et positionnez les champs par glisser-déposer, en reliant chaque emplacement à la colonne correspondante. Enfin, lancez la génération : vous obtenez un PDF par ligne, nommé automatiquement, plus une archive ZIP prête à être distribuée.",
@@ -791,7 +859,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "L'intérêt réel apparaît à la deuxième campagne. Le modèle se sauvegarde et se réutilise : la campagne de convocations de l'an prochain ne demandera plus que le nouvel export du SIRH et un clic. Le travail de mise en place ne se paie qu'une fois.",
       },
-      { type: "h2", text: "Quelques précautions avant de lancer" },
+      { type: "h2", text: "Quelles précautions prendre avant de lancer le lot ?" },
       {
         type: "ul",
         items: [
@@ -819,13 +887,17 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
+        text: "HR mail merge means linking a spreadsheet exported from your HRIS to a single PDF template (contract, invitation, badge) to automatically generate one personalized document per employee, with no copy-pasting.",
+      },
+      {
+        type: "p",
         text: "In an HR department, document production never really stops. Contract amendments in January, annual review invitations in the spring, badges for new joiners all year round, various certificates on request. Every time, the same pattern: one identical layout for everyone, and a handful of details that change from one person to the next.",
       },
       {
         type: "p",
         text: "That is the textbook definition of a mail merge. Yet in many companies these documents are still produced one at a time, by copy-pasting from an HRIS export. Here is how to break out of that loop.",
       },
-      { type: "h2", text: "Three document families, one single mechanism" },
+      { type: "h2", text: "Three HR document families, one single mechanism?" },
       {
         type: "p",
         text: "The most time-consuming HR documents are structurally identical: a fixed template, signed off by legal or management, and variable fields pulled from a list of employees.",
@@ -842,7 +914,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Once you see what they have in common, it becomes obvious that a single tool can cover all three. The template changes; the method does not.",
       },
-      { type: "h2", text: "The real cost of doing it by hand" },
+      { type: "h2", text: "What is the real cost of doing HR mail merge by hand?" },
       {
         type: "p",
         text: "Count two to three minutes per document on a good day: open the template, retype five or six values, proofread, export to PDF, rename the file so it can actually be filed. Across a campaign of 150 invitations, that adds up to nearly a full working day spent entirely on retyping.",
@@ -851,7 +923,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Wasted time is not the only issue. There is also the risk of error: an interview date shifted by one row, an amount belonging to the previous employee, a misspelled name on a contract. On documents with contractual weight, those mistakes cost far more than the minutes saved.",
       },
-      { type: "h2", text: "Employee data should not leave the company" },
+      { type: "h2", text: "Why should employee data not leave the company?" },
       {
         type: "p",
         text: "This is what sets HR mail merge apart from every other use case. A payroll file, or a list of employees with their compensation and home addresses, is sensitive personal data under GDPR. Uploading it to an online service to generate PDFs creates a data transfer that must be documented, justified, and possibly explained to a data protection officer.",
@@ -860,7 +932,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "A tool that works locally removes the question entirely: the spreadsheet and the resulting PDFs never leave the workstation. There is no processor to add to your records, no third-party server to audit, no payroll file left sitting on a platform.",
       },
-      { type: "h2", text: "Setting up a campaign, in practice" },
+      { type: "h2", text: "How do you set up an HR mail merge campaign, in practice?" },
       {
         type: "p",
         text: "The principle comes down to three steps. First, export a spreadsheet from your HRIS with one row per employee and one column per variable field. Then open your approved PDF template and place the fields by drag and drop, linking each position to the matching column. Finally, run the generation: you get one PDF per row, named automatically, plus a ZIP archive ready to distribute.",
@@ -869,7 +941,7 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "The real payoff shows up on the second campaign. The template can be saved and reused, so next year's invitation run only needs a fresh HRIS export and one click. The setup work is paid for once.",
       },
-      { type: "h2", text: "A few checks before you hit generate" },
+      { type: "h2", text: "What should you check before you hit generate?" },
       {
         type: "ul",
         items: [

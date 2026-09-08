@@ -126,6 +126,7 @@ const t = {
       btnLinuxTar: "Linux (.tar.gz)",
       btnSnap: "Linux (Snap Store)",
       subText: "Free — no credit card required",
+      stat: "Example: a batch of 150 personalized PDFs, generated in under a minute — versus nearly a full day of manual copy-pasting.",
       badges: [
         "100% local — GDPR",
         "One-time payment — no subscription",
@@ -387,6 +388,7 @@ const t = {
       btnLinuxTar: "Linux (.tar.gz)",
       btnSnap: "Linux (Snap Store)",
       subText: "Gratuit — aucune carte bancaire requise",
+      stat: "Exemple : un lot de 150 PDF personnalisés généré en moins d'une minute — contre près d'une journée de copier-coller manuel.",
       badges: [
         "100% local — RGPD",
         "Paiement unique — sans abonnement",
@@ -1079,6 +1081,9 @@ function Index() {
                   );
                 })}
               </div>
+            </Reveal>
+            <Reveal delay={280}>
+              <p className="mt-4 max-w-xl text-sm font-medium text-brand-deep">{c.hero.stat}</p>
             </Reveal>
           </div>
 
