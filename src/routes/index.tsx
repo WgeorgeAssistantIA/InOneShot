@@ -656,6 +656,61 @@ export const Route = createFileRoute("/")({
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: "canonical", href: "https://www.inoneshot.fr/" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "InOneShot",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Windows, Android",
+          description:
+            "Publipostage PDF : générez un PDF personnalisé par ligne d'un fichier Excel, en un clic. 100% local.",
+          url: "https://www.inoneshot.fr/",
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "EUR",
+            lowPrice: "0",
+            highPrice: "39",
+            offerCount: "2",
+            offers: [
+              { "@type": "Offer", name: "InOneShot Free", price: "0", priceCurrency: "EUR" },
+              { "@type": "Offer", name: "InOneShot Pro", price: "39", priceCurrency: "EUR" },
+            ],
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "La Fabrik Numérique",
+          url: "https://www.inoneshot.fr/",
+          logo: "https://www.inoneshot.fr/favicon.ico",
+          sameAs: [
+            PLAY_STORE_URL,
+            SNAP_URL,
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: t.fr.faq.items.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.a,
+            },
+          })),
+        }),
+      },
+    ],
   }),
   component: Index,
 });
