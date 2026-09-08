@@ -1,0 +1,17 @@
+# InOneShot
+
+> InOneShot is a Windows and Android app for PDF mail merge: import a PDF template and an Excel spreadsheet, place fields (columns, dates, signatures, QR codes) by drag-and-drop directly on the PDF preview, and generate every personalized document in one click.
+
+## Main pages
+- [Home](https://www.inoneshot.fr/): Product overview, features, pricing, download.
+- [Blog](https://www.inoneshot.fr/blog): Guides on PDF mail merge, Excel preparation, use cases.
+
+## Key facts
+- Platforms: Windows (desktop), Android (Google Play).
+- Use case: generate hundreds of personalized PDFs (certificates, invoices, invitations) from a single Excel file.
+- Processing is local; data never leaves the user's device.
+- Free tier available; Pro license unlocks unlimited batches and advanced fields.
+- Built and maintained by La Fabrik Numérique.
+
+## Contact
+- Website: https://www.inoneshot.fr
