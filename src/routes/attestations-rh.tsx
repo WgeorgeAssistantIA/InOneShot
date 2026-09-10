@@ -121,6 +121,8 @@ const t = {
       subtitle:
         "From a single PDF template and an Excel file, place your fields by drag & drop, then generate one PDF per row plus a ready-to-send ZIP. No cloud, no subscription.",
       btnPrimary: "Download free for Windows",
+      smartscreenNote:
+        "Windows may show a SmartScreen warning since the app is still new. Click “More info” then “Run anyway” to continue — the installer is safe.",
       btnPortable: "Portable version (.zip)",
       btnLinux: "Linux (.AppImage)",
       btnLinuxTar: "Linux (.tar.gz)",
@@ -382,6 +384,8 @@ const t = {
       subtitle:
         "La solution de publipostage sécurisée pour les RH, Notaires et PME. Générez des centaines de contrats, attestations et factures en un clic depuis votre Excel. 0% Cloud, sans abonnement.",
       btnPrimary: "Télécharger gratuitement pour Windows",
+      smartscreenNote:
+        "Windows peut afficher un avertissement SmartScreen car l'appli est encore peu téléchargée. Cliquez sur « Informations complémentaires » puis « Exécuter quand même » pour continuer — l'installeur est sûr.",
       btnPortable: "Version portable (.zip)",
       btnLinux: "Linux (.AppImage)",
       btnLinuxTar: "Linux (.tar.gz)",
@@ -971,14 +975,19 @@ function Index() {
             </Reveal>
             <Reveal delay={180}>
               <div className="mt-8 grid grid-cols-2 gap-3">
-                <a
-                  href={WINDOWS_INSTALLER_URL}
-                  onClick={trackPortableDownload}
-                  className="group col-span-2 inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep hover:shadow-lg hover:shadow-primary/25"
-                >
-                  <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-                  {c.hero.btnPrimary}
-                </a>
+                <div className="group/win relative col-span-2 inline-flex">
+                  <a
+                    href={WINDOWS_INSTALLER_URL}
+                    onClick={trackPortableDownload}
+                    className="group inline-flex w-full cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep hover:shadow-lg hover:shadow-primary/25"
+                  >
+                    <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                    {c.hero.btnPrimary}
+                  </a>
+                  <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-2 hidden w-72 -translate-x-1/2 rounded-lg border border-border bg-popover px-3 py-2 text-xs leading-relaxed text-popover-foreground opacity-0 shadow-lg transition-opacity duration-150 sm:block sm:group-hover/win:opacity-100">
+                    {c.hero.smartscreenNote}
+                  </div>
+                </div>
                 <a
                   href={STORE_URL}
                   target="_blank"
