@@ -8,6 +8,8 @@ export type BlogPost = {
   readingTime: number; // minutes
   // Optional contextual link to a landing page, rendered above the generic CTA
   related?: { to: string; label: string };
+  // Slug of the equivalent article in the other language, for hreflang alternates
+  altLangSlug?: string;
   // Content as array of blocks for simple rendering
   content: Array<
     { type: "p"; text: string } | { type: "h2"; text: string } | { type: "ul"; items: string[] }
@@ -31,6 +33,7 @@ const make = (p: Omit<BlogPost, "readingTime">): BlogPost => ({
 export const posts: BlogPost[] = [
   make({
     slug: "publipostage-pdf-depuis-excel",
+    altLangSlug: "generate-pdfs-from-excel",
     title:
       "Comment générer des centaines de PDF personnalisés depuis un Excel (sans copier-coller)",
     description:
@@ -91,6 +94,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "publipostage-pdf-local-vs-en-ligne",
+    altLangSlug: "local-pdf-mail-merge-vs-online",
     title: "Publipostage PDF : pourquoi le faire en local plutôt qu'en ligne",
     description:
       "Les outils de publipostage en ligne demandent d'envoyer vos données dans le cloud. Pour des documents sensibles (RH, factures, juridique), traiter en local change tout.",
@@ -133,6 +137,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "publipostage-word-vs-inoneshot",
+    altLangSlug: "word-mail-merge-vs-pdf-tool",
     title: "Word ou InOneShot : quelle solution pour fusionner Excel et PDF ?",
     description:
       "Le publipostage de Word existe depuis toujours. Voici ce qu'il fait bien, ses limites pour le PDF, et quand un outil dédié vous fera gagner du temps.",
@@ -299,6 +304,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "generate-pdfs-from-excel",
+    altLangSlug: "publipostage-pdf-depuis-excel",
     title: "How to Generate Hundreds of Personalized PDFs from an Excel File",
     description:
       "Certificates, invoices, letters, diplomas: here's how to turn every row of your spreadsheet into its own PDF — automatically, without copy-pasting a single value.",
@@ -358,6 +364,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "local-pdf-mail-merge-vs-online",
+    altLangSlug: "publipostage-pdf-local-vs-en-ligne",
     title: "PDF Mail Merge: Why Local Processing Beats Online Tools",
     description:
       "Online mail merge tools require uploading your data to the cloud. For sensitive documents — HR, invoices, legal — processing everything locally changes the game.",
@@ -400,6 +407,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "word-mail-merge-vs-pdf-tool",
+    altLangSlug: "publipostage-word-vs-inoneshot",
     title: "Word Mail Merge vs. a Dedicated PDF Tool: Which One Do You Need?",
     description:
       "Word's mail merge has been around forever. Here's what it does well, where it falls short for PDF output, and when a dedicated tool will save you real time.",
@@ -455,6 +463,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "inoneshot-1-1-0-nouveautes",
+    altLangSlug: "inoneshot-1-1-0-whats-new",
     title: "InOneShot 1.1.0 : mode sombre, interface FR/EN, fusion PDF, glisser-déposer — et Linux",
     description:
       "La mise à jour 1.1.0 d'InOneShot apporte le mode sombre, une interface bilingue, l'import CSV, la fusion en un seul PDF, le glisser-déposer de fichiers, et une version Linux.",
@@ -503,6 +512,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "inoneshot-1-1-0-whats-new",
+    altLangSlug: "inoneshot-1-1-0-nouveautes",
     title: "InOneShot 1.1.0: Dark Mode, Bilingual UI, PDF Merging, Drag & Drop — and Linux",
     description:
       "InOneShot 1.1.0 brings dark mode, a bilingual interface, CSV import, merging generated PDFs into a single file, drag-and-drop file handling, and a Linux release.",
@@ -551,6 +561,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "inoneshot-disponible-sur-android",
+    altLangSlug: "inoneshot-now-available-on-android",
     title: "InOneShot est maintenant disponible sur Android",
     description:
       "Le publipostage PDF d'InOneShot passe sur mobile : générez vos lots de PDF personnalisés depuis votre téléphone ou votre tablette, avec Google Play.",
@@ -589,6 +600,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "inoneshot-now-available-on-android",
+    altLangSlug: "inoneshot-disponible-sur-android",
     title: "InOneShot Is Now Available on Android",
     description:
       "InOneShot's PDF mail merge is now on mobile: generate your batches of personalized PDFs from your phone or tablet, via Google Play.",
@@ -627,6 +639,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "generer-factures-pdf-masse-excel",
+    altLangSlug: "generate-bulk-pdf-invoices-from-excel",
     title: "Générer des factures PDF personnalisées en masse depuis un tableur Excel",
     description:
       "Pour les indépendants, associations et petites entreprises, automatiser l'édition de factures en série grâce au publipostage PDF réduit un lot de 150 factures de plusieurs heures à quelques minutes.",
@@ -669,6 +682,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "generate-bulk-pdf-invoices-from-excel",
+    altLangSlug: "generer-factures-pdf-masse-excel",
     title: "Generate Bulk PDF Invoices Automatically from an Excel Spreadsheet",
     description:
       "For freelancers, nonprofits, and small businesses, automating batch invoice generation with PDF mail merge saves hours of manual work.",
@@ -711,6 +725,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "qr-code-document-genere-en-masse",
+    altLangSlug: "add-qr-code-bulk-generated-documents",
     title: "Ajouter un QR code personnalisé sur vos documents générés en masse",
     description:
       "Billets d'entrée, badges d'accès ou cartes de visite : apprenez à insérer automatiquement un QR code unique pour chaque ligne de votre fichier Excel.",
@@ -753,6 +768,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "add-qr-code-bulk-generated-documents",
+    altLangSlug: "qr-code-document-genere-en-masse",
     title: "Add a Personalized QR Code to Your Bulk-Generated Documents",
     description:
       "Event tickets, access badges, or business cards: learn how to automatically insert a unique QR code for each row of your Excel file.",
@@ -795,6 +811,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "publipostage-rh-contrats-convocations-badges",
+    altLangSlug: "hr-mail-merge-contracts-invitations-badges",
     title: "Publipostage RH : produire contrats, convocations et badges sans y passer la semaine",
     description:
       "Un service RH génère les mêmes documents en série toute l'année. Voici comment transformer un tableur du SIRH en centaines de PDF nominatifs, sans copier-coller et sans envoyer les données du personnel dans le cloud.",
@@ -877,6 +894,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "hr-mail-merge-contracts-invitations-badges",
+    altLangSlug: "publipostage-rh-contrats-convocations-badges",
     title: "HR Mail Merge: Contracts, Meeting Invitations and Badges Without Losing a Week",
     description:
       "HR teams produce the same documents in batches all year long. Here's how to turn an HRIS export into hundreds of personalized PDFs, with no copy-pasting and without sending employee data to the cloud.",

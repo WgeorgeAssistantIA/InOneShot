@@ -12,6 +12,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const post = loaderData?.post;
     if (!post) return { meta: [{ title: "Article — InOneShot" }] };
     const canonical = `https://www.inoneshot.fr/blog/${post.slug}`;
+    const altPost = post.altLangSlug ? getPost(post.altLangSlug) : undefined;
     return {
       meta: [
         { title: `${post.title} — Blog InOneShot` },
@@ -22,7 +23,23 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:url", content: canonical },
         { property: "article:author", content: post.author },
       ],
-      links: [{ rel: "canonical", href: canonical }],
+      links: [
+        { rel: "canonical", href: canonical },
+        {
+          rel: "alternate",
+          hrefLang: post.lang === "fr" ? "fr" : "en",
+          href: canonical,
+        },
+        ...(altPost
+          ? [
+              {
+                rel: "alternate",
+                hrefLang: altPost.lang === "fr" ? "fr" : "en",
+                href: `https://www.inoneshot.fr/blog/${altPost.slug}`,
+              },
+            ]
+          : []),
+      ],
       scripts: [
         {
           type: "application/ld+json",

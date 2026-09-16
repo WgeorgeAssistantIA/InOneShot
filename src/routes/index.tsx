@@ -106,7 +106,7 @@ const SNAP_URL = "https://snapcraft.io/inoneshot";
 const YOUTUBE_URL = "https://www.youtube.com/@InOneShot-PDFMailMerge";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
 
-const t = {
+export const t = {
   en: {
     metaTitle: "InOneShot — Generate hundreds of personalized PDFs from your Excel, in one click",
     metaDesc:
@@ -659,6 +659,9 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: "canonical", href: "https://www.inoneshot.fr/" },
+      { rel: "alternate", hrefLang: "fr", href: "https://www.inoneshot.fr/" },
+      { rel: "alternate", hrefLang: "en", href: "https://www.inoneshot.fr/en" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://www.inoneshot.fr/" },
     ],
     scripts: [
       {
@@ -890,8 +893,8 @@ function MergeDemo({ lang }: { lang: Lang }) {
   );
 }
 
-function Index() {
-  const [lang, setLangState] = useState<Lang>("fr");
+export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
+  const [lang, setLangState] = useState<Lang>(forcedLang ?? "fr");
   const [email, setEmail] = useState("");
   const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "sending" | "done" | "error">(
     "idle",
@@ -908,6 +911,9 @@ function Index() {
   }, []);
 
   useEffect(() => {
+    // /en is a dedicated SSR route for English: keep it English regardless of
+    // saved preference or browser language, so search engines see stable content.
+    if (forcedLang) return;
     if (typeof window === "undefined") return;
     const saved = localStorage.getItem("inoneshot-lang") as Lang | null;
     if (saved === "en" || saved === "fr") {
@@ -916,7 +922,7 @@ function Index() {
       const browserLang = navigator.language?.toLowerCase() ?? "";
       if (!browserLang.startsWith("fr")) setLangState("en");
     }
-  }, []);
+  }, [forcedLang]);
 
   useEffect(() => {
     document.documentElement.lang = lang;
