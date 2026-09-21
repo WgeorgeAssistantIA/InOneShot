@@ -1727,6 +1727,16 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
             >
               VidScope
             </a>
+            {" · "}
+            <a
+              href="https://votreassistantia.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCrossLink("votreassistantia")}
+              className="underline transition-colors hover:text-foreground"
+            >
+              VotreAssistantIA
+            </a>
           </p>
           <a
             href="https://fazier.com/"
