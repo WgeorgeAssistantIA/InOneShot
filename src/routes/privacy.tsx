@@ -31,10 +31,10 @@ const pp: Record<
 > = {
   fr: {
     title: "Politique de confidentialité",
-    updated: "Dernière mise à jour : 30 juin 2026",
+    updated: "Dernière mise à jour : 24 septembre 2026",
     back: "Retour à l'accueil",
     intro:
-      "InOneShot est un logiciel de publipostage PDF conçu pour fonctionner intégralement en local sur votre ordinateur. Le respect de votre vie privée est au cœur de sa conception. Cette politique explique quelles données sont — ou ne sont pas — traitées lorsque vous utilisez l'application InOneShot et le site inoneshot.fr.",
+      "InOneShot est un logiciel de publipostage PDF conçu pour fonctionner intégralement en local sur votre ordinateur ou appareil mobile. Le respect de votre vie privée est au cœur de sa conception. Cette politique explique quelles données sont — ou ne sont pas — traitées lorsque vous utilisez l'application InOneShot et le site inoneshot.fr.",
     sections: [
       {
         h: "1. Éditeur et responsable du traitement",
@@ -54,19 +54,20 @@ const pp: Record<
         blocks: [
           {
             type: "p",
-            text: "InOneShot traite vos modèles PDF et vos fichiers de données (Excel) directement sur votre ordinateur. Vos fichiers ne sont jamais envoyés vers un serveur, un cloud ou un tiers : ils ne quittent pas votre machine.",
+            text: "InOneShot traite vos modèles PDF et vos fichiers de données (Excel / CSV) directement sur votre appareil. Vos fichiers ne sont jamais envoyés vers un serveur, un cloud ou un tiers : ils ne quittent jamais votre machine.",
           },
           {
             type: "ul",
             items: [
-              "Aucun modèle PDF, fichier Excel ou document généré n'est téléversé ni stocké en ligne.",
-              "Aucune mesure d'audience (analytics), aucun mouchard ni télémétrie n'est intégré à l'application.",
-              "L'application fonctionne sans connexion internet, à l'exception de la vérification de licence (voir section 3).",
+              "Aucun modèle PDF, fichier Excel, tableau de données ou document généré n'est téléversé, transmis ni stocké en ligne.",
+              "Statistiques d'usage produit anonymes : afin d'améliorer la fiabilité et l'ergonomie, InOneShot intègre un suivi d'événements produit via PostHog EU (serveurs situés au sein de l'Union Européenne en Allemagne, en stricte conformité RGPD). Ces mesures sont strictement anonymes (lancements de l'application, étapes de découverte, exécution de publipostage, exports terminés, canal de distribution).",
+              "Zéro donnée personnelle dans l'application : aucun compte requis, aucun nom, aucun identifiant publicitaire, et aucun contenu de vos documents ou fichiers Excel n'est jamais transmis.",
+              "L'application fonctionne parfaitement hors connexion internet (hors vérification de licence Lemon Squeezy en ligne lors de l'activation).",
             ],
           },
           {
             type: "p",
-            text: "L'application enregistre quelques fichiers techniques localement dans le dossier de données utilisateur de votre ordinateur (sous Windows : %APPDATA%\\InOneShot) — clé de licence, compteur d'usage, préférences. Ces fichiers restent sur votre machine et ne nous sont jamais transmis.",
+            text: "L'application enregistre quelques fichiers techniques localement sur votre appareil (clé de licence chiffrée, compteur d'usage d'essai, préférences). Ces fichiers restent sur votre machine et ne nous sont jamais transmis.",
           },
         ],
       },
@@ -144,11 +145,11 @@ const pp: Record<
         ],
       },
       {
-        h: "8. Transferts hors Union européenne",
+        h: "8. Hébergement et transferts hors Union européenne",
         blocks: [
           {
             type: "p",
-            text: "Certains de nos prestataires (Lemon Squeezy, Vercel, Resend) peuvent être établis en dehors de l'Union européenne, notamment aux États-Unis. Le cas échéant, ces transferts sont encadrés par les garanties prévues par le RGPD (clauses contractuelles types ou mécanismes équivalents).",
+            text: "Nos serveurs d'analyse de produit (PostHog EU) sont exclusivement hébergés dans l'Union Européenne (Francfort, Allemagne). Certains de nos prestataires (Lemon Squeezy, Vercel, Resend) peuvent être établis en dehors de l'Union européenne, notamment aux États-Unis. Le cas échéant, ces transferts sont encadrés par les garanties prévues par le RGPD (clauses contractuelles types de la Commission Européenne).",
           },
         ],
       },
@@ -174,10 +175,10 @@ const pp: Record<
   },
   en: {
     title: "Privacy Policy",
-    updated: "Last updated: June 30, 2026",
+    updated: "Last updated: September 24, 2026",
     back: "Back to home",
     intro:
-      "InOneShot is a PDF mail merge tool designed to run entirely locally on your computer. Respect for your privacy is built into its design. This policy explains what data is — and is not — processed when you use the InOneShot application and the inoneshot.fr website.",
+      "InOneShot is a PDF mail merge tool designed to run entirely locally on your computer or mobile device. Respect for your privacy is built into its design. This policy explains what data is — and is not — processed when you use the InOneShot application and the inoneshot.fr website.",
     sections: [
       {
         h: "1. Publisher and data controller",
@@ -197,19 +198,20 @@ const pp: Record<
         blocks: [
           {
             type: "p",
-            text: "InOneShot processes your PDF templates and your data files (Excel) directly on your computer. Your files are never sent to a server, the cloud, or any third party: they never leave your machine.",
+            text: "InOneShot processes your PDF templates and data files (Excel / CSV) directly on your device. Your files are never sent to a server, the cloud, or any third party: they never leave your machine.",
           },
           {
             type: "ul",
             items: [
-              "No PDF template, Excel file or generated document is uploaded or stored online.",
-              "No analytics, tracker, or telemetry is built into the application.",
-              "The application works without an internet connection, except for license verification (see section 3).",
+              "No PDF template, Excel file, spreadsheet data, or generated document is ever uploaded, processed remotely, or stored online.",
+              "Anonymous product analytics: to improve stability and UX, InOneShot uses PostHog EU (hosted entirely within the European Union in Frankfurt, Germany, in strict compliance with GDPR) to record strictly anonymous usage events (app opens, onboarding steps, mail merge runs, completed exports, distribution channel).",
+              "Zero personal data in the app: no accounts required, no names, no advertising IDs, and absolutely no document content or spreadsheet data is ever transmitted.",
+              "The application works completely offline (except for online license activation via Lemon Squeezy).",
             ],
           },
           {
             type: "p",
-            text: "The application stores a few technical files locally in your computer's user data folder (on Windows: %APPDATA%\\InOneShot) — license key, usage counter, preferences. These files stay on your machine and are never transmitted to us.",
+            text: "The application stores technical files locally on your device (encrypted license key, trial export counter, preferences). These files remain on your machine.",
           },
         ],
       },
@@ -287,11 +289,11 @@ const pp: Record<
         ],
       },
       {
-        h: "8. Transfers outside the European Union",
+        h: "8. Hosting and transfers outside the European Union",
         blocks: [
           {
             type: "p",
-            text: "Some of our providers (Lemon Squeezy, Vercel, Resend) may be established outside the European Union, in particular in the United States. Where applicable, such transfers are governed by the safeguards provided for by the GDPR (standard contractual clauses or equivalent mechanisms).",
+            text: "Our product analytics servers (PostHog EU) are exclusively hosted within the European Union (Frankfurt, Germany). Some of our service providers (Lemon Squeezy, Vercel, Resend) may be established outside the European Union, notably in the United States. Where applicable, such transfers are governed by the safeguards provided for by the GDPR (standard contractual clauses of the European Commission).",
           },
         ],
       },
