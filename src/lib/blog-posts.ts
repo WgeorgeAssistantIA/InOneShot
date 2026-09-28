@@ -975,6 +975,139 @@ export const posts: BlogPost[] = [
       },
     ],
   }),
+  make({
+    slug: "comment-generer-attestations-formation-qualiopi-sans-logiciel-gestion",
+    title:
+      "Comment générer ses attestations de formation Qualiopi sans logiciel de gestion à 100 €/mois ?",
+    description:
+      "Attestations de fin de formation, certificats de réalisation, convocations : voici comment un petit organisme de formation ou un formateur indépendant peut produire ces documents en série, conformes Qualiopi, sans s'abonner à une suite de gestion complète.",
+    date: "2026-09-28",
+    author: "Équipe InOneShot",
+    lang: "fr",
+    related: { to: "/attestations-rh", label: "Voir la page dédiée aux documents RH et attestations" },
+    content: [
+      {
+        type: "p",
+        text: "Un organisme de formation (OF) certifié Qualiopi ou en cours de certification doit produire, à chaque session, plusieurs documents nominatifs : convocation, feuille d'émargement, attestation de formation, certificat de réalisation. Ces documents peuvent être générés en série à partir d'un fichier Excel et d'un modèle PDF, sans passer par un logiciel de gestion de formation complet facturé par abonnement.",
+      },
+      {
+        type: "p",
+        text: "Si vous êtes formateur indépendant ou responsable pédagogique dans un petit organisme, vous connaissez ce moment : une session se termine, et il faut produire quinze, trente ou cinquante attestations et certificats de réalisation, un par stagiaire, avec le bon nom, les bonnes dates et parfois une signature. Fait à la main dans Word, c'est long et risqué. Souscrire à un logiciel de gestion Qualiopi à 80 ou 150 € par mois pour ce seul besoin est souvent disproportionné, surtout quand vous animez quelques sessions par mois.",
+      },
+      {
+        type: "p",
+        text: "Cet article fait le point sur les documents réellement exigés, sur ce que couvrent (et ne couvrent pas) les suites de gestion Qualiopi, et sur une méthode plus légère : le publipostage PDF, qui permet de générer tous ces documents en un clic à partir d'un tableur, sans abonnement et sans envoyer les données de vos stagiaires sur un serveur.",
+      },
+      { type: "h2", text: "Quels documents un organisme de formation doit-il produire à chaque session ?" },
+      {
+        type: "p",
+        text: "Une session de formation génère toujours le même petit lot de documents nominatifs, quel que soit le thème enseigné. Ce sont des documents à mise en page fixe, avec seulement quelques champs qui changent d'un stagiaire à l'autre : nom, dates, durée, modalité, résultat de l'évaluation.",
+      },
+      {
+        type: "ul",
+        items: [
+          "La convocation, envoyée avant la session, avec le nom du stagiaire, les dates, le lieu ou le lien de connexion.",
+          "La feuille d'émargement, signée en présentiel ou en distanciel, qui prouve la présence effective.",
+          "L'attestation de formation, remise au stagiaire à l'issue de la session, qui décrit les compétences travaillées.",
+          "Le certificat de réalisation, destiné au financeur (OPCO, France Travail, CPF), qui atteste que la formation a bien eu lieu.",
+          "Parfois une attestation d'assiduité ou un diplôme interne, pour les formations certifiantes ou diplômantes.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Sur une promotion de trente stagiaires, cela représente potentiellement plus de cent documents à produire pour une seule session, à multiplier par le nombre de sessions dans l'année. C'est exactement le type de tâche répétitive que le copier-coller dans Word rend lent et sujet à l'erreur : une date décalée d'une ligne, un nom mal orthographié sur un certificat destiné à un OPCO, et c'est toute la crédibilité du dossier qui en pâtit lors d'un contrôle.",
+      },
+      {
+        type: "h2",
+        text: "Attestation de formation et certificat de réalisation : quelle différence, et que dit Qualiopi ?",
+      },
+      {
+        type: "p",
+        text: "Ces deux documents sont souvent confondus, alors qu'ils n'ont ni le même destinataire ni le même statut. Le certificat de réalisation est le document que la loi impose réellement : c'est lui qui est transmis au financeur pour justifier que l'action de formation a eu lieu, avec les dates, la durée et la modalité (présentiel, distanciel, mixte). L'attestation de formation, elle, est remise au stagiaire : depuis la loi Avenir professionnel, elle n'est plus une obligation légale en tant que telle, mais elle reste très largement utilisée par les organismes, et elle est directement liée aux indicateurs du Référentiel National Qualité qui portent sur l'évaluation des acquis (l'indicateur 11 impose d'évaluer l'atteinte des objectifs par les bénéficiaires).",
+      },
+      {
+        type: "p",
+        text: "Dans les deux cas, un auditeur Qualiopi ne vérifie pas la mise en page du document : il vérifie sa cohérence avec les autres pièces du dossier (convocation, émargement, évaluation). C'est précisément ce que permet un modèle unique réutilisé pour tous les stagiaires : la structure ne change jamais, seuls les champs variables changent, ce qui élimine le risque d'incohérence entre les documents d'une même session.",
+      },
+      { type: "h2", text: "Pourquoi un logiciel de gestion Qualiopi n'est pas toujours la bonne réponse" },
+      {
+        type: "p",
+        text: "Il existe une vraie catégorie de logiciels de gestion de formation (Digiforma, Dendreo, SmartOF, TousQuali et d'autres), qui couvrent l'ensemble du processus Qualiopi : gestion des inscriptions, facturation, suivi des 32 indicateurs, génération documentaire, parfois même la partie pédagogique en ligne. Pour un organisme de taille moyenne avec plusieurs formateurs et un volume de sessions important, ces outils ont un vrai intérêt : ils structurent tout le parcours qualité, pas seulement les documents.",
+      },
+      {
+        type: "p",
+        text: "Le problème apparaît pour les structures plus petites : formateur indépendant, micro-entreprise, association qui organise quelques sessions par an. Ces suites facturent en général entre 50 et plus de 150 € par mois, avec un engagement annuel, pour un outil dont vous n'utiliserez souvent qu'une fraction des fonctionnalités. Payer un abonnement toute l'année pour générer des attestations quatre ou cinq fois dans l'année n'est pas un mauvais choix par principe, mais ce n'est pas non plus le seul choix possible.",
+      },
+      {
+        type: "p",
+        text: "Il existe une alternative plus ciblée : un outil qui ne fait qu'une chose, la génération de documents en série à partir d'un modèle PDF et d'un tableur, sans gérer ni les inscriptions ni la facturation ni le suivi des indicateurs. C'est moins complet, mais c'est aussi beaucoup moins cher, et suffisant pour le seul besoin documentaire.",
+      },
+      {
+        type: "h2",
+        text: "Comment générer ses attestations et certificats de réalisation sans abonnement ?",
+      },
+      {
+        type: "p",
+        text: "La méthode s'appelle le publipostage PDF : on relie un modèle PDF fixe (votre attestation, déjà mise en page avec votre logo et vos mentions obligatoires) à un fichier Excel contenant une ligne par stagiaire. Chaque colonne du tableur (nom, dates, résultat de l'évaluation, durée) est associée à un emplacement sur le modèle, et un clic génère un PDF par ligne, nommé automatiquement, livré dans un dossier prêt à distribuer ou à archiver.",
+      },
+      {
+        type: "p",
+        text: "C'est exactement ce que fait InOneShot. Vous importez votre modèle d'attestation ou de certificat de réalisation déjà validé, vous placez les champs par glisser-déposer (y compris la date du jour et une image de signature), vous liez le fichier Excel de votre promotion, et vous générez la totalité du lot en une fois. La licence coûte 39 € en paiement unique, sans abonnement : pour un organisme qui produit des attestations quelques fois par an, l'écart avec une suite de gestion facturée chaque mois est net.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Un seul modèle PDF, préparé une fois pour toutes les sessions futures.",
+          "Un fichier Excel par session, exporté de votre outil d'inscription existant ou simplement tenu à jour.",
+          "Une génération en un clic : un PDF par stagiaire, nommé automatiquement (nom, date, ou numéro de dossier).",
+          "Aucun abonnement, aucun engagement, le modèle se réutilise à l'identique pour la session suivante.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Ce n'est pas un logiciel de gestion Qualiopi : InOneShot ne suit pas vos 32 indicateurs, ne gère pas vos inscriptions ni votre facturation. C'est un outil qui répond précisément au besoin documentaire, celui qui revient à chaque fin de session, sans vous faire payer pour des fonctionnalités de gestion dont vous n'avez pas l'usage.",
+      },
+      { type: "h2", text: "Pourquoi les données de vos stagiaires ne devraient-elles pas quitter votre poste ?" },
+      {
+        type: "p",
+        text: "Un fichier d'inscription de formation contient des données personnelles au sens du RGPD : nom, coordonnées, parfois des informations sur le poste occupé ou l'employeur. Le téléverser vers un service en ligne pour générer des attestations crée un transfert de données à documenter dans votre registre des traitements, avec un sous-traitant supplémentaire à identifier et à auditer.",
+      },
+      {
+        type: "p",
+        text: "InOneShot traite tout en local, sur votre ordinateur : le fichier Excel de vos stagiaires et les PDF générés ne transitent par aucun serveur. Pour un organisme de formation qui doit déjà justifier sa conformité RGPD lors d'un audit Qualiopi, c'est une case de moins à cocher, et une source de risque en moins à expliquer.",
+      },
+      { type: "h2", text: "Questions fréquentes" },
+      { type: "h2", text: "L'attestation de formation est-elle obligatoire pour être certifié Qualiopi ?" },
+      {
+        type: "p",
+        text: "Non, pas en tant que telle. Depuis la loi Avenir professionnel de 2018, l'attestation de formation remise au stagiaire n'est plus une obligation légale autonome. Le document réellement exigé par les financeurs est le certificat de réalisation. En pratique, la plupart des organismes continuent de délivrer une attestation, car elle est un élément de preuve cohérent avec les indicateurs du Référentiel National Qualité liés à l'évaluation des acquis.",
+      },
+      { type: "h2", text: "Quelle est la différence entre attestation de formation et certificat de réalisation ?" },
+      {
+        type: "p",
+        text: "Le certificat de réalisation est adressé au financeur (OPCO, CPF, France Travail) et atteste que l'action de formation a eu lieu, avec ses dates et sa durée. L'attestation de formation est remise au stagiaire et porte sur les compétences travaillées et les résultats de l'évaluation. Les deux documents sont souvent demandés ensemble lors d'un audit Qualiopi et gagnent à être générés à partir du même fichier de session, pour rester parfaitement cohérents entre eux.",
+      },
+      { type: "h2", text: "Un formateur indépendant a-t-il besoin d'un logiciel de gestion Qualiopi complet ?" },
+      {
+        type: "p",
+        text: "Pas nécessairement. Les suites de gestion Qualiopi sont conçues pour couvrir l'ensemble du processus qualité (indicateurs, inscriptions, facturation, suivi pédagogique), ce qui a du sens pour un organisme avec plusieurs formateurs et un volume important de sessions. Pour un formateur indépendant qui anime quelques sessions par mois, un abonnement mensuel peut représenter un coût disproportionné au regard du seul besoin réel : produire des documents fiables et cohérents à chaque fin de session.",
+      },
+      { type: "h2", text: "Peut-on ajouter une signature ou un QR code sur une attestation générée automatiquement ?" },
+      {
+        type: "p",
+        text: "Oui. Un outil de publipostage PDF comme InOneShot permet de placer, en plus des champs texte issus du tableur, une image de signature et un QR code (par exemple vers un lien de vérification du certificat ou vers l'avis de satisfaction) directement sur le modèle, au même titre que n'importe quel autre champ.",
+      },
+      { type: "h2", text: "Comment garder la cohérence entre convocation, émargement et attestation ?" },
+      {
+        type: "p",
+        text: "En partant du même fichier Excel pour les trois documents. Si la convocation, la feuille d'émargement et l'attestation sont toutes générées à partir de la même ligne de données par stagiaire, les noms, dates et durées restent identiques d'un document à l'autre, ce qui évite les incohérences qui posent problème lors d'un audit.",
+      },
+      {
+        type: "p",
+        text: "Que vous soyez formateur indépendant ou responsable qualité dans un petit organisme, le besoin documentaire d'une fin de session n'exige pas nécessairement un abonnement mensuel. Un modèle PDF préparé une fois, un fichier Excel par session, et un outil de publipostage local suffisent à produire des attestations et des certificats de réalisation fiables, cohérents entre eux, et sans faire transiter les données de vos stagiaires par un serveur tiers.",
+      },
+    ],
+  }),
 ];
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
