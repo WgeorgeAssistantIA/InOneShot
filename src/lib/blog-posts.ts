@@ -977,6 +977,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "comment-generer-attestations-formation-qualiopi-sans-logiciel-gestion",
+    altLangSlug: "how-to-generate-training-certificates-without-management-software",
     title:
       "Comment générer ses attestations de formation Qualiopi sans logiciel de gestion à 100 €/mois ?",
     description:
@@ -1105,6 +1106,88 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "Que vous soyez formateur indépendant ou responsable qualité dans un petit organisme, le besoin documentaire d'une fin de session n'exige pas nécessairement un abonnement mensuel. Un modèle PDF préparé une fois, un fichier Excel par session, et un outil de publipostage local suffisent à produire des attestations et des certificats de réalisation fiables, cohérents entre eux, et sans faire transiter les données de vos stagiaires par un serveur tiers.",
+      },
+    ],
+  }),
+  make({
+    slug: "how-to-generate-training-certificates-without-management-software",
+    altLangSlug: "comment-generer-attestations-formation-qualiopi-sans-logiciel-gestion",
+    title: "How Do You Generate Training Certificates Without Paying for Full Management Software?",
+    description:
+      "Certificates of completion, attendance records, invitations: here's how a small training provider or independent trainer can batch-produce these documents without subscribing to a full training-management suite.",
+    date: "2026-09-28",
+    author: "InOneShot Team",
+    lang: "en",
+    related: { to: "/attestations-rh", label: "See the dedicated HR documents page" },
+    content: [
+      {
+        type: "p",
+        text: "Every training provider produces the same small batch of documents at the end of each session: an invitation, an attendance sheet, and a certificate of completion for each participant. These can be generated in bulk from a spreadsheet and a PDF template, without subscribing to a full training-management platform billed every month.",
+      },
+      {
+        type: "p",
+        text: "If you run a small training business or work as an independent trainer, you know the moment: a session ends, and you need to produce fifteen, thirty or fifty certificates, one per participant, each with the right name and dates. Doing this by hand in a word processor is slow and error-prone. Subscribing to a full management suite for $80 to $150 a month just for this one need is often disproportionate, especially if you only run a handful of sessions per month.",
+      },
+      { type: "h2", text: "What documents does a training session actually require?" },
+      {
+        type: "p",
+        text: "A training session always produces the same small set of nominative documents, whatever the subject: an invitation sent beforehand, an attendance record signed during the session, and a certificate of completion handed out at the end. Each has a fixed layout, with only a handful of fields that change from one participant to the next — name, dates, duration, and sometimes an assessment result.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Invitation: participant name, dates, location or connection link.",
+          "Attendance record: signed proof of presence for each session day.",
+          "Certificate of completion: handed to the participant, describing the skills covered.",
+          "For regulated or funded training, a separate proof-of-completion document for the funder.",
+        ],
+      },
+      {
+        type: "p",
+        text: "On a cohort of thirty participants, that is already close to a hundred documents for a single session. Doing this by copy-pasting invites exactly the kind of mistake that matters on a document with contractual weight: a shifted date, a misspelled name, a certificate that ends up inconsistent with the attendance record for the same person.",
+      },
+      { type: "h2", text: "Why a full training-management suite isn't always the right fit" },
+      {
+        type: "p",
+        text: "Full training-management platforms exist for good reason: for a mid-sized provider with several trainers and a steady volume of sessions, they structure the entire process — enrollment, invoicing, compliance tracking, and document generation all in one place. If that is your situation, the subscription pays for itself.",
+      },
+      {
+        type: "p",
+        text: "The mismatch shows up for smaller setups: an independent trainer, a small business, an association running a handful of sessions a year. These platforms typically bill $50 to $150+ per month, often with an annual commitment, for a tool you would only use a fraction of. Paying for a full suite all year to generate certificates a few times a year is not unreasonable, but it is not the only option either.",
+      },
+      { type: "h2", text: "How do you generate certificates without a subscription?" },
+      {
+        type: "p",
+        text: "This is what PDF mail merge does: it links a fixed PDF template — your certificate, already laid out with your logo — to a spreadsheet with one row per participant. Each column (name, dates, result) maps to a position on the template, and one click generates one PDF per row, automatically named and delivered ready to send or archive.",
+      },
+      {
+        type: "p",
+        text: "That's exactly what InOneShot does. You import your certificate template, place the fields by drag and drop (including today's date and a signature image), link your session spreadsheet, and generate the whole batch at once. The license is a one-time $39, no subscription: for a provider that only produces certificates a few times a year, the gap with a monthly-billed suite is significant. It is not a full Qualiopi-style management tool — it does not track compliance indicators, enrollments, or invoicing. It just solves the recurring document problem, at the end of every session, without paying for management features you won't use.",
+      },
+      { type: "h2", text: "Why keep participant data off a server?" },
+      {
+        type: "p",
+        text: "A training enrollment file contains personal data: names, contact details, sometimes employer information. Uploading it to an online service to generate certificates creates a data transfer that has to be documented and justified under data protection rules like GDPR. InOneShot processes everything locally — the spreadsheet and the generated PDFs never leave your computer, which removes that question entirely.",
+      },
+      { type: "h2", text: "Frequently asked questions" },
+      { type: "h2", text: "Do I need training-management software as an independent trainer?" },
+      {
+        type: "p",
+        text: "Not necessarily. Full suites make sense for providers with several trainers and a high session volume. For an independent trainer running a few sessions a month, a monthly subscription can cost more than the actual need — reliable, consistent documents at the end of each session.",
+      },
+      { type: "h2", text: "Can I add a signature or QR code to a generated certificate?" },
+      {
+        type: "p",
+        text: "Yes. A PDF mail merge tool like InOneShot lets you place a signature image and a QR code (for example linking to a verification page) on the template, the same way as any other field from your spreadsheet.",
+      },
+      { type: "h2", text: "How do I keep the invitation, attendance record and certificate consistent?" },
+      {
+        type: "p",
+        text: "By generating all three from the same spreadsheet. If every document is produced from the same row of data per participant, names, dates and durations stay identical across documents, which avoids the inconsistencies that cause problems during an audit.",
+      },
+      {
+        type: "p",
+        text: "Whether you run training sessions solo or manage a small provider, the end-of-session paperwork doesn't require a monthly subscription. A template prepared once, a spreadsheet per session, and a local mail-merge tool are enough to produce certificates that are reliable, consistent with each other, and never send participant data to a third-party server.",
       },
     ],
   }),
