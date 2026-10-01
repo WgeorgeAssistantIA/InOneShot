@@ -92,7 +92,7 @@ import {
 type Lang = "en" | "fr";
 
 const CHECKOUT_URL =
-  "https://voxcut-pro.lemonsqueezy.com/checkout/buy/d04203ba-2117-403a-9dfb-b903bfd04587?checkout[discount_code]=LANCEMENT";
+  "https://checkout.lafabriknumerique.fr/checkout/buy/d04203ba-2117-403a-9dfb-b903bfd04587?checkout[discount_code]=LANCEMENT";
 const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android";
