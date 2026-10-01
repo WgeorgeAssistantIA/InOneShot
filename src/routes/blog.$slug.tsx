@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Clock, ArrowLeft, Download } from "lucide-react";
 import { getPost, posts, type BlogPost as BlogPostType } from "@/lib/blog-posts";
+import { renderInline } from "@/lib/inline-links";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -148,7 +149,7 @@ function BlogPost() {
             if (block.type === "p")
               return (
                 <p key={i} className="text-base md:text-lg">
-                  {block.text}
+                  {renderInline(block.text)}
                 </p>
               );
             return (

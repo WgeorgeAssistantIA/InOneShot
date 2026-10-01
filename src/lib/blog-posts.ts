@@ -90,6 +90,11 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Une fois le modèle prêt, refaire le même lot le mois suivant ne prend plus que quelques secondes. C'est le genre d'automatisation qui se rentabilise dès la première utilisation.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [préparer son fichier Excel sans erreur](/blog/preparer-fichier-excel-publipostage) ; [traiter un publipostage PDF en local plutôt qu'en ligne](/blog/publipostage-pdf-local-vs-en-ligne) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf).",
+      },
     ],
   }),
   make({
@@ -132,6 +137,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "Si vous avez besoin que plusieurs personnes collaborent en temps réel sur les mêmes modèles depuis des sites différents, une solution en ligne peut avoir du sens. Mais pour le cas le plus courant — produire un lot de documents à partir d'un tableur, vite et bien — le local est plus simple, plus rapide et plus sûr.",
+      },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [choisir entre Word et InOneShot pour fusionner Excel et PDF](/blog/publipostage-word-vs-inoneshot) ; [produire contrats, convocations et badges](/blog/publipostage-rh-contrats-convocations-badges).",
       },
     ],
   }),
@@ -188,6 +198,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "Les deux ne s'opposent pas vraiment : Word reste parfait pour le courrier texte, et InOneShot prend le relais dès qu'il s'agit de produire des PDF en série, proprement et sans y passer la journée.",
+      },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [préparer son fichier Excel sans erreur](/blog/preparer-fichier-excel-publipostage) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf).",
       },
     ],
   }),
@@ -247,6 +262,11 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Si l'une de ces situations vous parle, le calcul est vite fait : le temps de préparer le modèle une première fois, et tous les lots suivants ne coûtent plus que quelques secondes.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [générer des factures PDF en masse](/blog/generer-factures-pdf-masse-excel) ; [ajouter un QR code personnalisé à vos documents](/blog/qr-code-document-genere-en-masse) ; [produire contrats, convocations et badges](/blog/publipostage-rh-contrats-convocations-badges) ; [générer ses attestations de formation Qualiopi](/blog/comment-generer-attestations-formation-qualiopi-sans-logiciel-gestion).",
+      },
     ],
   }),
   make({
@@ -299,6 +319,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "Avec un tableur propre, le publipostage devient une opération sans surprise : dans InOneShot, vous importez le modèle et l'Excel, vous placez vos champs par glisser-déposer, et le premier aperçu vous confirme que tout est en place avant de générer l'ensemble.",
+      },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [générer des factures PDF en masse](/blog/generer-factures-pdf-masse-excel) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf).",
       },
     ],
   }),
@@ -360,6 +385,11 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Once the template is set up, running the same batch next month takes seconds. It's the kind of automation that pays for itself the very first time you use it.",
       },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Related reading: [why local processing beats online mail-merge tools](/blog/local-pdf-mail-merge-vs-online); [choose between Word mail merge and a dedicated PDF tool](/blog/word-mail-merge-vs-pdf-tool); [generate bulk PDF invoices](/blog/generate-bulk-pdf-invoices-from-excel).",
+      },
     ],
   }),
   make({
@@ -402,6 +432,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "If several people need to collaborate on the same templates in real time from different locations, an online solution can be worth it. But for the most common case — producing a batch of documents from a spreadsheet, quickly and reliably — local is simpler, faster, and safer.",
+      },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Related reading: [generate hundreds of personalized PDFs from an Excel file](/blog/generate-pdfs-from-excel); [choose between Word mail merge and a dedicated PDF tool](/blog/word-mail-merge-vs-pdf-tool); [produce contracts, invitations and badges](/blog/hr-mail-merge-contracts-invitations-badges).",
       },
     ],
   }),
@@ -459,6 +494,11 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "The two aren't really competitors: Word remains great for text-based letters, and InOneShot takes over whenever the job is producing PDFs in bulk, cleanly, without losing your day to it.",
       },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Related reading: [generate hundreds of personalized PDFs from an Excel file](/blog/generate-pdfs-from-excel); [why local processing beats online mail-merge tools](/blog/local-pdf-mail-merge-vs-online); [generate bulk PDF invoices](/blog/generate-bulk-pdf-invoices-from-excel).",
+      },
     ],
   }),
   make({
@@ -507,6 +547,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "La mise à jour est disponible dès maintenant en téléchargement direct sur ce site (version portable Windows) et sur le Snap Store pour Linux. La fiche Microsoft Store est en cours de mise à jour et suivra dans les prochains jours.",
+      },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [ajouter un QR code personnalisé à vos documents](/blog/qr-code-document-genere-en-masse) ; [InOneShot sur Android](/blog/inoneshot-disponible-sur-android).",
       },
     ],
   }),
@@ -557,6 +602,11 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "The update is available now as a direct download on this site (Windows portable) and on the Snap Store for Linux. The Microsoft Store listing is being updated and will follow in the coming days.",
       },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Related reading: [generate hundreds of personalized PDFs from an Excel file](/blog/generate-pdfs-from-excel); [add a personalized QR code to your documents](/blog/add-qr-code-bulk-generated-documents); [InOneShot on Android](/blog/inoneshot-now-available-on-android).",
+      },
     ],
   }),
   make({
@@ -596,6 +646,11 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "L'application est disponible dès maintenant, gratuitement, sur le Google Play Store : cherchez « InOneShot » ou suivez le lien direct depuis la page d'accueil de ce site.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [les nouveautés de la version 1.1.0](/blog/inoneshot-1-1-0-nouveautes) ; [traiter un publipostage PDF en local plutôt qu'en ligne](/blog/publipostage-pdf-local-vs-en-ligne).",
+      },
     ],
   }),
   make({
@@ -634,6 +689,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: 'The app is available now, for free, on the Google Play Store: search for "InOneShot" or follow the direct link from this site\'s homepage.',
+      },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Related reading: [generate hundreds of personalized PDFs from an Excel file](/blog/generate-pdfs-from-excel); [what's new in version 1.1.0](/blog/inoneshot-1-1-0-whats-new); [why local processing beats online mail-merge tools](/blog/local-pdf-mail-merge-vs-online).",
       },
     ],
   }),
@@ -678,6 +738,11 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Une fois le modèle configuré, la génération de 10 ou 500 factures prend exactement le même temps : un seul clic. Le traitement se faisant en local, les données financières de votre entreprise restent confidentielles sur votre ordinateur.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [préparer son fichier Excel sans erreur](/blog/preparer-fichier-excel-publipostage) ; [ajouter un QR code personnalisé à vos documents](/blog/qr-code-document-genere-en-masse) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf).",
+      },
     ],
   }),
   make({
@@ -720,6 +785,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "Once the template is configured, generating 10 or 500 invoices takes exactly the same amount of time: one click. And because processing is strictly local, your company's financial data remains private on your computer.",
+      },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Related reading: [add a personalized QR code to your documents](/blog/add-qr-code-bulk-generated-documents); [generate hundreds of personalized PDFs from an Excel file](/blog/generate-pdfs-from-excel); [why local processing beats online mail-merge tools](/blog/local-pdf-mail-merge-vs-online).",
       },
     ],
   }),
@@ -764,6 +834,11 @@ export const posts: BlogPost[] = [
           "Associations : Cartes de membres interactives pour la gestion des présences.",
         ],
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [générer des factures PDF en masse](/blog/generer-factures-pdf-masse-excel) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf) ; [produire contrats, convocations et badges](/blog/publipostage-rh-contrats-convocations-badges).",
+      },
     ],
   }),
   make({
@@ -806,6 +881,11 @@ export const posts: BlogPost[] = [
           "Human Resources: Employee badges linking to the internal directory.",
           "Nonprofits: Interactive membership cards for attendance tracking.",
         ],
+      },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Related reading: [generate bulk PDF invoices](/blog/generate-bulk-pdf-invoices-from-excel); [produce contracts, invitations and badges](/blog/hr-mail-merge-contracts-invitations-badges).",
       },
     ],
   }),
@@ -890,6 +970,11 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Une fois ces réflexes en place, produire cent contrats ou cent badges prend le même temps qu'en produire un seul. C'est du temps rendu au service RH pour faire ce qu'un tableur ne fera jamais à sa place.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [générer ses attestations de formation Qualiopi](/blog/comment-generer-attestations-formation-qualiopi-sans-logiciel-gestion) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf) ; [traiter un publipostage PDF en local plutôt qu'en ligne](/blog/publipostage-pdf-local-vs-en-ligne).",
+      },
     ],
   }),
   make({
@@ -972,6 +1057,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "With those habits in place, producing a hundred contracts or a hundred badges takes the same time as producing one. That is time handed back to the HR team to do what a spreadsheet will never do for them.",
+      },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Related reading: [generate training certificates without management software](/blog/how-to-generate-training-certificates-without-management-software); [why local processing beats online mail-merge tools](/blog/local-pdf-mail-merge-vs-online).",
       },
     ],
   }),
@@ -1107,6 +1197,11 @@ export const posts: BlogPost[] = [
         type: "p",
         text: "Que vous soyez formateur indépendant ou responsable qualité dans un petit organisme, le besoin documentaire d'une fin de session n'exige pas nécessairement un abonnement mensuel. Un modèle PDF préparé une fois, un fichier Excel par session, et un outil de publipostage local suffisent à produire des attestations et des certificats de réalisation fiables, cohérents entre eux, et sans faire transiter les données de vos stagiaires par un serveur tiers.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "À lire aussi : [produire contrats, convocations et badges](/blog/publipostage-rh-contrats-convocations-badges) ; [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [préparer son fichier Excel sans erreur](/blog/preparer-fichier-excel-publipostage) ; [traiter un publipostage PDF en local plutôt qu'en ligne](/blog/publipostage-pdf-local-vs-en-ligne).",
+      },
     ],
   }),
   make({
@@ -1188,6 +1283,11 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         text: "Whether you run training sessions solo or manage a small provider, the end-of-session paperwork doesn't require a monthly subscription. A template prepared once, a spreadsheet per session, and a local mail-merge tool are enough to produce certificates that are reliable, consistent with each other, and never send participant data to a third-party server.",
+      },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Related reading: [produce contracts, invitations and badges](/blog/hr-mail-merge-contracts-invitations-badges); [generate hundreds of personalized PDFs from an Excel file](/blog/generate-pdfs-from-excel); [why local processing beats online mail-merge tools](/blog/local-pdf-mail-merge-vs-online).",
       },
     ],
   }),
