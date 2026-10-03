@@ -47,6 +47,29 @@ export const Route = createFileRoute("/en")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "La Fabrik Numérique",
+          url: "https://www.lafabriknumerique.fr",
+          founder: { "@type": "Person", name: "William GEORGE", jobTitle: "Founder", url: "https://www.lafabriknumerique.fr" },
+          logo: "https://www.inoneshot.fr/favicon.ico",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "InOneShot",
+          url: "https://www.inoneshot.fr/en",
+          inLanguage: "en",
+          description: "PDF mail merge: one personalised PDF per Excel row, 100% local.",
+          publisher: { "@type": "Organization", name: "La Fabrik Numérique", url: "https://www.lafabriknumerique.fr" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: t.en.faq.items.map((item) => ({
             "@type": "Question",

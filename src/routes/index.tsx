@@ -694,12 +694,25 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "La Fabrik Numérique",
-          url: "https://www.inoneshot.fr/",
+          url: "https://www.lafabriknumerique.fr",
+          founder: { "@type": "Person", name: "William GEORGE", jobTitle: "Founder", url: "https://www.lafabriknumerique.fr" },
           logo: "https://www.inoneshot.fr/favicon.ico",
           sameAs: [
             PLAY_STORE_URL,
             SNAP_URL,
           ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "InOneShot",
+          url: "https://www.inoneshot.fr/",
+          inLanguage: "fr",
+          description: "Publipostage PDF : un PDF personnalisé par ligne d'un Excel, 100% local.",
+          publisher: { "@type": "Organization", name: "La Fabrik Numérique", url: "https://www.lafabriknumerique.fr" },
         }),
       },
       {
@@ -1620,6 +1633,22 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
                 height={60}
                 loading="lazy"
                 style={{ maxWidth: "150px" }}
+              />
+            </a>
+            <a
+              href="https://fazier.com/launches/inoneshot"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCrossLink("fazier")}
+              className="shrink-0"
+            >
+              <img
+                src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=12719&badge_type=daily&theme=light"
+                alt="InOneShot - Fazier Product of the Day"
+                width={255}
+                height={54}
+                loading="lazy"
+                style={{ maxWidth: "255px" }}
               />
             </a>
           </div>
