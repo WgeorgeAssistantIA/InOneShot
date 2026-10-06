@@ -671,10 +671,16 @@ export const Route = createFileRoute("/")({
           "@type": "SoftwareApplication",
           name: "InOneShot",
           applicationCategory: "BusinessApplication",
-          operatingSystem: "Windows, Android",
+          operatingSystem: "Windows, Linux, Android",
           description:
             "Publipostage PDF : générez un PDF personnalisé par ligne d'un fichier Excel, en un clic. 100% local.",
           url: "https://www.inoneshot.fr/",
+          sameAs: [
+            "https://www.wikidata.org/wiki/Q141656926",
+            "https://apps.microsoft.com/detail/9PPBQSM1MFZ2",
+            "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android",
+            "https://snapcraft.io/inoneshot",
+          ],
           offers: {
             "@type": "AggregateOffer",
             priceCurrency: "EUR",

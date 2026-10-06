@@ -26,10 +26,16 @@ export const Route = createFileRoute("/en")({
           "@type": "SoftwareApplication",
           name: "InOneShot",
           applicationCategory: "BusinessApplication",
-          operatingSystem: "Windows, Android",
+          operatingSystem: "Windows, Linux, Android",
           description:
             "PDF mail merge: generate one personalized PDF per row of an Excel file, in one click. 100% local.",
           url: "https://www.inoneshot.fr/en",
+          sameAs: [
+            "https://www.wikidata.org/wiki/Q141656926",
+            "https://apps.microsoft.com/detail/9PPBQSM1MFZ2",
+            "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android",
+            "https://snapcraft.io/inoneshot",
+          ],
           offers: {
             "@type": "AggregateOffer",
             priceCurrency: "EUR",
