@@ -9,13 +9,13 @@ export const Route = createFileRoute("/legal")({
       {
         name: "description",
         content:
-          "Mentions légales du site inoneshot.fr : éditeur, hébergeur et propriété intellectuelle.",
+          "Mentions légales du site InOneShot : informations sur l'éditeur La Fabrik Numérique, l'hébergement, la propriété intellectuelle et les données personnelles.",
       },
       { property: "og:title", content: "Mentions légales — InOneShot" },
       {
         property: "og:description",
         content:
-          "Mentions légales du site inoneshot.fr : éditeur, hébergeur et propriété intellectuelle.",
+          "Mentions légales du site InOneShot : informations sur l'éditeur La Fabrik Numérique, l'hébergement, la propriété intellectuelle et les données personnelles.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.inoneshot.fr/legal" },

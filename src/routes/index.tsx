@@ -695,15 +695,9 @@ export const Route = createFileRoute("/")({
             "https://snapcraft.io/inoneshot",
           ],
           offers: {
-            "@type": "AggregateOffer",
+            "@type": "Offer",
+            price: "0",
             priceCurrency: "EUR",
-            lowPrice: "0",
-            highPrice: "39",
-            offerCount: "2",
-            offers: [
-              { "@type": "Offer", name: "InOneShot Free", price: "0", priceCurrency: "EUR" },
-              { "@type": "Offer", name: "InOneShot Pro", price: "39", priceCurrency: "EUR" },
-            ],
           },
         }),
       },
