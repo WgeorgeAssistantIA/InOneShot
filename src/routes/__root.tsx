@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -13,6 +14,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { getPost } from "../lib/blog-posts";
 
 function NotFoundComponent() {
   return (
@@ -130,8 +132,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  let lang = "fr";
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
+    lang = "en";
+  } else if (pathname.startsWith("/blog/")) {
+    const slug = pathname.replace(/^\/blog\//, "").replace(/\/$/, "");
+    const post = getPost(slug);
+    if (post && post.lang === "en") {
+      lang = "en";
+    }
+  }
+
   return (
-    <html lang="fr">
+    <html lang={lang}>
       <head>
         <HeadContent />
       </head>

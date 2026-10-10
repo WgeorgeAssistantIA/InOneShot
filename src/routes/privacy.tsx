@@ -12,6 +12,18 @@ export const Route = createFileRoute("/privacy")({
           "Comment InOneShot traite vos données. InOneShot fonctionne 100% en local — vos modèles et vos données ne quittent jamais votre ordinateur.",
       },
       { property: "og:title", content: "Politique de confidentialité — InOneShot" },
+      {
+        property: "og:description",
+        content:
+          "InOneShot fonctionne 100% en local : vos modèles et vos données ne quittent jamais votre ordinateur.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.inoneshot.fr/privacy" },
+      { property: "og:image", content: "https://www.inoneshot.fr/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.inoneshot.fr/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://www.inoneshot.fr/privacy" }],
   }),

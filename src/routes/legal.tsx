@@ -12,6 +12,18 @@ export const Route = createFileRoute("/legal")({
           "Mentions légales du site inoneshot.fr : éditeur, hébergeur et propriété intellectuelle.",
       },
       { property: "og:title", content: "Mentions légales — InOneShot" },
+      {
+        property: "og:description",
+        content:
+          "Mentions légales du site inoneshot.fr : éditeur, hébergeur et propriété intellectuelle.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.inoneshot.fr/legal" },
+      { property: "og:image", content: "https://www.inoneshot.fr/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.inoneshot.fr/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://www.inoneshot.fr/legal" }],
   }),

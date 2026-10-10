@@ -10,6 +10,11 @@ export const Route = createFileRoute("/en")({
       { property: "og:description", content: t.en.metaDesc },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.inoneshot.fr/en" },
+      { property: "og:image", content: "https://www.inoneshot.fr/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.inoneshot.fr/og-image.png" },
     ],
     links: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -30,6 +35,15 @@ export const Route = createFileRoute("/en")({
           description:
             "PDF mail merge: generate one personalized PDF per row of an Excel file, in one click. 100% local.",
           url: "https://www.inoneshot.fr/en",
+          image: "https://www.inoneshot.fr/og-image.png",
+          screenshot: "https://www.inoneshot.fr/og-image.png",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            ratingCount: "28",
+            bestRating: "5",
+            worstRating: "1",
+          },
           sameAs: [
             "https://www.wikidata.org/wiki/Q141656926",
             "https://apps.microsoft.com/detail/9PPBQSM1MFZ2",
@@ -57,7 +71,7 @@ export const Route = createFileRoute("/en")({
           name: "La Fabrik Numérique",
           url: "https://www.lafabriknumerique.fr",
           founder: { "@type": "Person", name: "William GEORGE", jobTitle: "Founder", url: "https://www.lafabriknumerique.fr" },
-          logo: "https://www.inoneshot.fr/favicon.ico",
+          logo: "https://www.inoneshot.fr/inoneshot_logo.png",
         }),
       },
       {

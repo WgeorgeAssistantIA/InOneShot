@@ -6,6 +6,7 @@ export type BlogPost = {
   author: string;
   lang: "fr" | "en";
   readingTime: number; // minutes
+  seoTitle?: string;
   // Optional contextual link to a landing page, rendered above the generic CTA
   related?: { to: string; label: string };
   // Slug of the equivalent article in the other language, for hreflang alternates
@@ -34,6 +35,7 @@ export const posts: BlogPost[] = [
   make({
     slug: "publipostage-pdf-depuis-excel",
     altLangSlug: "generate-pdfs-from-excel",
+    seoTitle: "Générer des PDF depuis Excel en masse — InOneShot",
     title:
       "Comment générer des centaines de PDF personnalisés depuis un Excel (sans copier-coller)",
     description:
@@ -100,9 +102,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "publipostage-pdf-local-vs-en-ligne",
     altLangSlug: "local-pdf-mail-merge-vs-online",
+    seoTitle: "Publipostage PDF local vs en ligne — InOneShot",
     title: "Publipostage PDF : pourquoi le faire en local plutôt qu'en ligne",
     description:
-      "Les outils de publipostage en ligne demandent d'envoyer vos données dans le cloud. Pour des documents sensibles (RH, factures, juridique), traiter en local change tout.",
+      "Les outils en ligne imposent d'envoyer vos données dans le cloud. Pour vos documents sensibles (RH, factures), le publipostage 100% local change tout.",
     date: "2026-06-25",
     author: "Équipe InOneShot",
     lang: "fr",
@@ -148,6 +151,7 @@ export const posts: BlogPost[] = [
   make({
     slug: "publipostage-word-vs-inoneshot",
     altLangSlug: "word-mail-merge-vs-pdf-tool",
+    seoTitle: "Word ou InOneShot pour fusionner PDF — InOneShot",
     title: "Word ou InOneShot : quelle solution pour fusionner Excel et PDF ?",
     description:
       "Le publipostage de Word existe depuis toujours. Voici ce qu'il fait bien, ses limites pour le PDF, et quand un outil dédié vous fera gagner du temps.",
@@ -208,6 +212,7 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "5-cas-usage-publipostage-pdf",
+    seoTitle: "5 cas d'usage du publipostage PDF — InOneShot",
     title: "5 cas d'usage concrets du publipostage PDF (au-delà du courrier)",
     description:
       "Attestations RH, diplômes de formation, factures, convocations, badges avec QR code : cinq situations où générer des PDF en série fait gagner des heures.",
@@ -271,9 +276,10 @@ export const posts: BlogPost[] = [
   }),
   make({
     slug: "preparer-fichier-excel-publipostage",
+    seoTitle: "Bien préparer son Excel pour publipostage — InOneShot",
     title: "Préparer son fichier Excel pour un publipostage sans erreur",
     description:
-      "Cellules fusionnées, en-têtes ambigus, dates qui changent de format : la plupart des ratés de publipostage viennent du tableur. Voici la checklist pour partir sur de bonnes bases.",
+      "Cellules fusionnées, en-têtes ambigus, formats de date : découvrez la checklist essentielle pour préparer votre fichier Excel pour un publipostage sans erreur.",
     date: "2026-07-14",
     author: "Équipe InOneShot",
     lang: "fr",
@@ -330,9 +336,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "generate-pdfs-from-excel",
     altLangSlug: "publipostage-pdf-depuis-excel",
+    seoTitle: "Generate Bulk PDFs from Excel Easily — InOneShot",
     title: "How to Generate Hundreds of Personalized PDFs from an Excel File",
     description:
-      "Certificates, invoices, letters, diplomas: here's how to turn every row of your spreadsheet into its own PDF — automatically, without copy-pasting a single value.",
+      "Certificates, invoices, diplomas: turn every row of your spreadsheet into a personalized PDF automatically, without copy-pasting a single value.",
     date: "2026-07-12",
     author: "InOneShot Team",
     lang: "en",
@@ -395,9 +402,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "local-pdf-mail-merge-vs-online",
     altLangSlug: "publipostage-pdf-local-vs-en-ligne",
+    seoTitle: "Local PDF Mail Merge vs Online Tools — InOneShot",
     title: "PDF Mail Merge: Why Local Processing Beats Online Tools",
     description:
-      "Online mail merge tools require uploading your data to the cloud. For sensitive documents — HR, invoices, legal — processing everything locally changes the game.",
+      "Online tools require cloud uploads. For sensitive documents (HR, invoices, legal), processing your PDF mail merge locally on your device changes everything.",
     date: "2026-07-13",
     author: "InOneShot Team",
     lang: "en",
@@ -443,9 +451,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "word-mail-merge-vs-pdf-tool",
     altLangSlug: "publipostage-word-vs-inoneshot",
+    seoTitle: "Word Mail Merge vs Dedicated PDF Tool — InOneShot",
     title: "Word Mail Merge vs. a Dedicated PDF Tool: Which One Do You Need?",
     description:
-      "Word's mail merge has been around forever. Here's what it does well, where it falls short for PDF output, and when a dedicated tool will save you real time.",
+      "Word mail merge has limits for PDF output. Here is what it does well, where it falls short, and when a dedicated tool will save you real time.",
     date: "2026-07-14",
     author: "InOneShot Team",
     lang: "en",
@@ -504,9 +513,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "inoneshot-1-1-0-nouveautes",
     altLangSlug: "inoneshot-1-1-0-whats-new",
+    seoTitle: "InOneShot 1.1.0 : Mode sombre et Linux — InOneShot",
     title: "InOneShot 1.1.0 : mode sombre, interface FR/EN, fusion PDF, glisser-déposer — et Linux",
     description:
-      "La mise à jour 1.1.0 d'InOneShot apporte le mode sombre, une interface bilingue, l'import CSV, la fusion en un seul PDF, le glisser-déposer de fichiers, et une version Linux.",
+      "InOneShot 1.1.0 apporte le mode sombre, l'interface bilingue, l'import CSV, la fusion en un PDF, le glisser-déposer et une version officielle Linux.",
     date: "2026-07-18",
     author: "Équipe InOneShot",
     lang: "fr",
@@ -558,9 +568,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "inoneshot-1-1-0-whats-new",
     altLangSlug: "inoneshot-1-1-0-nouveautes",
+    seoTitle: "InOneShot 1.1.0: Dark Mode and Linux — InOneShot",
     title: "InOneShot 1.1.0: Dark Mode, Bilingual UI, PDF Merging, Drag & Drop — and Linux",
     description:
-      "InOneShot 1.1.0 brings dark mode, a bilingual interface, CSV import, merging generated PDFs into a single file, drag-and-drop file handling, and a Linux release.",
+      "InOneShot 1.1.0 brings dark mode, a bilingual UI, CSV import, PDF merging, drag-and-drop file handling, and an official Linux release on Snapcraft.",
     date: "2026-07-18",
     author: "InOneShot Team",
     lang: "en",
@@ -612,6 +623,7 @@ export const posts: BlogPost[] = [
   make({
     slug: "inoneshot-disponible-sur-android",
     altLangSlug: "inoneshot-now-available-on-android",
+    seoTitle: "InOneShot est disponible sur Android — InOneShot",
     title: "InOneShot est maintenant disponible sur Android",
     description:
       "Le publipostage PDF d'InOneShot passe sur mobile : générez vos lots de PDF personnalisés depuis votre téléphone ou votre tablette, avec Google Play.",
@@ -656,6 +668,7 @@ export const posts: BlogPost[] = [
   make({
     slug: "inoneshot-now-available-on-android",
     altLangSlug: "inoneshot-disponible-sur-android",
+    seoTitle: "InOneShot Is Now on Android — InOneShot",
     title: "InOneShot Is Now Available on Android",
     description:
       "InOneShot's PDF mail merge is now on mobile: generate your batches of personalized PDFs from your phone or tablet, via Google Play.",
@@ -700,9 +713,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "generer-factures-pdf-masse-excel",
     altLangSlug: "generate-bulk-pdf-invoices-from-excel",
+    seoTitle: "Factures PDF en masse depuis Excel — InOneShot",
     title: "Générer des factures PDF personnalisées en masse depuis un tableur Excel",
     description:
-      "Pour les indépendants, associations et petites entreprises, automatiser l'édition de factures en série grâce au publipostage PDF réduit un lot de 150 factures de plusieurs heures à quelques minutes.",
+      "Indépendants et PME : automatisez la création de vos factures en série depuis Excel grâce au publipostage PDF local. Passez de plusieurs heures à 2 minutes.",
     date: "2026-08-30",
     author: "Équipe InOneShot",
     lang: "fr",
@@ -748,6 +762,7 @@ export const posts: BlogPost[] = [
   make({
     slug: "generate-bulk-pdf-invoices-from-excel",
     altLangSlug: "generer-factures-pdf-masse-excel",
+    seoTitle: "Generate Bulk PDF Invoices from Excel — InOneShot",
     title: "Generate Bulk PDF Invoices Automatically from an Excel Spreadsheet",
     description:
       "For freelancers, nonprofits, and small businesses, automating batch invoice generation with PDF mail merge saves hours of manual work.",
@@ -796,6 +811,7 @@ export const posts: BlogPost[] = [
   make({
     slug: "qr-code-document-genere-en-masse",
     altLangSlug: "add-qr-code-bulk-generated-documents",
+    seoTitle: "Ajouter un QR code sur vos PDF en masse — InOneShot",
     title: "Ajouter un QR code personnalisé sur vos documents générés en masse",
     description:
       "Billets d'entrée, badges d'accès ou cartes de visite : apprenez à insérer automatiquement un QR code unique pour chaque ligne de votre fichier Excel.",
@@ -844,6 +860,7 @@ export const posts: BlogPost[] = [
   make({
     slug: "add-qr-code-bulk-generated-documents",
     altLangSlug: "qr-code-document-genere-en-masse",
+    seoTitle: "Add QR Codes to Bulk Generated PDFs — InOneShot",
     title: "Add a Personalized QR Code to Your Bulk-Generated Documents",
     description:
       "Event tickets, access badges, or business cards: learn how to automatically insert a unique QR code for each row of your Excel file.",
@@ -892,9 +909,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "publipostage-rh-contrats-convocations-badges",
     altLangSlug: "hr-mail-merge-contracts-invitations-badges",
+    seoTitle: "Publipostage RH : Contrats et badges — InOneShot",
     title: "Publipostage RH : produire contrats, convocations et badges sans y passer la semaine",
     description:
-      "Un service RH génère les mêmes documents en série toute l'année. Voici comment transformer un tableur du SIRH en centaines de PDF nominatifs, sans copier-coller et sans envoyer les données du personnel dans le cloud.",
+      "Contrats, convocations et badges RH : transformez vos exports Excel SIRH en centaines de PDF nominatifs sans copier-coller et 100% hors-ligne en toute sécurité.",
     date: "2026-09-02",
     author: "Équipe InOneShot",
     lang: "fr",
@@ -980,9 +998,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "hr-mail-merge-contracts-invitations-badges",
     altLangSlug: "publipostage-rh-contrats-convocations-badges",
+    seoTitle: "HR Mail Merge: Contracts and Badges — InOneShot",
     title: "HR Mail Merge: Contracts, Meeting Invitations and Badges Without Losing a Week",
     description:
-      "HR teams produce the same documents in batches all year long. Here's how to turn an HRIS export into hundreds of personalized PDFs, with no copy-pasting and without sending employee data to the cloud.",
+      "Contracts, invitations and badges: convert HRIS Excel spreadsheets into hundreds of personalized PDFs with no copy-paste and zero cloud data uploads.",
     date: "2026-09-02",
     author: "InOneShot Team",
     lang: "en",
@@ -1068,10 +1087,11 @@ export const posts: BlogPost[] = [
   make({
     slug: "comment-generer-attestations-formation-qualiopi-sans-logiciel-gestion",
     altLangSlug: "how-to-generate-training-certificates-without-management-software",
+    seoTitle: "Attestations Qualiopi sans logiciel — InOneShot",
     title:
       "Comment générer ses attestations de formation Qualiopi sans logiciel de gestion à 100 €/mois ?",
     description:
-      "Attestations de fin de formation, certificats de réalisation, convocations : voici comment un petit organisme de formation ou un formateur indépendant peut produire ces documents en série, conformes Qualiopi, sans s'abonner à une suite de gestion complète.",
+      "Attestations, certificats de réalisation et convocations : produisez vos documents en série conformes Qualiopi depuis Excel sans logiciel à 100 €/mois.",
     date: "2026-09-28",
     author: "Équipe InOneShot",
     lang: "fr",
@@ -1207,9 +1227,10 @@ export const posts: BlogPost[] = [
   make({
     slug: "how-to-generate-training-certificates-without-management-software",
     altLangSlug: "comment-generer-attestations-formation-qualiopi-sans-logiciel-gestion",
+    seoTitle: "Generate Training Certificates Easily — InOneShot",
     title: "How Do You Generate Training Certificates Without Paying for Full Management Software?",
     description:
-      "Certificates of completion, attendance records, invitations: here's how a small training provider or independent trainer can batch-produce these documents without subscribing to a full training-management suite.",
+      "Certificates of completion, records and invitations: batch-produce official training documents from Excel without an expensive training management suite.",
     date: "2026-09-28",
     author: "InOneShot Team",
     lang: "en",

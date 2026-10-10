@@ -12,6 +12,18 @@ export const Route = createFileRoute("/terms")({
           "Conditions générales de vente du logiciel InOneShot : licence, prix, livraison, rétractation et responsabilité.",
       },
       { property: "og:title", content: "Conditions Générales de Vente — InOneShot" },
+      {
+        property: "og:description",
+        content:
+          "Conditions générales de vente du logiciel InOneShot : licence, prix, livraison et rétractation.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.inoneshot.fr/terms" },
+      { property: "og:image", content: "https://www.inoneshot.fr/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.inoneshot.fr/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://www.inoneshot.fr/terms" }],
   }),

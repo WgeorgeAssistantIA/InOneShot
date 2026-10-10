@@ -14,14 +14,20 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) return { meta: [{ title: "Article — InOneShot" }] };
     const canonical = `https://www.inoneshot.fr/blog/${post.slug}`;
     const altPost = post.altLangSlug ? getPost(post.altLangSlug) : undefined;
+    const pageTitle = post.seoTitle || `${post.title} — InOneShot`;
     return {
       meta: [
-        { title: `${post.title} — Blog InOneShot` },
+        { title: pageTitle },
         { name: "description", content: post.description },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: canonical },
+        { property: "og:image", content: "https://www.inoneshot.fr/og-image.png" },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: "https://www.inoneshot.fr/og-image.png" },
         { property: "article:author", content: post.author },
       ],
       links: [
@@ -38,8 +44,22 @@ export const Route = createFileRoute("/blog/$slug")({
                 hrefLang: altPost.lang === "fr" ? "fr" : "en",
                 href: `https://www.inoneshot.fr/blog/${altPost.slug}`,
               },
+              {
+                rel: "alternate",
+                hrefLang: "x-default",
+                href:
+                  post.lang === "fr"
+                    ? canonical
+                    : `https://www.inoneshot.fr/blog/${altPost.slug}`,
+              },
             ]
-          : []),
+          : [
+              {
+                rel: "alternate",
+                hrefLang: "x-default",
+                href: canonical,
+              },
+            ]),
       ],
       scripts: [
         {
@@ -49,6 +69,7 @@ export const Route = createFileRoute("/blog/$slug")({
             "@type": "Article",
             headline: post.title,
             description: post.description,
+            image: "https://www.inoneshot.fr/og-image.png",
             datePublished: post.date,
             dateModified: post.date,
             inLanguage: post.lang === "fr" ? "fr-FR" : "en-US",
@@ -58,7 +79,7 @@ export const Route = createFileRoute("/blog/$slug")({
               name: "InOneShot",
               logo: {
                 "@type": "ImageObject",
-                url: "https://www.inoneshot.fr/favicon.ico",
+                url: "https://www.inoneshot.fr/inoneshot_logo.png",
               },
             },
             mainEntityOfPage: canonical,

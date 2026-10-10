@@ -108,9 +108,9 @@ const CONTACT_EMAIL = "contact@inoneshot.fr";
 
 export const t = {
   en: {
-    metaTitle: "InOneShot — Generate hundreds of personalized PDFs from your Excel, in one click",
+    metaTitle: "InOneShot — 1-Click PDF Mail Merge from Excel",
     metaDesc:
-      "PDF mail merge for Windows. From one PDF template + an Excel file, generate one PDF per row + a ZIP. 100% local. Free version available.",
+      "Generate hundreds of personalized PDFs from an Excel file in one click. 100% local, private, zero cloud data uploads.",
     nav: { features: "Features", pricing: "Pricing", faq: "FAQ", cta: "Download" },
     announce: {
       text: "Launch offer: 30% off for the first 20 customers — code",
@@ -370,10 +370,9 @@ export const t = {
     },
   },
   fr: {
-    metaTitle:
-      "InOneShot — Générez vos documents PDF sensibles en masse, 100% hors-ligne",
+    metaTitle: "InOneShot — Publipostage PDF en 1 clic depuis Excel",
     metaDesc:
-      "La solution de publipostage sécurisée pour les RH, Notaires et PME. 0% Cloud, sans abonnement. Vos données ne quittent jamais votre PC.",
+      "Générez des centaines de PDF personnalisés depuis votre Excel en un clic. Solution 100% locale, privée et sans abonnement.",
     nav: { features: "Fonctionnalités", pricing: "Tarifs", faq: "FAQ", cta: "Télécharger" },
     announce: {
       text: "Offre de lancement : -30% pour les 20 premiers clients — code",
@@ -641,11 +640,11 @@ export const t = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "InOneShot — Générez des centaines de PDF personnalisés depuis votre Excel" },
+      { title: "InOneShot — Publipostage PDF en 1 clic depuis Excel" },
       {
         name: "description",
         content:
-          "Publipostage PDF pour Windows. À partir d'un modèle PDF + un Excel, générez un PDF par ligne + un ZIP. 100% local.",
+          "Publipostage PDF pour Windows. À partir d'un modèle PDF et d'un Excel, générez vos PDF personnalisés en un clic. 100% local et sécurisé.",
       },
       { property: "og:title", content: "InOneShot — Publipostage PDF en un clic" },
       {
@@ -655,6 +654,11 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.inoneshot.fr/" },
+      { property: "og:image", content: "https://www.inoneshot.fr/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.inoneshot.fr/og-image.png" },
     ],
     links: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -675,6 +679,15 @@ export const Route = createFileRoute("/")({
           description:
             "Publipostage PDF : générez un PDF personnalisé par ligne d'un fichier Excel, en un clic. 100% local.",
           url: "https://www.inoneshot.fr/",
+          image: "https://www.inoneshot.fr/og-image.png",
+          screenshot: "https://www.inoneshot.fr/og-image.png",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            ratingCount: "28",
+            bestRating: "5",
+            worstRating: "1",
+          },
           sameAs: [
             "https://www.wikidata.org/wiki/Q141656926",
             "https://apps.microsoft.com/detail/9PPBQSM1MFZ2",
@@ -702,7 +715,7 @@ export const Route = createFileRoute("/")({
           name: "La Fabrik Numérique",
           url: "https://www.lafabriknumerique.fr",
           founder: { "@type": "Person", name: "William GEORGE", jobTitle: "Founder", url: "https://www.lafabriknumerique.fr" },
-          logo: "https://www.inoneshot.fr/favicon.ico",
+          logo: "https://www.inoneshot.fr/inoneshot_logo.png",
           sameAs: [
             PLAY_STORE_URL,
             SNAP_URL,

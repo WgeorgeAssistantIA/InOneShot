@@ -37,7 +37,7 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   });
 }
 
-const CANONICAL_HOST = "inoneshot.fr";
+const CANONICAL_HOST = "www.inoneshot.fr";
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {

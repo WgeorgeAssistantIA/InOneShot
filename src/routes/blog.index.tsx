@@ -5,17 +5,24 @@ import { posts, type BlogPost } from "@/lib/blog-posts";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Blog — InOneShot" },
+      { title: "Blog InOneShot — Guides et astuces publipostage PDF" },
       {
         name: "description",
         content:
           "Conseils, tutoriels et guides sur le publipostage PDF, la génération de documents en masse et l'automatisation, par l'équipe InOneShot.",
       },
-      { property: "og:title", content: "Blog — InOneShot" },
+      { property: "og:title", content: "Blog InOneShot — Guides et astuces publipostage PDF" },
       {
         property: "og:description",
         content: "Conseils et tutoriels sur le publipostage PDF par l'équipe InOneShot.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.inoneshot.fr/blog" },
+      { property: "og:image", content: "https://www.inoneshot.fr/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.inoneshot.fr/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://www.inoneshot.fr/blog" }],
   }),
