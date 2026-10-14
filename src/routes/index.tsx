@@ -59,7 +59,8 @@ function useDownloadCount() {
 
 function DownloadCounter({ lang }: { lang: Lang }) {
   const total = useDownloadCount();
-  if (total === null || total < 20) return null; // pas assez de recul, évite un chiffre gênant
+  // Sous 1 000, le chiffre dessert plus qu'il ne rassure : on ne l'affiche qu'au-delà.
+  if (total === null || total < 1000) return null;
   const formatted = new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "en-US").format(total);
   return (
     <p className="mt-3 text-xs text-muted-foreground">
@@ -118,6 +119,7 @@ export const t = {
       code: "LANCEMENT",
     },
     hero: {
+      titleLead: "",
       title: "Generate hundreds of personalized PDFs in one click, from your Excel. 100% local.",
       subtitle:
         "From a single PDF template and an Excel file, place your fields by drag & drop, then generate one PDF per row plus a ready-to-send ZIP. No cloud, no subscription.",
@@ -380,8 +382,10 @@ export const t = {
       code: "LANCEMENT",
     },
     hero: {
-      title:
-        "Vos données clients sont trop sensibles pour le Cloud. Générez vos documents PDF en masse, 100% hors-ligne.",
+      // Accroche affichée en plus petit au-dessus du titre : le H1 complet faisait 7 lignes
+      // et repoussait le bouton de téléchargement sous la ligne de flottaison.
+      titleLead: "Vos données clients sont trop sensibles pour le Cloud.",
+      title: "Générez vos documents PDF en masse, 100% hors-ligne.",
       subtitle:
         "La solution de publipostage sécurisée pour les RH, Notaires et PME. Générez des centaines de contrats, attestations et factures en un clic depuis votre Excel. 0% Cloud, sans abonnement.",
       btnPrimary: "Télécharger gratuitement pour Windows",
@@ -1062,6 +1066,11 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
             </Reveal>
             <Reveal delay={60}>
               <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+                {c.hero.titleLead && (
+                  <span className="mb-3 block text-xl font-semibold leading-snug tracking-normal text-muted-foreground md:text-2xl">
+                    {c.hero.titleLead}
+                  </span>
+                )}
                 {c.hero.title}
               </h1>
             </Reveal>
