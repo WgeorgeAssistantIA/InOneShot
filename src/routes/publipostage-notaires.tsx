@@ -94,6 +94,9 @@ type Lang = "en" | "fr";
 const CHECKOUT_URL =
   "https://checkout.lafabriknumerique.fr/checkout/buy/d04203ba-2117-403a-9dfb-b903bfd04587?checkout[discount_code]=LANCEMENT";
 const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
+// Main Windows CTA: Microsoft's Store installer, signed by Microsoft, so no SmartScreen
+// warning (our .exe is unsigned). The .exe stays available as a secondary button.
+const STORE_INSTALLER = "https://get.microsoft.com/installer/download/9PPBQSM1MFZ2?referrer=appbadge";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android";
 const WINDOWS_INSTALLER_URL =
@@ -122,12 +125,12 @@ const t = {
         "From a single PDF template and an Excel file, place your fields by drag & drop, then generate one PDF per row plus a ready-to-send ZIP. No cloud, no subscription.",
       btnPrimary: "Download free for Windows",
       smartscreenNote:
-        "Windows may show a SmartScreen warning since the app is still new. Click “More info” then “Run anyway” to continue — the installer is safe.",
+        "Installs through the Microsoft Store: signed by Microsoft, so Windows shows no security warning. The classic .exe installer is just below.",
       btnPortable: "Portable version (.zip)",
       btnLinux: "Linux (.AppImage)",
       btnLinuxTar: "Linux (.tar.gz)",
       btnSnap: "Linux (Snap Store)",
-      subText: "Free — no credit card required",
+      subText: "Free, via the Microsoft Store — no security warning, no credit card",
       badges: [
         "100% local — GDPR",
         "One-time payment — no subscription",
@@ -385,12 +388,12 @@ const t = {
         "La solution de publipostage sécurisée pour les RH, Notaires et PME. Générez des centaines de contrats, attestations et factures en un clic depuis votre Excel. 0% Cloud, sans abonnement.",
       btnPrimary: "Télécharger gratuitement pour Windows",
       smartscreenNote:
-        "Windows peut afficher un avertissement SmartScreen car l'appli est encore peu téléchargée. Cliquez sur « Informations complémentaires » puis « Exécuter quand même » pour continuer — l'installeur est sûr.",
+        "S'installe via le Microsoft Store : signé par Microsoft, donc aucun avertissement de sécurité Windows. L'installeur .exe classique est juste en dessous.",
       btnPortable: "Version portable (.zip)",
       btnLinux: "Linux (.AppImage)",
       btnLinuxTar: "Linux (.tar.gz)",
       btnSnap: "Linux (Snap Store)",
-      subText: "Gratuit — aucune carte bancaire requise",
+      subText: "Gratuit, via le Microsoft Store — sans avertissement de sécurité ni carte bancaire",
       badges: [
         "100% local — RGPD",
         "Paiement unique — sans abonnement",
@@ -982,8 +985,8 @@ function Index() {
               <div className="mt-8 grid grid-cols-2 gap-3">
                 <div className="group/win relative col-span-2 inline-flex">
                   <a
-                    href={WINDOWS_INSTALLER_URL}
-                    onClick={trackPortableDownload}
+                    href={STORE_INSTALLER}
+                    onClick={trackStoreDownload}
                     className="group inline-flex w-full cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep hover:shadow-lg hover:shadow-primary/25"
                   >
                     <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
@@ -994,28 +997,12 @@ function Index() {
                   </div>
                 </div>
                 <a
-                  href={STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={trackStoreDownload}
-                  aria-label={
-                    lang === "fr"
-                      ? "Télécharger InOneShot sur le Microsoft Store"
-                      : "Get InOneShot from the Microsoft Store"
-                  }
-                  className="inline-flex items-center justify-center rounded-lg border border-border transition-opacity hover:opacity-90"
+                  href={WINDOWS_INSTALLER_URL}
+                  onClick={trackPortableDownload}
+                  className="inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand-deep"
                 >
-                  <img
-                    src={`https://get.microsoft.com/images/${lang === "fr" ? "fr" : "en-us"}%20light.svg`}
-                    width={200}
-                    height={58}
-                    alt={
-                      lang === "fr"
-                        ? "Disponible sur le Microsoft Store"
-                        : "Get it from Microsoft Store"
-                    }
-                    className="h-[52px] w-auto"
-                  />
+                  <Download className="h-4 w-4" />
+                  {lang === "fr" ? "Installeur .exe" : ".exe installer"}
                 </a>
                 <a
                   href={SNAP_URL}
