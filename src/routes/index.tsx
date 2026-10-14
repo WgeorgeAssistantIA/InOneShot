@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { subscribeNewsletter } from "@/lib/api/newsletter.functions";
+import { MobileNav } from "@/components/MobileNav";
 import { getReassuranceVariant, REASSURANCE_COPY, type ReassuranceVariant } from "@/lib/abtest";
 
 declare function gtag(...args: unknown[]): void;
@@ -974,6 +975,29 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
     speed: Zap,
   };
 
+  const navLinks = (
+    <>
+      <a href="#how" className="transition-colors hover:text-foreground">
+        {c.nav.features}
+      </a>
+      <Link to="/publipostage-notaires" className="transition-colors hover:text-foreground">
+        Notaires & Avocats
+      </Link>
+      <Link to="/attestations-rh" className="transition-colors hover:text-foreground">
+        RH
+      </Link>
+      <a href="#pricing" className="transition-colors hover:text-foreground">
+        {c.nav.pricing}
+      </a>
+      <a href="#faq" className="transition-colors hover:text-foreground">
+        {c.nav.faq}
+      </a>
+      <Link to="/blog" className="transition-colors hover:text-foreground">
+        Blog
+      </Link>
+    </>
+  );
+
   return (
     <div className="min-h-screen">
       {/* NAV */}
@@ -1007,27 +1031,11 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
           <Logo />
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-            <a href="#how" className="transition-colors hover:text-foreground">
-              {c.nav.features}
-            </a>
-            <Link to="/publipostage-notaires" className="transition-colors hover:text-foreground">
-              Notaires & Avocats
-            </Link>
-            <Link to="/attestations-rh" className="transition-colors hover:text-foreground">
-              RH
-            </Link>
-            <a href="#pricing" className="transition-colors hover:text-foreground">
-              {c.nav.pricing}
-            </a>
-            <a href="#faq" className="transition-colors hover:text-foreground">
-              {c.nav.faq}
-            </a>
-            <Link to="/blog" className="transition-colors hover:text-foreground">
-              Blog
-            </Link>
+            {navLinks}
           </nav>
           <div className="flex items-center gap-3">
             <LangToggle lang={lang} setLang={setLang} />
+            <MobileNav>{navLinks}</MobileNav>
             <a
               href={STORE_URL}
               target="_blank"
