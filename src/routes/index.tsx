@@ -1290,15 +1290,26 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
               const num = String(i + 1).padStart(2, "0");
               return (
                 <Reveal key={i} delay={i * 100}>
-                  <div className="group relative h-full rounded-2xl border border-border bg-card p-8 shadow-sm transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md">
-                    <div className="absolute right-6 top-6 text-5xl font-bold text-brand/10">
-                      {num}
+                  <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md">
+                    {/* Real app screenshot for each step (public/steps/step-N.webp) */}
+                    <img
+                      src={`/steps/step-${i + 1}.webp`}
+                      alt={s.title}
+                      width={960}
+                      height={600}
+                      loading="lazy"
+                      className="aspect-[16/10] w-full border-b border-border object-cover object-top"
+                    />
+                    <div className="relative p-6">
+                      <div className="absolute right-6 top-5 text-4xl font-bold text-brand/10">
+                        {num}
+                      </div>
+                      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 ring-1 ring-brand/20">
+                        <Icon className="h-5 w-5 text-brand" />
+                      </div>
+                      <h3 className="text-lg font-semibold">{s.title}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
                     </div>
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 ring-1 ring-brand/20">
-                      <Icon className="h-6 w-6 text-brand" />
-                    </div>
-                    <h3 className="text-lg font-semibold">{s.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
                   </div>
                 </Reveal>
               );
