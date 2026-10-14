@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { subscribeNewsletter } from "@/lib/api/newsletter.functions";
 import { MobileNav } from "@/components/MobileNav";
+import { InstallHelp } from "@/components/InstallHelp";
 import { getReassuranceVariant, REASSURANCE_COPY, type ReassuranceVariant } from "@/lib/abtest";
 
 declare function gtag(...args: unknown[]): void;
@@ -973,6 +974,13 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
 
   const c = t[lang];
 
+  // Installer isn't code-signed: show the Edge/SmartScreen steps right after the click
+  const [installHelp, setInstallHelp] = useState(false);
+  const onExeClick = () => {
+    trackPortableDownload();
+    setInstallHelp(true);
+  };
+
   const pillarIcons: Record<string, React.ElementType> = {
     lock: Lock,
     payment: CreditCard,
@@ -1084,7 +1092,7 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
                 <div className="group/win relative col-span-2 inline-flex">
                   <a
                     href={WINDOWS_INSTALLER_URL}
-                    onClick={trackPortableDownload}
+                    onClick={onExeClick}
                     className="group inline-flex w-full cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition hover:bg-brand-deep hover:shadow-lg hover:shadow-primary/25"
                   >
                     <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
@@ -1823,6 +1831,9 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
           </a>
         </div>
       </footer>
+      {installHelp && (
+        <InstallHelp lang={lang} storeUrl={STORE_URL} onClose={() => setInstallHelp(false)} />
+      )}
     </div>
   );
 }
