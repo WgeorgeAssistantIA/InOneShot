@@ -90,6 +90,9 @@ import {
   Sparkles,
   UploadCloud,
   Layers,
+  Scale,
+  Users,
+  Briefcase,
 } from "lucide-react";
 
 type Lang = "en" | "fr";
@@ -419,11 +422,11 @@ export const t = {
     pain: {
       title: "Le publipostage de données sensibles vous bloque ?",
       text: "Les outils en ligne obligent à envoyer les données confidentielles de vos clients ou employés sur le web (illégal ou risqué). InOneShot fait le travail répétitif 100% en local sur votre machine.",
-      solutionTitle: "Idéal pour les professions exigeantes :",
+      solutionTitle: "Idéal pour les professions exigeantes :",
       steps: [
-        "⚖️ Cabinets Juridiques & Notaires : Générez des actes et contrats sans enfreindre le secret professionnel.",
-        "🏢 Ressources Humaines : Éditez vos fiches de paie et attestations avec une totale conformité RGPD.",
-        "💼 Indépendants & PME : Factures et devis en un seul tir, sans abonnement mensuel.",
+        "Cabinets Juridiques & Notaires : Générez des actes et contrats sans enfreindre le secret professionnel.",
+        "Ressources Humaines : Éditez vos fiches de paie et attestations avec une totale conformité RGPD.",
+        "Indépendants & PME : Factures et devis en un seul tir, sans abonnement mensuel.",
       ],
     },
     how: {
@@ -862,7 +865,7 @@ function MergeDemo({ lang }: { lang: Lang }) {
   ];
 
   return (
-    <div className="flex h-full flex-col items-center justify-between gap-6">
+    <div className="flex h-full flex-col items-center justify-center gap-6">
       {/* Source Excel */}
       <div className="flex w-full max-w-[320px] flex-col gap-3">
         <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
@@ -1209,15 +1212,17 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
           </div>
 
           {/* Right — app window with merge demo */}
-          <Reveal delay={160} className="h-full">
-            <div className="relative h-full">
-              <div className="pointer-events-none absolute -left-3 -top-3 z-20 hidden items-center gap-1.5 rounded-full border border-brand/30 bg-card px-3 py-1.5 text-xs font-medium text-brand-deep shadow-sm sm:inline-flex">
+          {/* Natural height, centred against the copy: stretched to the column height the
+              merge demo left a big empty white block in the middle */}
+          <Reveal delay={160} className="md:self-center">
+            <div className="relative">
+              <div className="pointer-events-none absolute -top-3 right-4 z-20 hidden items-center gap-1.5 rounded-full border border-brand/30 bg-card px-3 py-1.5 text-xs font-medium text-brand-deep shadow-sm sm:inline-flex">
                 <QrCode className="h-3.5 w-3.5" /> {c.hero.floating.topLeft}
               </div>
               <div className="pointer-events-none absolute -bottom-3 -right-3 z-20 hidden items-center gap-1.5 rounded-full border border-energy/30 bg-card px-3 py-1.5 text-xs font-medium text-energy shadow-sm sm:inline-flex">
                 <ShieldCheck className="h-3.5 w-3.5" /> {c.hero.floating.bottomRight}
               </div>
-              <div className="flex h-full flex-col rounded-2xl border border-border bg-card shadow-xl shadow-slate-900/5">
+              <div className="flex flex-col rounded-2xl border border-border bg-card shadow-xl shadow-slate-900/5">
                 <div className="flex items-center gap-1.5 border-b border-border px-4 py-3">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
@@ -1269,7 +1274,8 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
             </div>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-3">
-            {[UploadCloud, MousePointerClick, Files].map((Icon, i) => (
+            {/* FR lists professions here, EN lists the 3 steps: pick icons that match each */}
+            {(lang === "fr" ? [Scale, Users, Briefcase] : [UploadCloud, MousePointerClick, Files]).map((Icon, i) => (
               <Reveal key={i} delay={i * 100}>
                 <div className="flex flex-col items-center rounded-2xl border border-border bg-card p-8 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md">
                   <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 ring-1 ring-brand/20">
@@ -1478,7 +1484,52 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <div className="overflow-x-auto rounded-2xl border border-border shadow-sm">
+            {/* Phones: one card per tool instead of a 680px-wide table that scrolls sideways */}
+            <div className="space-y-3 md:hidden">
+              {c.compare.rows.map((row, i) => (
+                <div
+                  key={i}
+                  className={`rounded-2xl border p-4 shadow-sm ${row.highlight ? "border-primary/50 bg-brand/5" : "border-border bg-background"}`}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="font-semibold" translate="no">{row.name}</span>
+                        {row.badge && (
+                          <span className="rounded-md bg-primary px-2 py-0.5 text-[10px] font-medium text-primary-foreground">
+                            {row.badge}
+                          </span>
+                        )}
+                      </div>
+                      {row.sub && (
+                        <span className={`mt-0.5 block text-xs ${row.highlight ? "text-brand-deep" : "text-muted-foreground"}`}>
+                          {row.sub}
+                        </span>
+                      )}
+                    </div>
+                    <span className={`shrink-0 text-sm ${row.highlight ? "font-semibold text-brand-deep" : "text-muted-foreground"}`}>
+                      {row.price}
+                    </span>
+                  </div>
+                  <dl className="mt-3 grid grid-cols-3 gap-2 text-center text-xs">
+                    {[
+                      { label: c.compare.cols.local, s: row.local, n: row.localNote },
+                      { label: c.compare.cols.advanced, s: row.advanced, n: row.advancedNote },
+                      { label: c.compare.cols.batch, s: row.batch, n: row.batchNote },
+                    ].map((cell) => (
+                      <div key={cell.label} className="rounded-lg bg-muted/60 px-1 py-2">
+                        <dt className="text-muted-foreground">{cell.label}</dt>
+                        <dd className="mt-1 flex flex-col items-center">
+                          <StatusIcon s={cell.s} />
+                          {cell.n && <span className="mt-0.5 text-[11px] leading-tight text-muted-foreground">{cell.n}</span>}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              ))}
+            </div>
+            <div className="hidden overflow-x-auto rounded-2xl border border-border shadow-sm md:block">
               <table className="w-full min-w-[680px] text-sm">
                 <thead>
                   <tr className="border-b border-border bg-muted">
