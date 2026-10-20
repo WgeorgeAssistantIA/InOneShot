@@ -14,6 +14,7 @@ import { Route as AttestationsRhRouteImport } from './routes/attestations-rh'
 import { Route as EnRouteImport } from './routes/en'
 import { Route as InspecteurChampsPdfRouteImport } from './routes/inspecteur-champs-pdf'
 import { Route as LegalRouteImport } from './routes/legal'
+import { Route as OrganismesFormationQualiopiRouteImport } from './routes/organismes-formation-qualiopi'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PublipostageNotairesRouteImport } from './routes/publipostage-notaires'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -47,6 +48,12 @@ const LegalRoute = LegalRouteImport.update({
   path: '/legal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OrganismesFormationQualiopiRoute =
+  OrganismesFormationQualiopiRouteImport.update({
+    id: '/organismes-formation-qualiopi',
+    path: '/organismes-formation-qualiopi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -89,6 +96,7 @@ export interface FileRoutesByFullPath {
   '/en': typeof EnRoute
   '/inspecteur-champs-pdf': typeof InspecteurChampsPdfRoute
   '/legal': typeof LegalRoute
+  '/organismes-formation-qualiopi': typeof OrganismesFormationQualiopiRoute
   '/privacy': typeof PrivacyRoute
   '/publipostage-notaires': typeof PublipostageNotairesRoute
   '/terms': typeof TermsRoute
@@ -103,6 +111,7 @@ export interface FileRoutesByTo {
   '/en': typeof EnRoute
   '/inspecteur-champs-pdf': typeof InspecteurChampsPdfRoute
   '/legal': typeof LegalRoute
+  '/organismes-formation-qualiopi': typeof OrganismesFormationQualiopiRoute
   '/privacy': typeof PrivacyRoute
   '/publipostage-notaires': typeof PublipostageNotairesRoute
   '/terms': typeof TermsRoute
@@ -118,6 +127,7 @@ export interface FileRoutesById {
   '/en': typeof EnRoute
   '/inspecteur-champs-pdf': typeof InspecteurChampsPdfRoute
   '/legal': typeof LegalRoute
+  '/organismes-formation-qualiopi': typeof OrganismesFormationQualiopiRoute
   '/privacy': typeof PrivacyRoute
   '/publipostage-notaires': typeof PublipostageNotairesRoute
   '/terms': typeof TermsRoute
@@ -134,6 +144,7 @@ export interface FileRouteTypes {
     | '/en'
     | '/inspecteur-champs-pdf'
     | '/legal'
+    | '/organismes-formation-qualiopi'
     | '/privacy'
     | '/publipostage-notaires'
     | '/terms'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
     | '/en'
     | '/inspecteur-champs-pdf'
     | '/legal'
+    | '/organismes-formation-qualiopi'
     | '/privacy'
     | '/publipostage-notaires'
     | '/terms'
@@ -162,6 +174,7 @@ export interface FileRouteTypes {
     | '/en'
     | '/inspecteur-champs-pdf'
     | '/legal'
+    | '/organismes-formation-qualiopi'
     | '/privacy'
     | '/publipostage-notaires'
     | '/terms'
@@ -177,6 +190,7 @@ export interface RootRouteChildren {
   EnRoute: typeof EnRoute
   InspecteurChampsPdfRoute: typeof InspecteurChampsPdfRoute
   LegalRoute: typeof LegalRoute
+  OrganismesFormationQualiopiRoute: typeof OrganismesFormationQualiopiRoute
   PrivacyRoute: typeof PrivacyRoute
   PublipostageNotairesRoute: typeof PublipostageNotairesRoute
   TermsRoute: typeof TermsRoute
@@ -221,6 +235,13 @@ declare module '@tanstack/react-router' {
       path: '/legal'
       fullPath: '/legal'
       preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/organismes-formation-qualiopi': {
+      id: '/organismes-formation-qualiopi'
+      path: '/organismes-formation-qualiopi'
+      fullPath: '/organismes-formation-qualiopi'
+      preLoaderRoute: typeof OrganismesFormationQualiopiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -281,6 +302,7 @@ const rootRouteChildren: RootRouteChildren = {
   EnRoute: EnRoute,
   InspecteurChampsPdfRoute: InspecteurChampsPdfRoute,
   LegalRoute: LegalRoute,
+  OrganismesFormationQualiopiRoute: OrganismesFormationQualiopiRoute,
   PrivacyRoute: PrivacyRoute,
   PublipostageNotairesRoute: PublipostageNotairesRoute,
   TermsRoute: TermsRoute,

@@ -236,7 +236,7 @@ export const posts: BlogPost[] = [
       { type: "h2", text: "2. Les diplômes et certificats de formation" },
       {
         type: "p",
-        text: "Un organisme de formation qui clôture une session doit remettre un certificat à chaque participant. Le modèle est soigné (logo, mise en page verrouillée en PDF), seuls changent le nom, la formation et la date. C'est le cas d'école du publipostage PDF : on place trois champs sur le modèle, et la promotion entière est traitée en quelques secondes.",
+        text: "Un organisme de formation qui clôture une session doit remettre un certificat à chaque participant. Le modèle est soigné (logo, mise en page verrouillée en PDF), seuls changent le nom, la formation et la date. C'est le cas d'école du publipostage PDF : on place trois champs sur le modèle, et la promotion entière est traitée en quelques secondes. Découvrez aussi notre [solution dédiée aux organismes de formation et attestations Qualiopi](/organismes-formation-qualiopi).",
       },
       { type: "h2", text: "3. Les factures et reçus" },
       {
@@ -1095,7 +1095,10 @@ export const posts: BlogPost[] = [
     date: "2026-09-28",
     author: "Équipe InOneShot",
     lang: "fr",
-    related: { to: "/attestations-rh", label: "Voir la page dédiée aux documents RH et attestations" },
+    related: {
+      to: "/organismes-formation-qualiopi",
+      label: "Voir la page dédiée aux Organismes de Formation & Qualiopi",
+    },
     content: [
       {
         type: "p",
@@ -1234,7 +1237,10 @@ export const posts: BlogPost[] = [
     date: "2026-09-28",
     author: "InOneShot Team",
     lang: "en",
-    related: { to: "/attestations-rh", label: "See the dedicated HR documents page" },
+    related: {
+      to: "/organismes-formation-qualiopi",
+      label: "See the dedicated Training Certificates & Qualiopi page",
+    },
     content: [
       {
         type: "p",
