@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://www.inoneshot.fr/blog</loc>
-    <lastmod>2026-07-18</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -165,6 +165,18 @@
   <url>
     <loc>https://www.inoneshot.fr/blog/how-to-generate-training-certificates-without-management-software</loc>
     <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/blog/creer-un-pdf-par-ligne-excel-sans-word-ni-acrobat</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.inoneshot.fr/blog/create-one-filled-pdf-per-excel-row-offline-without-acrobat</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
