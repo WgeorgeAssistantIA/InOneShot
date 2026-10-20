@@ -329,7 +329,7 @@ export const posts: BlogPost[] = [
       { type: "h2", text: "Pour aller plus loin" },
       {
         type: "p",
-        text: "À lire aussi : [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [générer des factures PDF en masse](/blog/generer-factures-pdf-masse-excel) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf) ; [créer un PDF rempli par ligne Excel hors ligne](/blog/creer-un-pdf-par-ligne-excel-sans-word-ni-acrobat).",
+        text: "À lire aussi : [vérifier les champs d'un PDF remplissable avec notre inspecteur gratuit](/inspecteur-champs-pdf) ; [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [générer des factures PDF en masse](/blog/generer-factures-pdf-masse-excel) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf) ; [créer un PDF rempli par ligne Excel hors ligne](/blog/creer-un-pdf-par-ligne-excel-sans-word-ni-acrobat).",
       },
     ],
   }),
@@ -1373,7 +1373,7 @@ export const posts: BlogPost[] = [
       { type: "h2", text: "Peut-on créer un fichier PDF séparé pour chaque ligne Excel sans avoir Microsoft Word ?" },
       { type: "p", text: "Oui. Avec un outil de publipostage PDF autonome comme InOneShot, vous importez directement votre modèle PDF et votre fichier Excel (.xlsx) ou CSV. Microsoft Word n'intervient à aucun moment, et chaque ligne du tableur génère son propre fichier PDF individuel." },
       { type: "h2", text: "Mon modèle PDF doit-il contenir des champs de formulaire interactifs (AcroForm) ?" },
-      { type: "p", text: "Non. Contrairement à Adobe Acrobat qui impose de dessiner des champs de formulaire AcroForm au préalable, InOneShot travaille sur n'importe quel PDF standard (exporté depuis Canva, LibreOffice, InDesign, Word ou scanné). Vous posez directement vos champs texte, date, signature ou QR code par-dessus la page." },
+      { type: "p", text: "Non. Contrairement à Adobe Acrobat qui impose de dessiner des champs de formulaire AcroForm au préalable, InOneShot travaille sur n'importe quel PDF standard (exporté depuis Canva, LibreOffice, InDesign, Word ou scanné). Vous posez directement vos champs texte, date, signature ou QR code par-dessus la page. En cas de doute sur votre fichier, vous pouvez tester gratuitement notre [Outil gratuit : Inspecteur de champs PDF](/inspecteur-champs-pdf) directement dans votre navigateur." },
       { type: "h2", text: "Comment chaque PDF généré est-il nommé automatiquement ?" },
       { type: "p", text: "Vous sélectionnez dans l'interface la colonne de votre fichier Excel qui doit servir à nommer les fichiers (nom du destinataire, matricule, numéro de facture). Chaque PDF produit prend automatiquement la valeur correspondante de sa ligne." },
       { type: "h2", text: "Mes fichiers Excel et mes PDF quittent-ils mon ordinateur pendant l'opération ?" },
@@ -1381,7 +1381,7 @@ export const posts: BlogPost[] = [
       { type: "h2", text: "Peut-on aussi regrouper toutes les lignes dans un seul fichier PDF pour l'impression ?" },
       { type: "p", text: "Oui. En plus de produire un fichier PDF individuel par ligne Excel (et une archive ZIP), InOneShot propose une option pour fusionner l'ensemble du lot en un seul fichier PDF continu, idéal pour lancer une impression groupée." },
       { type: "h2", text: "Pour aller plus loin" },
-      { type: "p", text: "À lire aussi : [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [choisir entre Word et InOneShot pour fusionner Excel et PDF](/blog/publipostage-word-vs-inoneshot) ; [préparer son fichier Excel sans erreur](/blog/preparer-fichier-excel-publipostage) ; [traiter un publipostage PDF en local plutôt qu'en ligne](/blog/publipostage-pdf-local-vs-en-ligne) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf)." },
+      { type: "p", text: "À lire aussi : [Outil gratuit : Inspecteur de champs PDF](/inspecteur-champs-pdf) ; [générer des centaines de PDF personnalisés depuis un Excel](/blog/publipostage-pdf-depuis-excel) ; [choisir entre Word et InOneShot pour fusionner Excel et PDF](/blog/publipostage-word-vs-inoneshot) ; [préparer son fichier Excel sans erreur](/blog/preparer-fichier-excel-publipostage) ; [traiter un publipostage PDF en local plutôt qu'en ligne](/blog/publipostage-pdf-local-vs-en-ligne) ; [cinq cas d'usage concrets du publipostage PDF](/blog/5-cas-usage-publipostage-pdf)." },
     ],
   }),
   make({
@@ -1453,7 +1453,7 @@ export const posts: BlogPost[] = [
       { type: "h2", text: "Can I also merge all rows into a single PDF file for printing?" },
       { type: "p", text: "Yes. Alongside generating one individual PDF file per Excel row (and bundling them into a ZIP archive), InOneShot includes an output option to merge the entire batch into a single continuous PDF file, which is ideal when printing a hundred documents at once." },
       { type: "h2", text: "Going further" },
-      { type: "p", text: "Related reading: [generate hundreds of personalized PDFs from an Excel file](/blog/generate-pdfs-from-excel); [choose between Word mail merge and a dedicated PDF tool](/blog/word-mail-merge-vs-pdf-tool); [why local processing beats online mail-merge tools](/blog/local-pdf-mail-merge-vs-online); [generate bulk PDF invoices from Excel](/blog/generate-bulk-pdf-invoices-from-excel); [generate training certificates without management software](/blog/how-to-generate-training-certificates-without-management-software)." },
+      { type: "p", text: "Related reading: [Free tool: Fillable PDF Field Inspector](/inspecteur-champs-pdf); [generate hundreds of personalized PDFs from an Excel file](/blog/generate-pdfs-from-excel); [choose between Word mail merge and a dedicated PDF tool](/blog/word-mail-merge-vs-pdf-tool); [why local processing beats online mail-merge tools](/blog/local-pdf-mail-merge-vs-online); [generate bulk PDF invoices from Excel](/blog/generate-bulk-pdf-invoices-from-excel); [generate training certificates without management software](/blog/how-to-generate-training-certificates-without-management-software)." },
     ],
   }),
 ];

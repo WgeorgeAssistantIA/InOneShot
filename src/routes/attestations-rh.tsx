@@ -1583,6 +1583,9 @@ function Index() {
             <Link to="/attestations-rh" className="transition-colors hover:text-foreground">
               Cas d'usage : RH
             </Link>
+            <Link to="/inspecteur-champs-pdf" className="transition-colors hover:text-foreground">
+              Outil gratuit : Inspecteur de champs PDF
+            </Link>
             <a
               href={YOUTUBE_URL}
               target="_blank"

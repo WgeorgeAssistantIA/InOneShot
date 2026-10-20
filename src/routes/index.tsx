@@ -1773,6 +1773,11 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
             <Link to="/attestations-rh" className="transition-colors hover:text-foreground">
               Cas d'usage : RH
             </Link>
+            <Link to="/inspecteur-champs-pdf" className="transition-colors hover:text-foreground">
+              {lang === "fr"
+                ? "Outil gratuit : Inspecteur de champs PDF"
+                : "Free tool: PDF Field Inspector"}
+            </Link>
             <a
               href={YOUTUBE_URL}
               target="_blank"
