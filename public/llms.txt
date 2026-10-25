@@ -1,17 +1,23 @@
 # InOneShot
 
-> InOneShot is a Windows and Android app for PDF mail merge: import a PDF template and an Excel spreadsheet, place fields (columns, dates, signatures, QR codes) by drag-and-drop directly on the PDF preview, and generate every personalized document in one click.
+> InOneShot is an offline, 100% local PDF mail merge application for Windows, Linux, and Android. It lets users import an existing PDF template and an Excel or CSV file, place dynamic fields (text from columns, current date, transparent signature images, dynamic QR codes) directly onto the PDF by drag-and-drop, and generate hundreds of individual personalized PDFs in one click without sending any data to the cloud.
 
-## Main pages
-- [Home](https://www.inoneshot.fr/): Product overview, features, pricing, download.
-- [Blog](https://www.inoneshot.fr/blog): Guides on PDF mail merge, Excel preparation, use cases.
+## Main pages & Free tools
+- [Home (FR)](https://www.inoneshot.fr/): Publipostage PDF en 1 clic depuis Excel, 100% local.
+- [Home (EN)](https://www.inoneshot.fr/en): 1-Click PDF Mail Merge from Excel, 100% local.
+- [Free PDF Field Inspector](https://www.inoneshot.fr/inspecteur-champs-pdf): Inspect whether a PDF has interactive AcroForm fields in the browser with zero cloud upload.
+- [Qualiopi Training Certificates](https://www.inoneshot.fr/organismes-formation-qualiopi): Bulk generation of Qualiopi training certificates, attendance sheets and notices from Excel.
+- [HR & Employment Documents](https://www.inoneshot.fr/attestations-rh): GDPR-compliant bulk generation of employment certificates, notices and employee documents.
+- [Notaries & Legal Professionals](https://www.inoneshot.fr/publipostage-notaires): Secure offline mail merge for contracts, legal notices and deeds respecting strict professional secrecy.
+- [Blog & Tutorials](https://www.inoneshot.fr/blog): Guides on Excel mail merge, offline vs cloud processing, Word mail merge alternatives, bulk signatures, QR codes.
 
 ## Key facts
-- Platforms: Windows (desktop), Android (Google Play).
-- Use case: generate hundreds of personalized PDFs (certificates, invoices, invitations) from a single Excel file.
-- Processing is local; data never leaves the user's device.
-- Free tier available; Pro license unlocks unlimited batches and advanced fields.
-- Built and maintained by La Fabrik Numérique.
+- Platforms: Windows (MSIX Store installer, portable .zip), Linux (AppImage, Snap, tar.gz), Android (Google Play).
+- Privacy: 100% local processing; spreadsheets and generated documents never leave the computer. Ideal for GDPR compliance and sensitive records.
+- Unique features: Drag & drop field placement, transparent signature image placement, dynamic QR codes from spreadsheet URLs/data, automatic clean file naming per row, batch ZIP export.
+- Pricing: Free tier (up to 5 documents per batch with all features); Pro license (one-time payment, lifetime access, no subscription).
+- Publisher: La Fabrik Numérique (founder William GEORGE).
 
 ## Contact
 - Website: https://www.inoneshot.fr
+- Support: contact@inoneshot.fr
