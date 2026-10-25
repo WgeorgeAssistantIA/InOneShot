@@ -1321,20 +1321,20 @@ export const posts: BlogPost[] = [
   make({
     slug: "creer-un-pdf-par-ligne-excel-sans-word-ni-acrobat",
     altLangSlug: "create-one-filled-pdf-per-excel-row-offline-without-acrobat",
-    seoTitle: "Créer un PDF par ligne Excel sans Word — InOneShot",
+    seoTitle: "Publipostage Word vers PDF séparés : 1 PDF par ligne Excel — InOneShot",
     title:
       "Comment créer un PDF rempli par ligne Excel sans Word ni Acrobat (hors ligne) ?",
     description:
-      "Créez automatiquement un fichier PDF individuel rempli par ligne Excel sans Word, sans Adobe Acrobat et hors ligne sur votre ordinateur.",
+      "Marre de Word qui fusionne tout en un seul document ? Générez un fichier PDF séparé et nommé par ligne Excel en un clic, 100% hors ligne sans Acrobat.",
     date: "2026-10-20",
     author: "Équipe InOneShot",
     lang: "fr",
     related: { to: "/attestations-rh", label: "Voir la page dédiée aux documents RH et attestations" },
     content: [
       { type: "p", text: "Créer un PDF rempli par ligne Excel sans Word ni Adobe Acrobat consiste à relier directement un fichier Excel ou CSV à un modèle PDF existant dans un logiciel local sur votre ordinateur, afin que chaque ligne du tableur génère automatiquement son propre fichier PDF individuel et nommé proprement, hors ligne." },
-      { type: "p", text: "Vous disposez d'un modèle de document déjà mis en page en PDF — une attestation de présence, un contrat, un reçu, une convocation ou une facture — et d'un tableau Excel contenant cinquante, cent ou trois cents lignes. Votre objectif est simple : obtenir un fichier PDF distinct pour chaque ligne du tableur, prêt à être envoyé ou archivé sous le nom du destinataire. Pourtant, dès que l'on cherche à réaliser cette opération sans passer par Microsoft Word et sans payer d'abonnement Adobe Acrobat, les méthodes habituelles deviennent vite complexes." },
+      { type: "p", text: "Vous disposez d'un modèle de document déjà mis en page en PDF — une attestation de présence, un contrat, un reçu, une convocation ou une facture — et d'un tableau Excel contenant cinquante, cent ou trois cents lignes. Votre objectif est simple : obtenir un fichier PDF distinct pour chaque ligne du tableur, prêt à être envoyé ou archivé sous le nom du destinataire. Pourtant, dès que l'on cherche à réaliser ce publipostage Word vers des fichiers PDF séparés par destinataire sans passer par Microsoft Word et sans abonnement Adobe Acrobat, les méthodes habituelles deviennent vite un calvaire." },
       { type: "p", text: "Entre le publipostage Word qui fusionne tout dans un seul document géant, les formulaires AcroForm d'Acrobat qui demandent une préparation minutieuse, les scripts Python réservés aux profils techniques et les services en ligne qui imposent d'envoyer vos listes nominatives dans le cloud, il manquait une méthode directe. Voici pourquoi les approches classiques bloquent, comment générer un PDF par ligne Excel hors ligne en quelques minutes, et comment préparer et contrôler votre lot sans erreur." },
-      { type: "h2", text: "Pourquoi est-il si difficile de créer un PDF individuel par ligne Excel avec Word, Acrobat ou un script ?" },
+      { type: "h2", text: "Pourquoi le publipostage Word ne permet-il pas de séparer en plusieurs fichiers PDF ?" },
       { type: "p", text: "La majorité des guides bureautiques supposent que tout document professionnel est rédigé dans Microsoft Word ou nécessite Adobe Acrobat Pro. En réalité, lorsque votre maquette existe déjà au format PDF et que vos données sont rangées dans Excel, ces solutions imposent des détours techniques coûteux en temps à chaque nouveau lot." },
       { type: "p", text: "Du côté de Microsoft Word, l'outil de publipostage a été conçu à l'origine pour l'impression papier en continu. Par défaut, il fusionne toutes les lignes de votre fichier Excel dans un unique document final de plusieurs centaines de pages. Pour obtenir un fichier PDF séparé par destinataire, il faut soit découper ce gros fichier après coup — en perdant le nommage automatique —, soit installer une macro VBA qui se bloque souvent d'une version d'Office à l'autre. De plus, importer un PDF existant dans Word déforme régulièrement les cadres, les polices et les logos, comme nous le détaillons dans notre comparatif pour [choisir entre le publipostage Word et un outil PDF dédié](/blog/publipostage-word-vs-inoneshot)." },
       {
@@ -1393,11 +1393,11 @@ export const posts: BlogPost[] = [
   make({
     slug: "create-one-filled-pdf-per-excel-row-offline-without-acrobat",
     altLangSlug: "creer-un-pdf-par-ligne-excel-sans-word-ni-acrobat",
-    seoTitle: "One Filled PDF per Excel Row Offline — InOneShot",
+    seoTitle: "Word Mail Merge into Separate PDFs: 1 PDF per Excel Row — InOneShot",
     title:
       "How to Create One Filled PDF per Excel Row Offline (Without Acrobat or Word)",
     description:
-      "Automatically create one individual filled PDF per Excel row offline without Microsoft Word, Adobe Acrobat or Python scripts on your PC.",
+      "Frustrated by Word merging all records into one file? Automatically create individual, cleanly named PDFs per Excel row offline on your PC.",
     date: "2026-10-20",
     author: "InOneShot Team",
     lang: "en",
