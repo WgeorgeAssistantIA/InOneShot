@@ -111,9 +111,9 @@ const CONTACT_EMAIL = "contact@inoneshot.fr";
 
 const t = {
   en: {
-    metaTitle: "InOneShot — Generate hundreds of personalized PDFs from your Excel, in one click",
+    metaTitle: "Offline PDF Mail Merge for Notaries & Lawyers — InOneShot",
     metaDesc:
-      "PDF mail merge for Windows. From one PDF template + an Excel file, generate one PDF per row + a ZIP. 100% local. Free version available.",
+      "Generate bulk legal contracts, deeds and notifications from Excel. 100% local offline on your PC, ensuring client confidentiality and GDPR compliance.",
     nav: { features: "Features", pricing: "Pricing", faq: "FAQ", cta: "Download" },
     announce: {
       text: "Launch offer: 30% off for the first 20 customers — code",
@@ -373,9 +373,9 @@ const t = {
   },
   fr: {
     metaTitle:
-      "InOneShot — Générez vos documents PDF sensibles en masse, 100% hors-ligne",
+      "Publipostage PDF pour Notaires & Avocats (Zéro Cloud) — InOneShot",
     metaDesc:
-      "La solution de publipostage sécurisée pour les RH, Notaires et PME. 0% Cloud, sans abonnement. Vos données ne quittent jamais votre PC.",
+      "Générez vos courriers, actes et contrats notariés en masse depuis Excel. 100% local sur votre ordinateur, respect strict du secret professionnel et RGPD.",
     nav: { features: "Fonctionnalités", pricing: "Tarifs", faq: "FAQ", cta: "Télécharger" },
     announce: {
       text: "Offre de lancement : -30% pour les 20 premiers clients — code",
@@ -642,7 +642,7 @@ const t = {
 export const Route = createFileRoute("/publipostage-notaires")({
   head: () => ({
     meta: [
-      { title: "Publipostage PDF pour Notaires & Avocats — 100% Local" },
+      { title: "Publipostage PDF pour Notaires & Avocats (Zéro Cloud) — InOneShot" },
       {
         name: "description",
         content:

@@ -111,9 +111,9 @@ const CONTACT_EMAIL = "contact@inoneshot.fr";
 
 const t = {
   en: {
-    metaTitle: "InOneShot — Generate hundreds of personalized PDFs from your Excel, in one click",
+    metaTitle: "Bulk HR Document & Certificate Generator from Excel — InOneShot",
     metaDesc:
-      "PDF mail merge for Windows. From one PDF template + an Excel file, generate one PDF per row + a ZIP. 100% local. Free version available.",
+      "Generate employee certificates, attendance sheets and contracts in bulk from Excel. 100% offline on your PC, fully GDPR-compliant with zero cloud uploads.",
     nav: { features: "Features", pricing: "Pricing", faq: "FAQ", cta: "Download" },
     announce: {
       text: "Launch offer: 30% off for the first 20 customers — code",
@@ -373,9 +373,9 @@ const t = {
   },
   fr: {
     metaTitle:
-      "InOneShot — Générez vos documents PDF sensibles en masse, 100% hors-ligne",
+      "Publipostage RH : Attestations et Contrats PDF en Masse — InOneShot",
     metaDesc:
-      "La solution de publipostage sécurisée pour les RH, Notaires et PME. 0% Cloud, sans abonnement. Vos données ne quittent jamais votre PC.",
+      "Générez vos attestations de travail, convocations et fiches employés en masse depuis Excel. 100% hors ligne, conforme RGPD sans risque de fuite cloud.",
     nav: { features: "Fonctionnalités", pricing: "Tarifs", faq: "FAQ", cta: "Télécharger" },
     announce: {
       text: "Offre de lancement : -30% pour les 20 premiers clients — code",
@@ -642,7 +642,7 @@ const t = {
 export const Route = createFileRoute("/attestations-rh")({
   head: () => ({
     meta: [
-      { title: "Automatisez vos attestations et fiches de paie — 100% Local" },
+      { title: "Publipostage RH : Attestations et Contrats PDF en Masse — InOneShot" },
       {
         name: "description",
         content:

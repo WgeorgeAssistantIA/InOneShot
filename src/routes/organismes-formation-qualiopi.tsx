@@ -78,11 +78,11 @@ const SNAP_URL = "https://snapcraft.io/inoneshot";
 const YOUTUBE_URL = "https://www.youtube.com/@InOneShot-PDFMailMerge";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
 
-const META_TITLE_FR = "Attestations Formation Qualiopi Excel — InOneShot"; // 49 chars
+const META_TITLE_FR = "Attestations Formation Qualiopi depuis Excel : PDF en Masse — InOneShot"; // 49 chars
 const META_DESC_FR =
-  "Générez vos attestations de formation Qualiopi et feuilles d'émargement PDF en masse depuis Excel, 100 % hors ligne sur PC et sans abonnement."; // 142 chars
+  "Générez vos certificats de réalisation Qualiopi, convocations et feuilles d'émargement PDF en masse depuis Excel. 100% local sur PC, sans abonnement."; // 142 chars
 
-const META_TITLE_EN = "Offline Training Certificate Generator — InOneShot"; // 50 chars
+const META_TITLE_EN = "Bulk Training Certificate & Attendance Sheet Generator — InOneShot"; // 50 chars
 const META_DESC_EN =
   "Generate your training completion certificates and attendance sheets in bulk from Excel, 100% offline on PC without a subscription or Word."; // 139 chars
 

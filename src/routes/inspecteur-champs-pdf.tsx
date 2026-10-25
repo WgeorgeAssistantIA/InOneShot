@@ -49,11 +49,11 @@ const CHECKOUT_URL =
 const YOUTUBE_URL = "https://www.youtube.com/@InOneShot-PDFMailMerge";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
 
-const META_TITLE_FR = "Inspecteur de Champs PDF Remplissable — InOneShot"; // 50 chars
+const META_TITLE_FR = "Inspecteur de Champs PDF Remplissable Gratuit (AcroForm) — InOneShot"; // 50 chars
 const META_DESC_FR =
-  "Outil gratuit 100 % local : vérifiez si votre PDF contient des champs remplissables AcroForm et téléchargez le modèle Excel correspondant sans upload."; // 150 chars
+  "Outil gratuit 100% local : inspectez instantanément si votre PDF comporte des champs AcroForm remplissables et téléchargez la matrice Excel sans aucun upload."; // 150 chars
 
-const META_TITLE_EN = "Fillable PDF Field Inspector Offline — InOneShot"; // 48 chars
+const META_TITLE_EN = "Free Fillable PDF Field Inspector Online (AcroForm) — InOneShot"; // 48 chars
 const META_DESC_EN =
   "Free 100% local tool: inspect whether your PDF contains fillable AcroForm fields and download the matching Excel CSV template with zero file upload."; // 148 chars
 
