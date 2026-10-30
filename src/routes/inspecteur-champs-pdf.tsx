@@ -41,7 +41,7 @@ const STORE_URL = "https://apps.microsoft.com/detail/9PPBQSM1MFZ2";
 const STORE_INSTALLER =
   "https://get.microsoft.com/installer/download/9PPBQSM1MFZ2?referrer=appbadge";
 const WINDOWS_INSTALLER_URL =
-  "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-Setup-2.0.0.exe";
+  "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-Setup-2.0.1.exe";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android";
 const CHECKOUT_URL =
