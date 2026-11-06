@@ -93,6 +93,8 @@ import {
   Scale,
   Users,
   Briefcase,
+  Smartphone,
+  Youtube,
 } from "lucide-react";
 
 type Lang = "en" | "fr";
@@ -106,11 +108,11 @@ const STORE_INSTALLER = "https://get.microsoft.com/installer/download/9PPBQSM1MF
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.lafabriknumerique.inoneshot_android";
 const WINDOWS_INSTALLER_URL =
-  "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-Setup-2.0.1.exe";
+  "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-Setup-2.0.2.exe";
 const LINUX_URL =
   "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot-x86_64.AppImage";
 const LINUX_TAR_URL =
-  "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_2.0.1_linux_x86_64.tar.gz";
+  "https://github.com/WgeorgeAssistantIA/InOneShot/releases/latest/download/InOneShot_2.0.2_linux_x86_64.tar.gz";
 const SNAP_URL = "https://snapcraft.io/inoneshot";
 const YOUTUBE_URL = "https://www.youtube.com/@InOneShot-PDFMailMerge";
 const CONTACT_EMAIL = "contact@inoneshot.fr";
@@ -154,6 +156,22 @@ export const t = {
       },
     },
     video: { caption: "InOneShot in action — 1-minute demo", soon: "Demo video coming soon" },
+    androidVideo: {
+      tag: "Android App",
+      title: "Fill a PDF from Excel on Android: InOneShot Tutorial",
+      description:
+        "How do you fill a PDF in bulk from an Excel or CSV sheet, right on your Android phone? In this tutorial, we create 3 certificates from one PDF template and a 3-row sheet: 1 row = 1 document. Your documents stay on your phone: they never go through a server. Free for up to 5 rows per run.",
+      trackLabel: "English",
+      keyPoints: [
+        "1 row = 1 document",
+        "Documents processed on your phone",
+        "Free for up to 5 rows per run",
+      ],
+      playStoreAlt: "Get it on Google Play",
+      playStoreAria: "Get InOneShot on Google Play",
+      youtubeUrl: "https://youtube.com/shorts/7B_rw3zwfLY?feature=share",
+      youtubeBtn: "Watch on YouTube",
+    },
     pain: {
       title: "Is PDF mail merge eating your time?",
       text: "Copy-pasting each name into a template, exporting a PDF, renaming the file, doing it again a hundred times — it is the most thankless task there is, and a single typo means starting over.",
@@ -421,6 +439,22 @@ export const t = {
     video: {
       caption: "InOneShot en action — démo d'une minute",
       soon: "Démo vidéo bientôt disponible",
+    },
+    androidVideo: {
+      tag: "Application Android",
+      title: "Remplir un PDF avec Excel sur Android : tutoriel InOneShot",
+      description:
+        "Comment remplir un PDF en série à partir d'un tableau Excel ou CSV, directement sur votre téléphone Android ? Dans ce tutoriel, on crée 3 attestations à partir d'un modèle PDF et d'un tableau de 3 lignes : 1 ligne = 1 document. Vos documents restent sur votre téléphone : ils ne passent par aucun serveur. Gratuit jusqu'à 5 lignes par génération.",
+      trackLabel: "Français",
+      keyPoints: [
+        "1 ligne = 1 document",
+        "Documents traités sur le téléphone",
+        "Gratuit jusqu'à 5 lignes par génération",
+      ],
+      playStoreAlt: "Disponible sur Google Play",
+      playStoreAria: "Télécharger InOneShot sur Google Play",
+      youtubeUrl: "https://youtube.com/shorts/3bNX8YHWnIM?feature=share",
+      youtubeBtn: "Voir sur YouTube",
     },
     pain: {
       title: "Le publipostage de données sensibles vous bloque ?",
@@ -753,6 +787,22 @@ export const Route = createFileRoute("/")({
               text: item.a,
             },
           })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: "Remplir un PDF avec Excel sur Android : tutoriel InOneShot",
+          description:
+            "Comment remplir un PDF en série à partir d'un tableau Excel ou CSV, directement sur votre téléphone Android. 1 ligne = 1 document, documents traités sur le téléphone, gratuit jusqu'à 5 lignes par génération.",
+          thumbnailUrl: ["https://www.inoneshot.fr/videos/thumbnail_fr.webp"],
+          contentUrl: "https://www.inoneshot.fr/videos/tutoriel_inoneshot_fr_16x9.mp4",
+          embedUrl: "https://www.youtube.com/embed/3bNX8YHWnIM",
+          sameAs: ["https://youtube.com/shorts/3bNX8YHWnIM?feature=share"],
+          uploadDate: "2026-11-06T14:00:00+01:00",
+          duration: "PT1M24S",
         }),
       },
     ],
@@ -1241,6 +1291,89 @@ export function Index({ forcedLang }: { forcedLang?: Lang } = {}) {
                 title={c.video.caption}
                 allowFullScreen
               />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ANDROID TUTORIAL VIDEO */}
+      <section id="tutoriel-android" className="border-t border-border py-20">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <Reveal>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3.5 py-1.5 text-xs font-semibold text-brand-deep">
+              <Smartphone className="h-4 w-4 text-brand" /> {c.androidVideo.tag}
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              {c.androidVideo.title}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
+              {c.androidVideo.description}
+            </p>
+            <div className="mx-auto mt-8 aspect-video w-full max-w-3xl overflow-hidden rounded-xl border border-border bg-black shadow-lg">
+              <video
+                key={lang}
+                controls
+                playsInline
+                preload="none"
+                poster={lang === "fr" ? "/videos/thumbnail_fr.webp" : "/videos/thumbnail_en.webp"}
+                className="h-full w-full object-cover"
+              >
+                <source
+                  src={
+                    lang === "fr"
+                      ? "/videos/tutoriel_inoneshot_fr_16x9.mp4"
+                      : "/videos/tutoriel_inoneshot_en_16x9.mp4"
+                  }
+                  type="video/mp4"
+                />
+                <track
+                  src={lang === "fr" ? "/videos/subtitles_fr.vtt" : "/videos/subtitles_en.vtt"}
+                  kind="subtitles"
+                  srcLang={lang}
+                  label={c.androidVideo.trackLabel}
+                />
+                {lang === "fr"
+                  ? "Votre navigateur ne prend pas en charge la lecture vidéo."
+                  : "Your browser does not support the video tag."}
+              </video>
+            </div>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+              {c.androidVideo.keyPoints.map((point) => (
+                <span
+                  key={point}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-3 py-1.5 text-xs font-medium text-foreground"
+                >
+                  <CheckCircle2 className="h-3.5 w-3.5 text-brand" /> {point}
+                </span>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={trackPlayStoreDownload}
+                aria-label={c.androidVideo.playStoreAria}
+                className="inline-flex items-center justify-center rounded-lg border border-border transition-opacity hover:opacity-90"
+              >
+                <img
+                  src={`https://play.google.com/intl/en_us/badges/static/images/badges/${lang === "fr" ? "fr" : "en"}_badge_web_generic.png`}
+                  width={200}
+                  height={60}
+                  alt={c.androidVideo.playStoreAlt}
+                  className="h-[52px] w-auto"
+                />
+              </a>
+              <a
+                href={c.androidVideo.youtubeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackCrossLink("youtube_tutorial")}
+                className="inline-flex h-[52px] items-center justify-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground transition hover:border-red-500 hover:text-red-600"
+              >
+                <Youtube className="h-5 w-5 text-red-600" />
+                {c.androidVideo.youtubeBtn}
+              </a>
             </div>
           </Reveal>
         </div>

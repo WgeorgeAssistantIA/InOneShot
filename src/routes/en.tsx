@@ -95,6 +95,22 @@ export const Route = createFileRoute("/en")({
           })),
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: "Fill a PDF from Excel on Android: InOneShot Tutorial",
+          description:
+            "How do you fill a PDF in bulk from an Excel or CSV sheet, right on your Android phone? In this tutorial, we create 3 certificates from one PDF template and a 3-row sheet: 1 row = 1 document. Your documents stay on your phone: they never go through a server. Free for up to 5 rows per run.",
+          thumbnailUrl: ["https://www.inoneshot.fr/videos/thumbnail_en.webp"],
+          contentUrl: "https://www.inoneshot.fr/videos/tutoriel_inoneshot_en_16x9.mp4",
+          embedUrl: "https://www.youtube.com/embed/7B_rw3zwfLY",
+          sameAs: ["https://youtube.com/shorts/7B_rw3zwfLY?feature=share"],
+          uploadDate: "2026-11-06T14:00:00+01:00",
+          duration: "PT1M24S",
+        }),
+      },
     ],
   }),
   component: EnglishHome,
